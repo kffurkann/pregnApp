@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".login">
+
+    <RelativeLayout
+        android:id="@+id/frame28"
+        android:layout_width="153dp"
+        android:layout_height="156dp"
+        android:layout_marginTop="52dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="false"
+            android:layout_marginTop="0dp"
+            app:srcCompat="@drawable/pregnapp_logo" />
+
+        <TextView
+            android:id="@+id/textTitle"
+            android:layout_width="153dp"
+            android:layout_height="40dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/rubikbold"
+            android:gravity="center_horizontal|top"
+            android:text="@string/title"
+            android:textSize="30sp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/frame29"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="80dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frame28">
+
+        <TextView
+            android:id="@+id/textLoginMail"
+            android:layout_width="300dp"
+            android:layout_height="17dp"
+            android:fontFamily="@font/rubikregular"
+            android:gravity="center_vertical"
+            android:text="E-Mail" />
+
+        <EditText
+            android:id="@+id/inputLoginMail"
+            android:layout_width="300dp"
+            android:layout_height="48dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/input"
+            android:drawableRight="@drawable/email_icon"
+            android:fontFamily="@font/rubikregular"
+            android:hint="E-mail"
+            android:paddingStart="20dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="10dp"
+            android:textSize="12sp" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/frame30"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frame29">
+
+        <TextView
+            android:id="@+id/textLoginPassword"
+            android:layout_width="300dp"
+            android:layout_height="17dp"
+            android:fontFamily="@font/rubikregular"
+            android:gravity="center_vertical"
+            android:text="Password" />
+
+        <EditText
+            android:id="@+id/inputLoginPassword"
+            android:layout_width="300dp"
+            android:layout_height="48dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/input"
+            android:drawableRight="@drawable/login_password_icon"
+            android:fontFamily="@font/rubikregular"
+            android:hint="Password"
+            android:paddingStart="20dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="10dp"
+            android:textSize="12sp" />
+
+    </RelativeLayout>
+    <Button
+        android:id="@+id/buttonLogin"
+        android:layout_width="300dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="42dp"
+        android:backgroundTint="@color/boldPink"
+        android:fontFamily="@font/rubikregular"
+        android:text="Log in"
+        app:cornerRadius="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frame30" />
+
+    <TextView
+        android:id="@+id/textPassToSignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/rubikregular"
+        android:text="Don't have an account?  Create Account"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonLogin" />
+
+    <TextView
+        android:id="@+id/textOr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/rubikregular"
+        android:text="Or"
+        app:layout_constraintBottom_toTopOf="@+id/buttonGoogle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textPassToSignUp"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonGoogle"
+        android:layout_width="300dp"
+        android:layout_height="48dp"
+
+        android:layout_marginBottom="22dp"
+        android:drawableLeft="@drawable/button_google"
+        android:fontFamily="@font/rubikregular"
+        android:gravity="fill_vertical"
+        android:paddingStart="70dp"
+        android:text="Login with Google"
+        android:textColor="@color/black"
+        app:backgroundTint="@color/white"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="@color/grey"
+        app:strokeWidth="1dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>
