@@ -11,6 +11,7 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
     private Button buttonGecis;
     private Button buttonMakale;
+    private Button buttonTekme;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +29,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this,Makale.class));
+            }
+        });
+        buttonTekme=findViewById(R.id.button_tekme);
+        buttonTekme.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,TekmeSayar.class));
             }
         });
     }
