@@ -12,10 +12,12 @@ public class MainActivity extends AppCompatActivity {
     private Button buttonGecis;
     private Button buttonMakale;
     private Button buttonTekme;
+    private Button buttonLogin;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         buttonGecis=findViewById(R.id.buttonGecis);
         buttonGecis.setOnClickListener(new View.OnClickListener() {
@@ -36,6 +38,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this,TekmeSayar.class));
+            }
+        });
+        buttonLogin=findViewById(R.id.button_login);
+        buttonLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,TestlerVeTaramalar.class));
             }
         });
     }
