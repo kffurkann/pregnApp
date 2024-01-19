@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         buttonGecis.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, HamilelikAjandam.class));
+                startActivity(new Intent(MainActivity.this, ihtiyacListesi.class));
             }
         });
         buttonMakale=findViewById(R.id.button_makale);

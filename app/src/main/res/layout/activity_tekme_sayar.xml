@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 <ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,7 +12,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:context=".TekmeSayar">
-    <androidx.appcompat.widget.Toolbar
+
+
+
+        <androidx.appcompat.widget.Toolbar
         android:id="@+id/my_toolbar_tekme_sayar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -52,7 +58,8 @@
         app:srcCompat="@drawable/tekme_sayar_logo"
         />
 
-    <RelativeLayout
+
+        <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="65dp"
@@ -570,5 +577,18 @@
 
     </RelativeLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
+
+    <Button
+        android:id="@+id/buttonTekmeEkle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:backgroundTint="@color/darkerPink"
+        android:paddingStart="16dp"
+        android:text="Ekle"
+        app:icon="@drawable/plus_icon_white"
+        app:iconPadding="0dp" />
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

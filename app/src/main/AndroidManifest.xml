@@ -22,6 +22,9 @@
             android:name=".TestlerVeTaramalar"
             android:exported="false" />
         <activity
+            android:name=".ihtiyacListesi"
+            android:exported="false" />
+        <activity
             android:name=".TekmeSayar"
             android:exported="false" />
         <activity
