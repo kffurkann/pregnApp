@@ -103,7 +103,7 @@
                     android:textSize="20dp" />
 
                 <View
-                    android:id="@+id/line1"
+                    android:id="@+id/lineTehlikeli1"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_below="@+id/gogusUcu"
@@ -135,7 +135,7 @@
                     android:textSize="20dp" />
 
                 <View
-                    android:id="@+id/line2"
+                    android:id="@+id/lineTehlikeli2"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_below="@+id/gogusPompasi"
@@ -360,7 +360,7 @@
         app:layout_constraintTop_toBottomOf="@+id/buttonAnne">
 
         <LinearLayout
-            android:id="@+id/linearLayout2"
+            android:id="@+id/linearLayoutTehlikesizb"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="16dp"

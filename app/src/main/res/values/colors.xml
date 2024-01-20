@@ -2,6 +2,7 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="grey">#8C8A8A</color>
+    <color name="lightGrey">#B1ACAC</color>
     <color name="white">#FFFFFFFF</color>
     <color name="background">#FAFAFA</color>
     <color name="darkerPink">#E91E63</color>
@@ -9,4 +10,9 @@
     <color name="mediumPink">#F48FB1</color>
     <color name="lightPink">#FFCDD2</color>
     <color name="darkBlue">#3F51B5</color>
+    <color name="dangerous">#BD0303</color>
+    <color name="undangerous">#7DD581</color>
+    <color name="undangerousText">#0B4A0E</color>
+    <color name="careful">#DA8B73</color>
+    <color name="carefulText">#8A381F</color>
 </resources>
