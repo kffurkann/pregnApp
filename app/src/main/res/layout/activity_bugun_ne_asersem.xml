@@ -24,10 +24,10 @@
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="s"
             android:src="@drawable/ic_back_arrow"
             tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="7dp"
-            android:contentDescription="s"/>
+            tools:layout_editor_absoluteY="7dp" />
 
 
         <!-- TextView ekleyerek kendi metnini belirle -->
@@ -43,11 +43,22 @@
             tools:layout_editor_absoluteY="20dp" />
     </androidx.appcompat.widget.Toolbar>
 
+    <ImageView
+        android:id="@+id/asermekadinView"
+        android:layout_width="350dp"
+        android:layout_height="350dp"
+        android:layout_marginTop="72dp"
+        android:src="@drawable/asermekadin_foto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/button_aser"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="208dp"
+        android:layout_marginBottom="104dp"
         android:backgroundTint="#3F51B5"
         android:text="AŞER"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -55,14 +66,16 @@
         app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageView
-        android:id="@+id/asermekadinView"
-        android:layout_width="350dp"
-        android:layout_height="300dp"
-        android:layout_marginTop="108dp"
-        android:src="@drawable/asermekadin_foto"
+    <TextView
+        android:id="@+id/textViewAser"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Aşerdiğiniz Yemek: "
+        android:textAlignment="center"
+        android:textSize="20dp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/asermekadinView" />
 </androidx.constraintlayout.widget.ConstraintLayout>

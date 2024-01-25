@@ -13,10 +13,29 @@ public class MainActivity extends AppCompatActivity {
     private Button buttonMakale;
     private Button buttonTekme;
     private Button buttonLogin;
+    private Button buttonBebek;
+    private Button buttonGebelik;
+    private Button buttonAsermek;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        buttonAsermek=findViewById(R.id.button_bugunneAsersem);
+        buttonAsermek.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, BugunNeAsersem.class));
+            }
+        });
+
+        buttonGebelik=findViewById(R.id.button_gebelikAraclari);
+        buttonGebelik.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, gebelikAraclari.class));
+            }
+        });
 
 
         buttonGecis=findViewById(R.id.buttonGecis);
@@ -26,6 +45,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, ihtiyacListesi.class));
             }
         });
+
+        buttonBebek=findViewById(R.id.button_bebekİsimleri);
+        buttonBebek.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, BebekIsimleri.class));
+            }
+        });
+
         buttonMakale=findViewById(R.id.button_makale);
         buttonMakale.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this,Makale.class));
             }
         });
+
         buttonTekme=findViewById(R.id.button_tekme);
         buttonTekme.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this,TekmeSayar.class));
             }
         });
+
         buttonLogin=findViewById(R.id.button_login);
         buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override

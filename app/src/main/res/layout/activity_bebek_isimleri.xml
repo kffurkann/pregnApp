@@ -23,10 +23,10 @@
             android:layout_width="64dp"
             android:layout_height="64dp"
             android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="s"
             android:src="@drawable/ic_back_arrow"
             tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="7dp"
-            android:contentDescription="s"/>
+            tools:layout_editor_absoluteY="7dp" />
 
 
         <!-- TextView ekleyerek kendi metnini belirle -->
@@ -43,25 +43,55 @@
     </androidx.appcompat.widget.Toolbar>
 
     <Button
-        android:id="@+id/button_çevir"
-        android:layout_width="300dp"
+        android:id="@+id/button_kiz"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="208dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="80dp"
         android:backgroundTint="#3F51B5"
-        android:text="ÇEVİR"
+        android:text="Kız"
+        android:textSize="20dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <Button
+        android:id="@+id/button_erkek"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="51dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="80dp"
+        android:backgroundTint="#3F51B5"
+        android:text="Erkek"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button_kiz" />
+
     <ImageView
-        android:id="@+id/bebekIsimleriView"
+        android:id="@+id/carkImageView"
         android:layout_width="350dp"
         android:layout_height="300dp"
         android:layout_marginTop="108dp"
-        android:src="@drawable/bebek_isimleri_cark"
+        android:src="@drawable/cark2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewRandomIsim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="47dp"
+        android:text="Rastgele gelen isim:"
+
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/carkImageView" />
 </androidx.constraintlayout.widget.ConstraintLayout>

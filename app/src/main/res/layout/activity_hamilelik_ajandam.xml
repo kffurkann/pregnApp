@@ -7,6 +7,8 @@
     android:background="@color/background"
     tools:context=".HamilelikAjandam">
 
+
+
     <RelativeLayout
         android:id="@+id/hamilelik_relative"
         android:layout_width="321dp"

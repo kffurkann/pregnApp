@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".ihtiyacListesi">
 
+
+
     <Button
         android:id="@+id/buttonAnne"
         android:layout_width="wrap_content"

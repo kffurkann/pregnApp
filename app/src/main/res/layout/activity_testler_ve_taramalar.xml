@@ -7,7 +7,8 @@
     android:layout_height="match_parent">
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        tools:context=".TestlerVeTaramalar">
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/my_toolbar_testlervetaramalar"
         android:layout_width="match_parent"
@@ -92,7 +93,7 @@
                     android:background="#808080" />
 
                 <CheckBox
-                    android:id="@+id/checkboxTest1"
+                    android:id="@+id/checkboxTest1Test"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -123,7 +124,7 @@
                     android:background="#808080" />
 
                 <CheckBox
-                    android:id="@+id/checkboxTest2"
+                    android:id="@+id/checkboxTest2Test"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -154,7 +155,7 @@
                     android:background="#808080" />
 
                 <CheckBox
-                    android:id="@+id/checkboxTest3"
+                    android:id="@+id/checkboxTest3Test"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -185,7 +186,7 @@
                     android:background="#808080" />
 
                 <CheckBox
-                    android:id="@+id/checkboxTest4"
+                    android:id="@+id/checkboxTest4Test"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -216,7 +217,7 @@
                     android:background="#808080" />
 
                 <CheckBox
-                    android:id="@+id/checkboxTest5"
+                    android:id="@+id/checkboxTest5Test"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -248,7 +249,7 @@
                     android:background="#808080" />
 
                 <CheckBox
-                    android:id="@+id/checkboxTest6"
+                    android:id="@+id/checkboxTest6Test"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -279,7 +280,7 @@
                     android:background="#808080" />
 
                 <CheckBox
-                    android:id="@+id/checkboxTest7"
+                    android:id="@+id/checkboxTest7Test"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -310,7 +311,7 @@
                     android:background="#808080" />
 
                 <CheckBox
-                    android:id="@+id/checkboxTest8"
+                    android:id="@+id/checkboxTest8Test"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -341,7 +342,7 @@
                     android:background="#808080" />
 
                 <CheckBox
-                    android:id="@+id/checkboxTest9"
+                    android:id="@+id/checkboxTest9Test"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -372,7 +373,7 @@
                     android:background="#808080" />
 
                 <CheckBox
-                    android:id="@+id/checkboxTest10"
+                    android:id="@+id/checkboxTest10Test"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -403,7 +404,7 @@
                     android:background="#808080" />
 
                 <CheckBox
-                    android:id="@+id/checkboxTest11"
+                    android:id="@+id/checkboxTest11Test"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -434,7 +435,7 @@
                     android:background="#808080" />
 
                 <CheckBox
-                    android:id="@+id/checkboxTest12"
+                    android:id="@+id/checkboxTest12Test"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
