@@ -15,4 +15,5 @@
     <color name="undangerousText">#0B4A0E</color>
     <color name="careful">#DA8B73</color>
     <color name="carefulText">#8A381F</color>
+    <color name="tekmeBackground">#F1F0F0</color>
 </resources>

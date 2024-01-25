@@ -36,40 +36,40 @@ public class TestlerVeTaramalar extends AppCompatActivity {
         sharedPreferencesTestler = getPreferences(Context.MODE_PRIVATE);
 
         // Her bir checkbox'un durumunu SharedPreferences'ten oku ve ayarla
-        CheckBox checkboxTest1Test = findViewById(R.id.checkboxTest1Test);
+        CheckBox checkboxTest1Test = findViewById(R.id.checkboxTest1);
         checkboxTest1Test.setChecked(sharedPreferencesTestler.getBoolean("checkboxTest1Test", false));
 
-        CheckBox checkboxTest2Test = findViewById(R.id.checkboxTest2Test);
+        CheckBox checkboxTest2Test = findViewById(R.id.checkboxTest2);
         checkboxTest2Test.setChecked(sharedPreferencesTestler.getBoolean("checkboxTest2Test", false));
 
-        CheckBox checkboxTest3Test = findViewById(R.id.checkboxTest3Test);
+        CheckBox checkboxTest3Test = findViewById(R.id.checkboxTest3);
         checkboxTest3Test.setChecked(sharedPreferencesTestler.getBoolean("checkboxTest3Test", false));
 
-        CheckBox checkboxTest4Test = findViewById(R.id.checkboxTest4Test);
+        CheckBox checkboxTest4Test = findViewById(R.id.checkboxTest4);
         checkboxTest4Test.setChecked(sharedPreferencesTestler.getBoolean("checkboxTest4Test", false));
 
-        CheckBox checkboxTest5Test = findViewById(R.id.checkboxTest5Test);
+        CheckBox checkboxTest5Test = findViewById(R.id.checkboxTest5);
         checkboxTest5Test.setChecked(sharedPreferencesTestler.getBoolean("checkboxTest5Test", false));
 
-        CheckBox checkboxTest6Test = findViewById(R.id.checkboxTest6Test);
+        CheckBox checkboxTest6Test = findViewById(R.id.checkboxTest6);
         checkboxTest6Test.setChecked(sharedPreferencesTestler.getBoolean("checkboxTest6Test", false));
 
-        CheckBox checkboxTest7Test = findViewById(R.id.checkboxTest7Test);
+        CheckBox checkboxTest7Test = findViewById(R.id.checkboxTest7);
         checkboxTest7Test.setChecked(sharedPreferencesTestler.getBoolean("checkboxTest7Test", false));
 
-        CheckBox checkboxTest8Test = findViewById(R.id.checkboxTest8Test);
+        CheckBox checkboxTest8Test = findViewById(R.id.checkboxTest8);
         checkboxTest8Test.setChecked(sharedPreferencesTestler.getBoolean("checkboxTest8Test", false));
 
-        CheckBox checkboxTest9Test = findViewById(R.id.checkboxTest9Test);
+        CheckBox checkboxTest9Test = findViewById(R.id.checkboxTest9);
         checkboxTest9Test.setChecked(sharedPreferencesTestler.getBoolean("checkboxTest9Test", false));
 
-        CheckBox checkboxTest10Test = findViewById(R.id.checkboxTest10Test);
+        CheckBox checkboxTest10Test = findViewById(R.id.checkboxTest10);
         checkboxTest10Test.setChecked(sharedPreferencesTestler.getBoolean("checkboxTest10Test", false));
 
-        CheckBox checkboxTest11Test = findViewById(R.id.checkboxTest11Test);
+        CheckBox checkboxTest11Test = findViewById(R.id.checkboxTest11);
         checkboxTest11Test.setChecked(sharedPreferencesTestler.getBoolean("checkboxTest11Test", false));
 
-        CheckBox checkboxTest12Test = findViewById(R.id.checkboxTest12Test);
+        CheckBox checkboxTest12Test = findViewById(R.id.checkboxTest12);
         checkboxTest12Test.setChecked(sharedPreferencesTestler.getBoolean("checkboxTest12Test", false));
 
 
