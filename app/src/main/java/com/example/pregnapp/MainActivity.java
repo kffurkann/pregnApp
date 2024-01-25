@@ -16,10 +16,19 @@ public class MainActivity extends AppCompatActivity {
     private Button buttonBebek;
     private Button buttonGebelik;
     private Button buttonAsermek;
+    private Button buttonSignUp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        buttonSignUp=findViewById(R.id.button_signUp);
+        buttonSignUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, signUp.class));
+            }
+        });
 
         buttonAsermek=findViewById(R.id.button_bugunneAsersem);
         buttonAsermek.setOnClickListener(new View.OnClickListener() {
