@@ -1,0 +1,68 @@
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="300dp"
+    android:layout_height="550dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center"
+    android:background="@android:color/white"
+    android:layout_margin="20dp"
+    android:elevation="8dp"
+    app:cardCornerRadius="25dp"> <!-- Adjust the corner radius as needed -->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <!-- İçerik için bir TextView -->
+            <TextView
+                android:id="@+id/textViewPopup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Bu Kullanım Şartları PregnApp içindir. Bu şartlar PregnApp Android uygulaması için geçerlidir.
+     \n
+     \nBu uygulamayı kullanmaya devam ederek bu şartları kabul etmiş sayılırsınız.
+     \n
+     \nBu uygulamada yer alan bilgiler tamamen bilgilendirme amaçlıdır. Hiçbir zaman doktor tavsiyesi yerine geçmez ve hastalıkların tanı veya tedavisi için kullanılamaz.
+     \n
+     \nUygulama hamileliğinizi otomatik hesaplar. Hamilelik haftanız kesin olarak doktorunuz tarafından belirlenebilir.
+     \n
+     \nUygulama içerisinde bulunan forum ve blog sayfalarının kendilerine özel kullanım şartları vardır. Bu sayfaları kullanmadan önce bu sayfalara özel kullanım şartları vardır. Bu sayfaları kullanmadan önce bu sayfalara özel kullanım şartlarını okumalı, ona göre kullanıp kullanmayacağınıza karar vermelisiniz.
+     \n
+     \nPregnApp bu kullanım şartlarını güncelleme konusunda özgürdür. Kullanım şartlarının değişmesi halinde kullanıcılar bilgilendirilir ve şartların yeniden kabul edilmesi istenir.
+     \n
+     \n1.Kişisel Verilerin İşlenme Amaçları:
+     \nKişisel veriler, hamilelik takibi, tekme sayar, makaleler, kilo takibi, kayıt olma, giriş yapma, hamilelik ajandası, testler ve taramalar, ihtiyaç listesi, gıdalar, bugün ne aşersem, bebek isimleri önerileri gibi amaçlarla işlenmektedir.
+     \n\n2.Toplanan Kişisel Veriler:
+     \nUygulamamız, ad, soyad, e-posta adresi, hamilelik tarihi gibi kişisel verileri toplamaktadır.
+     \n\n3.İşlenen Kişisel Verilerin Hukuki Sebepleri:
+     \nKişisel veriler, KVKK'nın öngördüğü hukuki sebepler çerçevesinde işlenmektedir. Bu sebepler arasında kullanıcının açık rızası, hizmetin sağlanması ve yasal yükümlülüklerimizi yerine getirmek bulunmaktadır.
+     \n\n4.Veri İşleme Süreleri:
+     \nKişisel veriler, işlenme amacına uygun olarak belirli bir süre saklanacak ve daha sonra silinecektir.
+     \n\n5.Veri Güvenliği:
+     \nKişisel verilerin güvenliği için gerekli teknik ve organizasyonel önlemler alınmaktadır. Bu kapsamda, şifreleme, güvenlik duvarları gibi güvenlik tedbirleri uygulanmaktadır.
+     \n\n6.Kullanıcı Hakları:
+     \nKVKK kapsamında kullanıcılara tanınan hakları kullanma konusunda, kullanıcılarımıza veri erişim hakkı, düzeltme hakkı, silme hakkı gibi haklar tanınmaktadır. Bu hakları kullanmak için iletişim bilgilerimizi kullanabilirsiniz.
+     \n\n7.Değişiklikler ve Güncellemeler:
+     \nKVKK metnimiz, gerektiğinde güncellenebilir. Güncellemeler hakkında bilgi almak için düzenli olarak bu metni kontrol etmenizi öneririz.
+"
+                android:padding="16dp" />
+
+            <!-- Kapatma işareti (X) -->
+            <ImageView
+                android:id="@+id/imageViewClose"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginEnd="16dp"
+                android:src="@android:drawable/ic_menu_close_clear_cancel"
+                android:contentDescription="Kapat"
+                android:clickable="true"
+                android:onClick="closePopup"
+                android:layout_below="@+id/textViewPopup" />
+        </RelativeLayout>
+    </ScrollView>
+</androidx.cardview.widget.CardView>
