@@ -76,7 +76,8 @@
             android:layout_centerVertical="true"
             android:paddingLeft="30dp"
             android:text="Tarih"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            android:textStyle="bold"/>
 
         <!-- TextViewHafta - Ortada -->
         <TextView
@@ -87,7 +88,8 @@
             android:layout_centerVertical="true"
             android:paddingRight="50dp"
             android:text="Hafta"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            android:textStyle="bold"/>
 
         <!-- TextViewTekme - Sağda -->
         <TextView
@@ -99,7 +101,8 @@
             android:layout_centerVertical="true"
             android:paddingRight="75dp"
             android:text="Tekme"
-            android:textSize="20dp" />
+            android:textSize="20dp"
+            android:textStyle="bold"/>
     </RelativeLayout>
 
     <RelativeLayout
@@ -120,8 +123,9 @@
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:paddingLeft="15dp"
-            android:text="17.10.2023"
-            android:textSize="20dp" />
+            android:text="17.10.2023\n   15:01"
+            android:textSize="20dp"
+            />
 
         <!-- TextViewHafta - Ortada -->
         <TextView
@@ -131,7 +135,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:paddingRight="25dp"
-            android:text="21.Hafta"
+            android:text="21.Hafta\n   0.Gün"
             android:textSize="20dp" />
 
         <!-- TextViewTekme - Sağda -->
@@ -180,7 +184,7 @@
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:paddingLeft="15dp"
-            android:text="14.10.2023"
+            android:text="14.10.2023\n   14:17"
             android:textSize="20dp" />
 
         <!-- TextViewHafta - Ortada -->
@@ -191,7 +195,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:paddingRight="25dp"
-            android:text="20.Hafta"
+            android:text="20.Hafta\n   4.Gün"
             android:textSize="20dp" />
 
         <!-- TextViewTekme - Sağda -->
@@ -239,7 +243,7 @@
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:paddingLeft="15dp"
-            android:text="14.10.2023"
+            android:text="14.10.2023\n   14:16"
             android:textSize="20dp" />
 
         <!-- TextViewHafta - Ortada -->
@@ -250,7 +254,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:paddingRight="25dp"
-            android:text="20.Hafta"
+            android:text="20.Hafta\n   5.Gün"
             android:textSize="20dp" />
 
         <!-- TextViewTekme - Sağda -->
@@ -298,7 +302,7 @@
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:paddingLeft="15dp"
-            android:text="22.09.2023"
+            android:text="22.09.2023\n   12:30"
             android:textSize="20dp" />
 
         <!-- TextViewHafta - Ortada -->
@@ -309,7 +313,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:paddingRight="25dp"
-            android:text="17.Hafta"
+            android:text="17.Hafta\n   7.Gün"
             android:textSize="20dp" />
 
         <!-- TextViewTekme - Sağda -->
@@ -357,7 +361,7 @@
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:paddingLeft="15dp"
-            android:text="29.08.2023"
+            android:text="29.08.2023\n   20:14"
             android:textSize="20dp" />
 
         <!-- TextViewHafta - Ortada -->
@@ -368,7 +372,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:paddingRight="25dp"
-            android:text="14.Hafta"
+            android:text="14.Hafta\n   8.Gün"
             android:textSize="20dp" />
 
         <!-- TextViewTekme - Sağda -->
@@ -417,7 +421,7 @@
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:paddingLeft="15dp"
-            android:text="29.08.2023"
+            android:text="29.08.2023\n   19:44"
             android:textSize="20dp" />
 
         <!-- TextViewHafta - Ortada -->
@@ -428,7 +432,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:paddingRight="25dp"
-            android:text="14.Hafta"
+            android:text="14.Hafta\n   10.Gün"
             android:textSize="20dp" />
 
         <!-- TextViewTekme - Sağda -->
@@ -477,7 +481,7 @@
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:paddingLeft="15dp"
-            android:text="17.10.2023"
+            android:text="17.10.2023\n   13:12"
             android:textSize="20dp" />
 
         <!-- TextViewHafta - Ortada -->
@@ -488,7 +492,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:paddingRight="25dp"
-            android:text="21.Hafta"
+            android:text="21.Hafta\n   11.Gün"
             android:textSize="20dp" />
 
         <!-- TextViewTekme - Sağda -->
@@ -536,7 +540,7 @@
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:paddingLeft="15dp"
-            android:text="17.10.2023"
+            android:text="17.10.2023\n   09:23"
             android:textSize="20dp" />
 
         <!-- TextViewHafta - Ortada -->
@@ -547,7 +551,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:paddingRight="25dp"
-            android:text="21.Hafta"
+            android:text="21.Hafta\n   25.Gün"
             android:textSize="20dp" />
 
         <!-- TextViewTekme - Sağda -->

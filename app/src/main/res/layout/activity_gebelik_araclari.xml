@@ -23,13 +23,13 @@
 
             <TextView
                 android:id="@+id/textView"
-                android:layout_width="101dp"
+                android:layout_width="150dp"
                 android:layout_height="17dp"
                 android:layout_alignParentTop="true"
-
                 android:layout_alignParentBottom="true"
                 android:gravity="center_horizontal|top"
-                android:text="TextView" />
+                android:text="Gebelik Araçları"
+                android:textStyle="bold"/>
 
             <ImageView
                 android:id="@+id/imageView2"
@@ -62,9 +62,10 @@
                 <RelativeLayout
                     android:id="@+id/kilo_takibi_relative"
                     android:layout_width="155dp"
-                    android:layout_height="123dp">
+                    android:layout_height="123dp"
+                    android:background="#F8F6F6">
                     <!-- İlk Relative Layout içeriği -->
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/kilotakibiLogo"
                         android:layout_width="68dp"
                         android:layout_height="68dp"
@@ -72,7 +73,8 @@
                         android:layout_alignParentTop="true"
                         android:layout_alignParentRight="true"
                         android:layout_marginTop="23dp"
-                        android:src="@drawable/kilo_takibi_logo" />
+                        android:src="@drawable/kilo_takibi_logo"
+                        android:background="@android:color/transparent"/>
 
                     <TextView
                         android:id="@+id/kilotakibiText"
@@ -90,9 +92,10 @@
                 <RelativeLayout
                     android:id="@+id/tekme_sayar_relative"
                     android:layout_width="155dp"
-                    android:layout_height="123dp">
+                    android:layout_height="123dp"
+                    android:background="#F8F6F6">
                     <!-- İkinci Relative Layout içeriği -->
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/tekmesayarLogo"
                         android:layout_width="68dp"
                         android:layout_height="68dp"
@@ -100,7 +103,8 @@
                         android:layout_alignParentTop="true"
                         android:layout_alignParentRight="true"
                         android:layout_marginTop="23dp"
-                        android:src="@drawable/tekme_sayar_logo" />
+                        android:src="@drawable/tekme_sayar_logo"
+                        android:background="@android:color/transparent"/>
 
                     <TextView
                         android:id="@+id/tekmesayarText"
@@ -133,9 +137,10 @@
                 <RelativeLayout
                     android:id="@+id/saglik_testleri_relative"
                     android:layout_width="155dp"
-                    android:layout_height="123dp">
+                    android:layout_height="123dp"
+                    android:background="#F8F6F6">
                     <!-- İlk Relative Layout içeriği -->
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/sagliktestleriLogo"
                         android:layout_width="68dp"
                         android:layout_height="68dp"
@@ -143,7 +148,8 @@
                         android:layout_alignParentTop="true"
                         android:layout_alignParentRight="true"
                         android:layout_marginTop="23dp"
-                        android:src="@drawable/saglik_testleri_logo" />
+                        android:src="@drawable/saglik_testleri_logo"
+                        android:background="@android:color/transparent"/>
 
                     <TextView
                         android:id="@+id/sagliktestleriText"
@@ -161,9 +167,10 @@
                 <RelativeLayout
                     android:id="@+id/gidalar_relative"
                     android:layout_width="155dp"
-                    android:layout_height="123dp">
+                    android:layout_height="123dp"
+                    android:background="#F8F6F6">
                     <!-- İkinci Relative Layout içeriği -->
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/gidalarLogo"
                         android:layout_width="68dp"
                         android:layout_height="68dp"
@@ -171,7 +178,8 @@
                         android:layout_alignParentTop="true"
                         android:layout_alignParentRight="true"
                         android:layout_marginTop="23dp"
-                        android:src="@drawable/gidalar_logo" />
+                        android:src="@drawable/gidalar_logo"
+                        android:background="@android:color/transparent"/>
 
                     <TextView
                         android:id="@+id/gidalarText"
@@ -204,9 +212,10 @@
                 <RelativeLayout
                     android:id="@+id/ihtiyac_listesi_relative"
                     android:layout_width="155dp"
-                    android:layout_height="123dp">
+                    android:layout_height="123dp"
+                    android:background="#F8F6F6">
                     <!-- İlk Relative Layout içeriği -->
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/ihtiyaclistesiLogo"
                         android:layout_width="68dp"
                         android:layout_height="68dp"
@@ -214,7 +223,8 @@
                         android:layout_alignParentTop="true"
                         android:layout_alignParentRight="true"
                         android:layout_marginTop="23dp"
-                        android:src="@drawable/ihtiyac_listesi_logo" />
+                        android:src="@drawable/ihtiyac_listesi_logo"
+                        android:background="@android:color/transparent"/>
 
                     <TextView
                         android:id="@+id/ihtiyaclistesiText"
@@ -232,9 +242,10 @@
                 <RelativeLayout
                     android:id="@+id/hamilelik_gunlugum_relative"
                     android:layout_width="155dp"
-                    android:layout_height="123dp">
+                    android:layout_height="123dp"
+                    android:background="#F8F6F6">
                     <!-- İkinci Relative Layout içeriği -->
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/hamilelikgunluguLogo"
                         android:layout_width="68dp"
                         android:layout_height="68dp"
@@ -242,7 +253,8 @@
                         android:layout_alignParentTop="true"
                         android:layout_alignParentRight="true"
                         android:layout_marginTop="23dp"
-                        android:src="@drawable/hamilelik_gunlugu_logo" />
+                        android:src="@drawable/hamilelik_gunlugu_logo"
+                        android:background="@android:color/transparent"/>
 
                     <TextView
                         android:id="@+id/hamilelikgunluguText"
@@ -275,9 +287,10 @@
                 <RelativeLayout
                     android:id="@+id/hamilelik_ajandam_relative"
                     android:layout_width="155dp"
-                    android:layout_height="123dp">
+                    android:layout_height="123dp"
+                    android:background="#F8F6F6">
                     <!-- İlk Relative Layout içeriği -->
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/hamilelikajandaLogo"
                         android:layout_width="68dp"
                         android:layout_height="68dp"
@@ -285,7 +298,8 @@
                         android:layout_alignParentTop="true"
                         android:layout_alignParentRight="true"
                         android:layout_marginTop="23dp"
-                        android:src="@drawable/hamilelik_ajanda_logo" />
+                        android:src="@drawable/hamilelik_ajanda_logo"
+                        android:background="@android:color/transparent"/>
 
                     <TextView
                         android:id="@+id/hamilelikajandaText"
@@ -303,9 +317,10 @@
                 <RelativeLayout
                     android:id="@+id/bebek_isimleri_relative"
                     android:layout_width="155dp"
-                    android:layout_height="123dp">
+                    android:layout_height="123dp"
+                    android:background="#F8F6F6">
                     <!-- İkinci Relative Layout içeriği -->
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/bebekisimleriLogo"
                         android:layout_width="68dp"
                         android:layout_height="68dp"
@@ -313,7 +328,8 @@
                         android:layout_alignParentTop="true"
                         android:layout_alignParentRight="true"
                         android:layout_marginTop="23dp"
-                        android:src="@drawable/bebek_isimleri_logo" />
+                        android:src="@drawable/bebek_isimleri_logo"
+                        android:background="@android:color/transparent"/>
 
                     <TextView
                         android:id="@+id/bebekisimleriText"
@@ -346,9 +362,10 @@
                 <RelativeLayout
                     android:id="@+id/hamilelik_cizelgesi_relative"
                     android:layout_width="155dp"
-                    android:layout_height="123dp">
+                    android:layout_height="123dp"
+                    android:background="#F8F6F6">
                     <!-- İlk Relative Layout içeriği -->
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/hamilelikcizelgesiLogo"
                         android:layout_width="68dp"
                         android:layout_height="68dp"
@@ -356,7 +373,8 @@
                         android:layout_alignParentTop="true"
                         android:layout_alignParentRight="true"
                         android:layout_marginTop="23dp"
-                        android:src="@drawable/hamilelik_cizelgesi_logo" />
+                        android:src="@drawable/hamilelik_cizelgesi_logo"
+                        android:background="@android:color/transparent"/>
 
                     <TextView
                         android:id="@+id/hamilelikcizelgesiText"
@@ -374,9 +392,10 @@
                 <RelativeLayout
                     android:id="@+id/bugunne_asersem_relative"
                     android:layout_width="155dp"
-                    android:layout_height="123dp">
+                    android:layout_height="123dp"
+                    android:background="#F8F6F6">
                     <!-- İkinci Relative Layout içeriği -->
-                    <ImageView
+                    <ImageButton
                         android:id="@+id/bugunneasersemLogo"
                         android:layout_width="68dp"
                         android:layout_height="68dp"
@@ -384,7 +403,8 @@
                         android:layout_alignParentTop="true"
                         android:layout_alignParentRight="true"
                         android:layout_marginTop="23dp"
-                        android:src="@drawable/bugunne_asersem_logo" />
+                        android:src="@drawable/bugunne_asersem_logo"
+                        android:background="@android:color/transparent"/>
 
                     <TextView
                         android:id="@+id/bugunneasersemView"

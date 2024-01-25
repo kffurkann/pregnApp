@@ -1,8 +1,10 @@
 package com.example.pregnapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.CheckBox;
 import android.widget.ImageButton;
 
@@ -10,9 +12,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 public class TestlerVeTaramalar extends AppCompatActivity {
-
+//button_geri_testlervetaramalar
+    private ImageButton buttongeriGitmeTestler;
     private SharedPreferences sharedPreferencesTestler;
-    private ImageButton buttonGeriTestlerVeTaramalar;
     private Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,24 +23,91 @@ public class TestlerVeTaramalar extends AppCompatActivity {
         toolbar = findViewById(R.id.my_toolbar_testlervetaramalar);
         setSupportActionBar(toolbar);
 
-        buttonGeriTestlerVeTaramalar = findViewById(R.id.button_geri_testlervetaramalar);
+
+
+        buttongeriGitmeTestler=findViewById(R.id.button_geri_testlervetaramalar);
+        buttongeriGitmeTestler.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(TestlerVeTaramalar.this, MainActivity.class));
+            }
+        });
+
         sharedPreferencesTestler = getPreferences(Context.MODE_PRIVATE);
 
         // Her bir checkbox'un durumunu SharedPreferences'ten oku ve ayarla
-        CheckBox checkboxTest1 = findViewById(R.id.checkboxTest1);
-        checkboxTest1.setChecked(sharedPreferencesTestler.getBoolean("checkboxTest1", false));
+        CheckBox checkboxTest1Test = findViewById(R.id.checkboxTest1Test);
+        checkboxTest1Test.setChecked(sharedPreferencesTestler.getBoolean("checkboxTest1Test", false));
 
-        CheckBox checkboxTest2 = findViewById(R.id.checkboxTest2);
-        checkboxTest2.setChecked(sharedPreferencesTestler.getBoolean("checkboxTest2", false));
+        CheckBox checkboxTest2Test = findViewById(R.id.checkboxTest2Test);
+        checkboxTest2Test.setChecked(sharedPreferencesTestler.getBoolean("checkboxTest2Test", false));
 
-        // Diğer checkbox'ları buraya ekleyin...
+        CheckBox checkboxTest3Test = findViewById(R.id.checkboxTest3Test);
+        checkboxTest3Test.setChecked(sharedPreferencesTestler.getBoolean("checkboxTest3Test", false));
 
-        // CheckBox'ların durumları değiştiğinde SharedPreferences'e kaydet
-        checkboxTest1.setOnCheckedChangeListener((buttonView, isChecked) ->
-                saveCheckboxState("checkboxTest1", isChecked));
+        CheckBox checkboxTest4Test = findViewById(R.id.checkboxTest4Test);
+        checkboxTest4Test.setChecked(sharedPreferencesTestler.getBoolean("checkboxTest4Test", false));
 
-        checkboxTest2.setOnCheckedChangeListener((buttonView, isChecked) ->
-                saveCheckboxState("checkboxTest2", isChecked));
+        CheckBox checkboxTest5Test = findViewById(R.id.checkboxTest5Test);
+        checkboxTest5Test.setChecked(sharedPreferencesTestler.getBoolean("checkboxTest5Test", false));
+
+        CheckBox checkboxTest6Test = findViewById(R.id.checkboxTest6Test);
+        checkboxTest6Test.setChecked(sharedPreferencesTestler.getBoolean("checkboxTest6Test", false));
+
+        CheckBox checkboxTest7Test = findViewById(R.id.checkboxTest7Test);
+        checkboxTest7Test.setChecked(sharedPreferencesTestler.getBoolean("checkboxTest7Test", false));
+
+        CheckBox checkboxTest8Test = findViewById(R.id.checkboxTest8Test);
+        checkboxTest8Test.setChecked(sharedPreferencesTestler.getBoolean("checkboxTest8Test", false));
+
+        CheckBox checkboxTest9Test = findViewById(R.id.checkboxTest9Test);
+        checkboxTest9Test.setChecked(sharedPreferencesTestler.getBoolean("checkboxTest9Test", false));
+
+        CheckBox checkboxTest10Test = findViewById(R.id.checkboxTest10Test);
+        checkboxTest10Test.setChecked(sharedPreferencesTestler.getBoolean("checkboxTest10Test", false));
+
+        CheckBox checkboxTest11Test = findViewById(R.id.checkboxTest11Test);
+        checkboxTest11Test.setChecked(sharedPreferencesTestler.getBoolean("checkboxTest11Test", false));
+
+        CheckBox checkboxTest12Test = findViewById(R.id.checkboxTest12Test);
+        checkboxTest12Test.setChecked(sharedPreferencesTestler.getBoolean("checkboxTest12Test", false));
+
+
+        checkboxTest1Test.setOnCheckedChangeListener((buttonView, isChecked) ->
+                saveCheckboxState("checkboxTest1Test", isChecked));
+
+        checkboxTest2Test.setOnCheckedChangeListener((buttonView, isChecked) ->
+                saveCheckboxState("checkboxTest2Test", isChecked));
+
+        checkboxTest3Test.setOnCheckedChangeListener((buttonView, isChecked) ->
+                saveCheckboxState("checkboxTest3Test", isChecked));
+
+        checkboxTest4Test.setOnCheckedChangeListener((buttonView, isChecked) ->
+                saveCheckboxState("checkboxTest4Test", isChecked));
+
+        checkboxTest5Test.setOnCheckedChangeListener((buttonView, isChecked) ->
+                saveCheckboxState("checkboxTest5Test", isChecked));
+
+        checkboxTest6Test.setOnCheckedChangeListener((buttonView, isChecked) ->
+                saveCheckboxState("checkboxTest6Test", isChecked));
+
+        checkboxTest7Test.setOnCheckedChangeListener((buttonView, isChecked) ->
+                saveCheckboxState("checkboxTest7Test", isChecked));
+
+        checkboxTest8Test.setOnCheckedChangeListener((buttonView, isChecked) ->
+                saveCheckboxState("checkboxTest8Test", isChecked));
+
+        checkboxTest9Test.setOnCheckedChangeListener((buttonView, isChecked) ->
+                saveCheckboxState("checkboxTest9Test", isChecked));
+
+        checkboxTest10Test.setOnCheckedChangeListener((buttonView, isChecked) ->
+                saveCheckboxState("checkboxTest10Test", isChecked));
+
+        checkboxTest11Test.setOnCheckedChangeListener((buttonView, isChecked) ->
+                saveCheckboxState("checkboxTest11Test", isChecked));
+
+        checkboxTest12Test.setOnCheckedChangeListener((buttonView, isChecked) ->
+                saveCheckboxState("checkboxTest12Test", isChecked));
 
 
     }
