@@ -1,31 +1,50 @@
 package com.example.pregnapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.ImageButton;
 import android.widget.RelativeLayout;
-
+import android.widget.Toast;
 
 
 public class ihtiyacListesi extends AppCompatActivity {
-    private RelativeLayout relativeAnne, relativeBebek;
-    private Button buttonAnne, buttonBebek;
+    private Toolbar toolbarihtiyaclistesi;
+    private ImageButton button_geri_ihtiyac;
+    private RelativeLayout relativeAnne, relativeBebek, relativeDogum;
+    private Button buttonAnne, buttonBebek, buttonDogum;
     private SharedPreferences sharedPreferencesTestler;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ihtiyac_listesi);
+        toolbarihtiyaclistesi=findViewById(R.id.toolbarihtiyaclistesi);
+        toolbarihtiyaclistesi.setBackgroundColor(getResources().getColor(R.color.darkBlue));
+
+        button_geri_ihtiyac=findViewById(R.id.button_geri_ihtiyac);
+
+        button_geri_ihtiyac.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(ihtiyacListesi.this,MainActivity.class));
+            }
+        });
 
         relativeAnne=findViewById(R.id.relativeAnne);
         relativeBebek=findViewById(R.id.relativeBebek);
+        relativeDogum=findViewById(R.id.relativeDogum);
 
-    buttonAnne=findViewById(R.id.buttonAnne);
-    buttonBebek=findViewById(R.id.buttonBebek);
+
+        buttonAnne=findViewById(R.id.buttonAnne);
+        buttonBebek=findViewById(R.id.buttonBebek);
+        buttonDogum=findViewById(R.id.buttonDogum);
 
         sharedPreferencesTestler = getPreferences(Context.MODE_PRIVATE);
 
@@ -134,10 +153,40 @@ public class ihtiyacListesi extends AppCompatActivity {
         if (view.getId() == R.id.buttonAnne) {
                 relativeAnne.setVisibility(View.VISIBLE);
                 relativeBebek.setVisibility(View.GONE);
+                relativeDogum.setVisibility(View.GONE);
+
+                buttonAnne.setBackgroundColor(getResources().getColor(R.color.darkerPink));
+                buttonAnne.setTextColor(getResources().getColor(R.color.white));
+                buttonBebek.setBackgroundColor(getResources().getColor(R.color.lightPink));
+                buttonBebek.setTextColor(getResources().getColor(R.color.darkerPink));
+                buttonDogum.setBackgroundColor(getResources().getColor(R.color.lightPink));
+                buttonDogum.setTextColor(getResources().getColor(R.color.darkerPink));
 
         } else if (view.getId() == R.id.buttonBebek) {
                 relativeAnne.setVisibility(View.GONE);
                 relativeBebek.setVisibility(View.VISIBLE);
+                relativeDogum.setVisibility(View.GONE);
+
+            buttonAnne.setBackgroundColor(getResources().getColor(R.color.lightPink));
+            buttonAnne.setTextColor(getResources().getColor(R.color.darkerPink));
+                buttonBebek.setBackgroundColor(getResources().getColor(R.color.darkerPink));
+                buttonBebek.setTextColor(getResources().getColor(R.color.white));
+            buttonDogum.setBackgroundColor(getResources().getColor(R.color.lightPink));
+            buttonDogum.setTextColor(getResources().getColor(R.color.darkerPink));
+
+        }
+        else if (view.getId() == R.id.buttonDogum) {
+            relativeAnne.setVisibility(View.GONE);
+            relativeBebek.setVisibility(View.GONE);
+            relativeDogum.setVisibility(View.VISIBLE);
+
+            buttonAnne.setBackgroundColor(getResources().getColor(R.color.lightPink));
+            buttonAnne.setTextColor(getResources().getColor(R.color.darkerPink));
+            buttonBebek.setBackgroundColor(getResources().getColor(R.color.lightPink));
+            buttonBebek.setTextColor(getResources().getColor(R.color.darkerPink));
+            buttonDogum.setBackgroundColor(getResources().getColor(R.color.darkerPink));
+            buttonDogum.setTextColor(getResources().getColor(R.color.white));
+
 
         }
     }

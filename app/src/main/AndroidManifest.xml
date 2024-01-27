@@ -13,6 +13,9 @@
         android:theme="@style/Theme.PregnApp"
         tools:targetApi="31">
         <activity
+            android:name=".HamilelikAjandamEkle"
+            android:exported="false" />
+        <activity
             android:name=".KiloTakibi"
             android:exported="false" />
         <activity

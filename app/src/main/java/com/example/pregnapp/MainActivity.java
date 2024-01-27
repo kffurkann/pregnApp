@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     private Button buttonBebek;
     private Button buttonGebelik;
     private Button buttonAsermek;
+    private Button buttonihtiyacL;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         buttonAsermek.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, BugunNeAsersem.class));
+                startActivity(new Intent(MainActivity.this, HamilelikAjandam.class));
             }
         });
 
@@ -75,6 +76,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this,TestlerVeTaramalar.class));
+            }
+        });
+        buttonihtiyacL=findViewById(R.id.buttonihtiyacL);
+
+        buttonihtiyacL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this,ihtiyacListesi.class));
             }
         });
     }

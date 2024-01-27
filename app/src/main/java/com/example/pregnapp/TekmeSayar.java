@@ -38,7 +38,7 @@ public class TekmeSayar extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tekme_sayar);
 
-        buttongeriGitmeTekmeSayar=findViewById(R.id.button_geri_tekme_sayar);
+        buttongeriGitmeTekmeSayar=findViewById(R.id.button_geri_gidalar);
         buttonTekmeEkle=findViewById(R.id.buttonTekmeEkle);
 
         buttongeriGitmeTekmeSayar.setOnClickListener(new View.OnClickListener() {
@@ -129,10 +129,7 @@ public class TekmeSayar extends AppCompatActivity {
         horizontalLayout.setOrientation(LinearLayout.HORIZONTAL);
         horizontalLayout.setLayoutParams(horizontalLayoutParams);
 
-        LinearLayout.LayoutParams params1 = new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.WRAP_CONTENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT
-        );
+
 
 
         // Increment the counter for the next layout
