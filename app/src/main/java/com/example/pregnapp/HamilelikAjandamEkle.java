@@ -5,6 +5,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -127,6 +128,7 @@ public class HamilelikAjandamEkle extends AppCompatActivity {
         startActivity(intent);
         Toast.makeText(this, entryData[0], Toast.LENGTH_SHORT).show();
 
+        saveEntryDataToSharedPreferences(secilenTarihSaat, gunlukNot);
 
         // Her tıklamada yeni bir giriş eklemek için sayaç arttır
 
@@ -150,7 +152,25 @@ public class HamilelikAjandamEkle extends AppCompatActivity {
 
         return secilenTarihSaat;
     }
+    private void saveEntryDataToSharedPreferences(String selectedDateTime, String note) {
+        SharedPreferences sharedPreferences = getSharedPreferences("entry_data", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+
+        // Retrieve the current entry count
+        final int entryCount = sharedPreferences.getInt("entry_count", 0);
+
+        // Use the entryCount as the key for the new entry
+        String entryKey = "entry_" + entryCount;
+
+        // Save data
+        editor.putString(entryKey + "_date_time", selectedDateTime);
+        editor.putString(entryKey + "_note", note);
+
+        // Update entry count
+        editor.putInt("entry_count", entryCount + 1);
+
+        editor.apply();
+    }
+
 }
-
-
 

@@ -55,3 +55,66 @@ public class signUp extends AppCompatActivity {
     }
 
 }
+/*
+newMinusImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                    // Remove the view from the layout
+                    linearLayout.removeView(newRelativeLayout);
+                    String entryKey = (String) newRelativeLayout.getTag();
+                Toast.makeText(HamilelikAjandam.this, entryKey, Toast.LENGTH_SHORT).show();
+                // Remove the corresponding entry from SharedPreferences
+                removeEntryFromSharedPreferences(entryKey);
+
+            }
+        });
+
+
+        // Horizontal Layout içine eklemeleri yap
+        horizontalLayout.addView(newEllipseImageView);
+        horizontalLayout.addView(newTarihSaatTextView);
+        horizontalLayout.addView(newNoteTextView);
+        horizontalLayout.addView(newMinusImageView);
+
+        // RelativeLayout içine Horizontal Layout'ı ekle
+        newRelativeLayout.addView(horizontalLayout);
+
+        // Ana LinearLayout'a yeni RelativeLayout'ı ekle
+        linearLayout.addView(newRelativeLayout);
+    }
+    private void displaySavedEntries() {
+        LinearLayout linearLayout = findViewById(R.id.ana);
+
+        SharedPreferences sharedPreferences = getSharedPreferences("entry_data", MODE_PRIVATE);
+        int entryCount = sharedPreferences.getInt("entry_count", 0);
+
+        for (int i = 0; i < entryCount; i++) {
+            String entryKey = "entry_" + i;
+
+            // Retrieve data
+            String dateAndTime = sharedPreferences.getString(entryKey + "_date_time", "");
+            String note = sharedPreferences.getString(entryKey + "_note", "");
+
+            // Display entry
+            String[] entryData = new String[]{dateAndTime, note};
+            addNewEntry(entryData);  // Do not pass entryKey when displaying saved entries
+        }
+    }
+    private void removeEntryFromSharedPreferences(String entryKey) {
+        SharedPreferences sharedPreferences = getSharedPreferences("entry_data", MODE_PRIVATE);
+
+        // Remove the entry
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.remove(entryKey + "_date_time");
+        editor.remove(entryKey + "_note");
+
+        // Update entry count after removal
+        int entryCount = sharedPreferences.getInt("entry_count", 0);
+        if (entryCount > 0) {
+            editor.putInt("entry_count", entryCount - 1);
+        }
+
+        // Save changes synchronously
+        editor.commit();
+    }
+ */
