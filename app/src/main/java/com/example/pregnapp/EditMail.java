@@ -23,7 +23,7 @@ public class EditMail extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_mail);
 
-        editUserNameEditText = findViewById(R.id.editTextUsername);
+        /*editUserNameEditText = findViewById(R.id.editTextUsername);
         changeInfosButton = findViewById(R.id.changeInfos);
 
         String userMail = getIntent().getStringExtra("userMail");
@@ -67,6 +67,6 @@ public class EditMail extends AppCompatActivity {
                 e.printStackTrace();
 
             }
-        }).start();
+        }).start();*/
     }
 }
