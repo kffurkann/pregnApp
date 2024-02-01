@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         buttonAsermek.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, BugunNeAsersem.class));
+                startActivity(new Intent(MainActivity.this, HamilelikAjandam.class));
             }
         });
 

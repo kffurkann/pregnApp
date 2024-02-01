@@ -67,6 +67,9 @@
             android:name=".HamilelikAjandam"
             android:exported="false" />
         <activity
+            android:name=".HamilelikAjandamEkle"
+            android:exported="false" />
+        <activity
             android:name=".login"
             android:exported="false" />
         <activity

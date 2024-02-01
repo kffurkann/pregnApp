@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/scrollViewGidalar"
+    android:id="@+id/RelativeGidalar"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     tools:context=".Gidalar">
@@ -20,7 +20,27 @@
             android:background="?attr/colorPrimary"
             android:contentDescription="Ana sayfa araç çubuğu"
             android:minHeight="?attr/actionBarSize"
-            android:theme="?attr/actionBarTheme" />
+            android:theme="?attr/actionBarTheme" >
+            <ImageButton
+            android:id="@+id/button_geri_gidalar"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="s"
+            android:src="@drawable/ic_back_arrow" />
+
+            <!-- TextView ekleyerek kendi metnini belirle -->
+            <TextView
+                android:id="@+id/toolbar_title_tekme_sayar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Gıdalar"
+                android:textColor="#FFFFFF"
+                android:textSize="25dp"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="20dp" />
+        </androidx.appcompat.widget.Toolbar>
 
         <ImageView
             android:id="@+id/gidalar_image"
@@ -36,7 +56,7 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/buttonTehlikeli"
+                android:id="@+id/buttonTarih"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="4dp"
@@ -47,7 +67,7 @@
                 android:text="Tehlikeli" />
 
             <Button
-                android:id="@+id/buttonTehlikesiz"
+                android:id="@+id/buttonSaat"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="4dp"
@@ -66,228 +86,634 @@
                 android:layout_marginRight="4dp"
                 android:layout_weight="1"
                 android:backgroundTint="@color/careful"
+                android:onClick="showContent"
                 android:text="Dikkatli Olun"
                 android:textColor="@color/carefulText" />
         </LinearLayout>
 
-        <RelativeLayout
-            android:id="@+id/relativeTehlikeli"
+        <ScrollView
+            android:id="@+id/scroll"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="visible">
+            android:layout_height="match_parent">
 
             <LinearLayout
-                android:id="@+id/linearLayoutDikeyTehlikeli"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
                 <RelativeLayout
-                    android:id="@+id/relativeAlkol"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="4dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginRight="4dp">
-
-                    <LinearLayout
-                        android:id="@+id/linearLayoutTehlikelib"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:src="@drawable/gidalar_tehlikeli"/>
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginBottom="12dp"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:paddingLeft="8dp"
-                                android:text="Alkol"
-                                android:textSize="16sp"
-                                android:textStyle="bold" />
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:paddingLeft="8dp"
-                                android:paddingRight="8dp"
-                                android:text="Risk: Bebekte gelişim geriliği, erken doğuma, düşük yapma"
-                                android:textSize="14sp" />
-                        </LinearLayout>
-
-                    </LinearLayout>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_alignBottom="@id/linearLayoutTehlikelib"
-                        android:background="@color/lightGrey" />
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/relativePastorize"
+                    android:id="@+id/relativeTehlikeli"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="4dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginRight="4dp">
+                    android:visibility="visible">
 
                     <LinearLayout
-                        android:id="@+id/linearLayoutTehlikelib"
+                        android:id="@+id/linearLayoutDikeyTehlikeli"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        tools:ignore="DuplicateIds">
+                        android:orientation="vertical">
 
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:src="@drawable/gidalar_tehlikeli"/>
+                        <RelativeLayout
+                            android:id="@+id/relativeAlkol"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="4dp">
 
-                        <LinearLayout
+                            <LinearLayout
+                                android:id="@+id/linearLayoutTehlikelib"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:src="@drawable/gidalar_tehlikeli" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="12dp"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:paddingLeft="8dp"
+                                        android:text="Alkol"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:paddingLeft="8dp"
+                                        android:paddingRight="8dp"
+                                        android:text="Risk: Bebekte gelişim geriliği, erken doğuma, düşük yapma"
+                                        android:textSize="14sp" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_alignBottom="@id/linearLayoutTehlikelib"
+                                android:background="@color/lightGrey" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/relativePastorize"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginBottom="12dp"
-                            android:layout_weight="1"
-                            android:orientation="vertical">
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="4dp">
 
-                            <TextView
+                            <LinearLayout
+                                android:id="@+id/linearLayoutTehlikelib"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:paddingLeft="8dp"
-                                android:text="Pastörize Edilmemiş Gıdalar"
-                                android:textSize="16sp"
-                                android:textStyle="bold" />
+                                android:orientation="horizontal"
+                                tools:ignore="DuplicateIds">
 
-                            <TextView
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:src="@drawable/gidalar_tehlikeli" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="12dp"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:paddingLeft="8dp"
+                                        android:text="Pastörize Edilmemiş Gıdalar"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:paddingLeft="8dp"
+                                        android:paddingRight="8dp"
+                                        android:text="Hamilelik sırasında pastörize edilmemiş süt, yumurta ve peynir gibi süt ürünlerinden kaçınnmak gerekir. Risk: Salmonella"
+                                        android:textSize="14sp" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <View
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:paddingLeft="8dp"
-                                android:paddingRight="8dp"
-                                android:text="Hamilelik sırasında pastörize edilmemiş süt, yumurta ve peynir gibi süt ürünlerinden kaçınnmak gerekir. Risk: Salmonella"
-                                android:textSize="14sp" />
-                        </LinearLayout>
-
+                                android:layout_height="1dp"
+                                android:layout_alignBottom="@id/linearLayoutTehlikelib"
+                                android:background="@color/lightGrey" />
+                        </RelativeLayout>
                     </LinearLayout>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_alignBottom="@id/linearLayoutTehlikelib"
-                        android:background="@color/lightGrey" />
-                </RelativeLayout>
-            </LinearLayout>
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/relativeTehlikelisiz"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="gone">
-
-            <LinearLayout
-                android:id="@+id/linearLayoutDikeyTehlikesiz"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="4dp"
-                android:layout_marginRight="4dp"
-                android:orientation="vertical">
-
-                <RelativeLayout
-                    android:id="@+id/relativeTehlikesiza"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginLeft="4dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginRight="4dp"
-                    tools:ignore="DuplicateIds">
-
-                    <LinearLayout
-                        android:id="@+id/linearLayoutTehlikesiza"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="16dp"
-                        android:orientation="horizontal"
-                        android:paddingBottom="16dp"
-                        tools:ignore="DuplicateIds">
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:src="@drawable/gidalar_tehlikesiz"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_weight="20"
-                            android:gravity="center_vertical"
-                            android:paddingLeft="8dp"
-                            android:text="Alkol"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
-
-                    </LinearLayout>
-
-                    <View
-                        android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_alignBottom="@id/linearLayoutTehlikesiza"
-                        android:background="@color/lightGrey" />
                 </RelativeLayout>
 
                 <RelativeLayout
-                    android:id="@+id/relativeTehlikesizb"
+                    android:id="@+id/relativeTehlikelisiz"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="4dp"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginRight="4dp">
+                    android:visibility="gone">
 
                     <LinearLayout
-                        android:id="@+id/linearLayoutTehlikesizb"
+                        android:id="@+id/linearLayoutDikeyTehlikesiz"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="16dp"
-                        android:orientation="horizontal"
-                        android:paddingBottom="16dp">
+                        android:layout_marginLeft="4dp"
+                        android:layout_marginRight="4dp"
+                        android:orientation="vertical">
 
-                        <ImageView
-                            android:layout_width="wrap_content"
+                        <RelativeLayout
+                            android:id="@+id/relativeTehlikesiza"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_weight="1"
-                            android:src="@drawable/gidalar_tehlikesiz"/>
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="4dp"
+                            tools:ignore="DuplicateIds">
 
-                        <TextView
-                            android:layout_width="wrap_content"
+                            <LinearLayout
+                                android:id="@+id/linearLayoutTehlikesiza"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="16dp"
+                                android:orientation="horizontal"
+                                android:paddingBottom="16dp"
+                                tools:ignore="DuplicateIds">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:src="@drawable/gidalar_tehlikesiz" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="20"
+                                    android:gravity="center_vertical"
+                                    android:paddingLeft="8dp"
+                                    android:text="Alkol"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_alignBottom="@id/linearLayoutTehlikesiza"
+                                android:background="@color/lightGrey" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/relativeTehlikesizb"
+                            android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_weight="20"
-                            android:paddingLeft="8dp"
-                            android:text="Pastörize Edilmemiş Gıdalar"
-                            android:textSize="16sp"
-                            android:textStyle="bold" />
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="4dp">
 
+                            <LinearLayout
+                                android:id="@+id/linearLayoutTehlikesizb"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="16dp"
+                                android:orientation="horizontal"
+                                android:paddingBottom="16dp">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:src="@drawable/gidalar_tehlikesiz" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="20"
+                                    android:paddingLeft="8dp"
+                                    android:text="Pastörize Edilmemiş Gıdalar"
+                                    android:textSize="16sp"
+                                    android:textStyle="bold" />
+
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_alignBottom="@id/linearLayoutTehlikesizb"
+                                android:background="@color/lightGrey" />
+                        </RelativeLayout>
                     </LinearLayout>
+                </RelativeLayout>
 
-                    <View
+                <RelativeLayout
+                    android:id="@+id/relativeBeCareful"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:id="@+id/linearLayoutDikeyBeCareful"
                         android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_alignBottom="@id/linearLayoutTehlikesizb"
-                        android:background="@color/lightGrey" />
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <RelativeLayout
+                            android:id="@+id/relativeKafein"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="4dp">
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutKafein"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:src="@drawable/gidalar_becareful" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="12dp"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:paddingLeft="8dp"
+                                        android:text="Kafein"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:paddingLeft="8dp"
+                                        android:paddingRight="8dp"
+                                        android:text="Kafein plasentadan geçer. Bazı araştırmalar aşırı kafein tüketiminin düşüğe neden olabileceğini gösteriyor. Günlük güvenli kabul edilen kafein mikatrı 200 md'dır."
+                                        android:textSize="14sp" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_alignBottom="@id/linearLayoutKafein"
+                                android:background="@color/lightGrey" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/relativeBitki"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="4dp">
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutBitki"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                tools:ignore="DuplicateIds">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:src="@drawable/gidalar_becareful" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="12dp"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:paddingLeft="8dp"
+                                        android:text="Bitki Çayları"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:paddingLeft="8dp"
+                                        android:paddingRight="8dp"
+                                        android:text="Bazı bitki çayları bebeğin gelişimi üzerinde olumsuz etki yapabilir. Bitki çayları ile ilgili çok fazla bilimsel araştırma yoktur. Bu yüzden doktorunuza danışınız."
+                                        android:textSize="14sp" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_alignBottom="@id/linearLayoutBitki"
+                                android:background="@color/lightGrey" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/relativeKiyma"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="4dp">
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutKiyma"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                tools:ignore="DuplicateIds">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:src="@drawable/gidalar_becareful" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="12dp"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:paddingLeft="8dp"
+                                        android:text="Dondurulmuş Et Kıyması"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:paddingLeft="8dp"
+                                        android:paddingRight="8dp"
+                                        android:text="Uygun şekilde saklanmadıklarında Listeria riski vardır."
+                                        android:textSize="14sp" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_alignBottom="@id/linearLayoutKiyma"
+                                android:background="@color/lightGrey" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/relativeHazir"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="4dp">
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutHazir"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                tools:ignore="DuplicateIds">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:src="@drawable/gidalar_becareful" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="12dp"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:paddingLeft="8dp"
+                                        android:text="Dondurulmuş Hazır Gıdalar"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:paddingLeft="8dp"
+                                        android:paddingRight="8dp"
+                                        android:text="Uygun şekilde saklanmadıklarında Listeria riski vardır."
+                                        android:textSize="14sp" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_alignBottom="@id/linearLayoutHazir"
+                                android:background="@color/lightGrey" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/relativeHavyar"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="4dp">
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutHavyar"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                tools:ignore="DuplicateIds">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:src="@drawable/gidalar_becareful" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="12dp"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:paddingLeft="8dp"
+                                        android:text="Havyar"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:paddingLeft="8dp"
+                                        android:paddingRight="8dp"
+                                        android:text="Pastorize edilmemiş ise Listeria riski vardır."
+                                        android:textSize="14sp" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_alignBottom="@id/linearLayoutHavyar"
+                                android:background="@color/lightGrey" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/relativeHumus"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="4dp">
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutHumus"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                tools:ignore="DuplicateIds">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:src="@drawable/gidalar_becareful" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="12dp"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:paddingLeft="8dp"
+                                        android:text="Humus"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:paddingLeft="8dp"
+                                        android:paddingRight="8dp"
+                                        android:text="Bakteri barındırabilir. Risk: Listeria ve Salmonella"
+                                        android:textSize="14sp" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_alignBottom="@id/linearLayoutHumus"
+                                android:background="@color/lightGrey" />
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/relativeKonserveler"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="4dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginRight="4dp">
+
+                            <LinearLayout
+                                android:id="@+id/linearLayoutKonserveler"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal"
+                                tools:ignore="DuplicateIds">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:src="@drawable/gidalar_becareful" />
+
+                                <LinearLayout
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginBottom="12dp"
+                                    android:layout_weight="1"
+                                    android:orientation="vertical">
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:paddingLeft="8dp"
+                                        android:text="Konserveler"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold" />
+
+                                    <TextView
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:paddingLeft="8dp"
+                                        android:paddingRight="8dp"
+                                        android:text="BPA içerebilir. Risk: Düşük"
+                                        android:textSize="14sp" />
+                                </LinearLayout>
+
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_alignBottom="@id/linearLayoutKonserveler"
+                                android:background="@color/lightGrey" />
+                        </RelativeLayout>
+                    </LinearLayout>
                 </RelativeLayout>
             </LinearLayout>
-        </RelativeLayout>
+        </ScrollView>
+
+
     </LinearLayout>
-</ScrollView>
+</RelativeLayout>
