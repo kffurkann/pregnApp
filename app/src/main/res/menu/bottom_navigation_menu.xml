@@ -1,0 +1,19 @@
+<!-- bottom_navigation_menu.xml -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/baseline_home_24"
+        android:title="Homepage" />
+    <item
+        android:id="@+id/nav_forum"
+        android:icon="@drawable/baseline_3p_24"
+        android:title="@string/forum" />
+    <item
+        android:id="@+id/nav_tools"
+        android:icon="@drawable/baseline_add_alarm_24"
+        android:title="Tools" />
+    <item
+        android:id="@+id/nav_profile"
+        android:icon="@drawable/baseline_account_circle_24"
+        android:title="Profile" />
+</menu>

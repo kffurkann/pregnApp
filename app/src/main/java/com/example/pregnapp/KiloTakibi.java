@@ -19,7 +19,7 @@ public class KiloTakibi extends AppCompatActivity {
         buttongeriGitmeKiloTakibi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(KiloTakibi.this, MainActivity.class));
+                onBackPressed();
             }
         });
 

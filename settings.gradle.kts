@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "pregnApp"
+rootProject.name = "pregnapp"
 include(":app")

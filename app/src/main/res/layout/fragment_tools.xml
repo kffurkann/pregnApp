@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Tools">
+
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".gebelikAraclari">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:id="@+id/gebelik_relative"
+                android:layout_width="321dp"
+                android:layout_height="24dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="150dp"
+                    android:layout_height="17dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="center_horizontal|top"
+                    android:text="Gebelik Araçları"
+                    android:textStyle="bold"/>
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentLeft="false"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:src="@drawable/baseline_person_24" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/card1_relative"
+                android:layout_width="320dp"
+                android:layout_height="123dp"
+                android:layout_marginTop="37dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/gebelik_relative">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/kilo_takibi_relative"
+                        android:layout_width="155dp"
+                        android:layout_height="123dp"
+                        android:background="#F8F6F6">
+                        <!-- İlk Relative Layout içeriği -->
+                        <ImageButton
+                            android:id="@+id/kilotakibiLogo"
+                            android:layout_width="68dp"
+                            android:layout_height="68dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginTop="23dp"
+                            android:src="@drawable/kilo_takibi_logo"
+                            android:background="@android:color/transparent"/>
+
+                        <TextView
+                            android:id="@+id/kilotakibiText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="45dp"
+                            android:layout_marginTop="95dp"
+                            android:text="Kilo Takibi" />
+                    </RelativeLayout>
+
+                    <Space
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent" />
+
+                    <RelativeLayout
+                        android:id="@+id/tekme_sayar_relative"
+                        android:layout_width="155dp"
+                        android:layout_height="123dp"
+                        android:background="#F8F6F6">
+                        <!-- İkinci Relative Layout içeriği -->
+                        <ImageButton
+                            android:id="@+id/tekmesayarLogo"
+                            android:layout_width="68dp"
+                            android:layout_height="68dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginTop="23dp"
+                            android:src="@drawable/tekme_sayar_logo"
+                            android:background="@android:color/transparent"/>
+
+                        <TextView
+                            android:id="@+id/tekmesayarText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="45dp"
+                            android:layout_marginTop="95dp"
+                            android:text="Tekme Sayar" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/card2_relative"
+                android:layout_width="320dp"
+                android:layout_height="123dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card1_relative">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/saglik_testleri_relative"
+                        android:layout_width="155dp"
+                        android:layout_height="123dp"
+                        android:background="#F8F6F6">
+                        <!-- İlk Relative Layout içeriği -->
+                        <ImageButton
+                            android:id="@+id/sagliktestleriLogo"
+                            android:layout_width="68dp"
+                            android:layout_height="68dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginTop="23dp"
+                            android:src="@drawable/saglik_testleri_logo"
+                            android:background="@android:color/transparent"/>
+
+                        <TextView
+                            android:id="@+id/sagliktestleriText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="40dp"
+                            android:layout_marginTop="95dp"
+                            android:text="Sağlık Testleri" />
+                    </RelativeLayout>
+
+                    <Space
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent" />
+
+                    <RelativeLayout
+                        android:id="@+id/gidalar_relative"
+                        android:layout_width="155dp"
+                        android:layout_height="123dp"
+                        android:background="#F8F6F6">
+                        <!-- İkinci Relative Layout içeriği -->
+                        <ImageButton
+                            android:id="@+id/gidalarLogo"
+                            android:layout_width="68dp"
+                            android:layout_height="68dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginTop="23dp"
+                            android:src="@drawable/gidalar_logo"
+                            android:background="@android:color/transparent"/>
+
+                        <TextView
+                            android:id="@+id/gidalarText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="54dp"
+                            android:layout_marginTop="95dp"
+                            android:text="Gıdalar" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/card3_relative"
+                android:layout_width="320dp"
+                android:layout_height="123dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card2_relative">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/ihtiyac_listesi_relative"
+                        android:layout_width="155dp"
+                        android:layout_height="123dp"
+                        android:background="#F8F6F6">
+                        <!-- İlk Relative Layout içeriği -->
+                        <ImageButton
+                            android:id="@+id/ihtiyaclistesiLogo"
+                            android:layout_width="68dp"
+                            android:layout_height="68dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginTop="23dp"
+                            android:src="@drawable/ihtiyac_listesi_logo"
+                            android:background="@android:color/transparent"/>
+
+                        <TextView
+                            android:id="@+id/ihtiyaclistesiText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="35dp"
+                            android:layout_marginTop="95dp"
+                            android:text="İhtiyaç Listesi" />
+                    </RelativeLayout>
+
+                    <Space
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent" />
+
+                    <RelativeLayout
+                        android:id="@+id/hamilelik_gunlugum_relative"
+                        android:layout_width="155dp"
+                        android:layout_height="123dp"
+                        android:background="#F8F6F6">
+                        <!-- İkinci Relative Layout içeriği -->
+                        <ImageButton
+                            android:id="@+id/hamilelikgunluguLogo"
+                            android:layout_width="68dp"
+                            android:layout_height="68dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginTop="23dp"
+                            android:src="@drawable/hamilelik_gunlugu_logo"
+                            android:background="@android:color/transparent"/>
+
+                        <TextView
+                            android:id="@+id/hamilelikgunluguText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="95dp"
+                            android:text="Hamilelik Günlüğüm" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/card4_relative"
+                android:layout_width="320dp"
+                android:layout_height="123dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card3_relative">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/hamilelik_ajandam_relative"
+                        android:layout_width="155dp"
+                        android:layout_height="123dp"
+                        android:background="#F8F6F6">
+                        <!-- İlk Relative Layout içeriği -->
+                        <ImageButton
+                            android:id="@+id/hamilelikajandaLogo"
+                            android:layout_width="68dp"
+                            android:layout_height="68dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginTop="23dp"
+                            android:src="@drawable/hamilelik_ajanda_logo"
+                            android:background="@android:color/transparent"/>
+
+                        <TextView
+                            android:id="@+id/hamilelikajandaText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="95dp"
+                            android:text="Hamilelik Ajandam" />
+                    </RelativeLayout>
+
+                    <Space
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent" />
+
+                    <RelativeLayout
+                        android:id="@+id/bebek_isimleri_relative"
+                        android:layout_width="155dp"
+                        android:layout_height="123dp"
+                        android:background="#F8F6F6">
+                        <!-- İkinci Relative Layout içeriği -->
+                        <ImageButton
+                            android:id="@+id/bebekisimleriLogo"
+                            android:layout_width="68dp"
+                            android:layout_height="68dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginTop="23dp"
+                            android:src="@drawable/bebek_isimleri_logo"
+                            android:background="@android:color/transparent"/>
+
+                        <TextView
+                            android:id="@+id/bebekisimleriText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="35dp"
+                            android:layout_marginTop="95dp"
+                            android:text="Bebek İsimleri" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/card5_relative"
+                android:layout_width="320dp"
+                android:layout_height="123dp"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/card4_relative">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:id="@+id/hamilelik_cizelgesi_relative"
+                        android:layout_width="155dp"
+                        android:layout_height="123dp"
+                        android:background="#F8F6F6">
+                        <!-- İlk Relative Layout içeriği -->
+                        <ImageButton
+                            android:id="@+id/hamilelikcizelgesiLogo"
+                            android:layout_width="68dp"
+                            android:layout_height="68dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginTop="23dp"
+                            android:src="@drawable/hamilelik_cizelgesi_logo"
+                            android:background="@android:color/transparent"/>
+
+                        <TextView
+                            android:id="@+id/hamilelikcizelgesiText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="95dp"
+                            android:text="Hamilelik Çizelgesi" />
+                    </RelativeLayout>
+
+                    <Space
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent" />
+
+                    <RelativeLayout
+                        android:id="@+id/bugunne_asersem_relative"
+                        android:layout_width="155dp"
+                        android:layout_height="123dp"
+                        android:background="#F8F6F6">
+                        <!-- İkinci Relative Layout içeriği -->
+                        <ImageButton
+                            android:id="@+id/bugunneasersemLogo"
+                            android:layout_width="68dp"
+                            android:layout_height="68dp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginTop="23dp"
+                            android:src="@drawable/bugunne_asersem_logo"
+                            android:background="@android:color/transparent"/>
+
+                        <TextView
+                            android:id="@+id/bugunneasersemView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15dp"
+                            android:layout_marginTop="95dp"
+                            android:text="Bugün Ne Aşersem?" />
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</FrameLayout>

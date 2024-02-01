@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/fullName"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:padding="15dp"
+            android:layout_marginBottom="36dp"/>
+
+        <!-- Üst Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/firstWeek"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text=""
+                android:gravity="center"
+                android:background="@drawable/text_view_border"/>
+
+            <TextView
+                android:id="@+id/secondWeek"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text=""
+                android:gravity="center"
+                android:background="@drawable/text_view_border"/>
+
+
+            <TextView
+                android:id="@+id/thirdWeek"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text=""
+                android:gravity="center"
+                android:background="@drawable/text_view_border"/>
+
+            <TextView
+                android:id="@+id/fifthWeek"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text=""
+                android:gravity="center"
+                android:background="@drawable/text_view_border"/>
+
+            <TextView
+                android:id="@+id/sixWeek"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:text=""
+                android:gravity="center"
+                android:background="@drawable/text_view_border"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="fill_horizontal"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/height"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:gravity="center"
+                android:padding="15dp"
+                android:background="@drawable/text_view_border"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:layout_weight="2"
+                android:gravity="center"/>
+
+            <TextView
+                android:gravity="center"
+                android:id="@+id/width"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:layout_marginStart="8dp"
+                android:padding="15dp"
+                android:background="@drawable/text_view_border"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="fill_horizontal"
+            android:padding="20dp">
+
+            <TextView
+                android:gravity="center"
+                android:id="@+id/fruitT"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:padding="15dp"
+                android:background="@drawable/text_view_border"/>
+            <Button
+                android:layout_marginTop="48dp"
+                android:id="@+id/button_makale"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Günün Makalesi" />
+
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

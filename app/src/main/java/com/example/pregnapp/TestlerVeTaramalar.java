@@ -29,7 +29,7 @@ public class TestlerVeTaramalar extends AppCompatActivity {
         buttongeriGitmeTestler.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(TestlerVeTaramalar.this, MainActivity.class));
+                onBackPressed();
             }
         });
 

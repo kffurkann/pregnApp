@@ -2,14 +2,15 @@ package com.example.pregnapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+
+import androidx.fragment.app.Fragment;
+
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageButton;
-import android.widget.RelativeLayout;
-import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-public class gebelikAraclari extends AppCompatActivity {
+public class Tools extends Fragment {
 
     private ImageButton kiloTakibi;
     private ImageButton tekmeSayar;
@@ -23,95 +24,91 @@ public class gebelikAraclari extends AppCompatActivity {
     private ImageButton bugunNeAsersem;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_gebelik_araclari);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
 
-
-
-        kiloTakibi = findViewById(R.id.kilotakibiLogo);
+        View view =
+        inflater.inflate(R.layout.fragment_tools, container, false);
+        kiloTakibi = view.findViewById(R.id.kilotakibiLogo);
         kiloTakibi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(gebelikAraclari.this, KiloTakibi.class));
+                startActivity(new Intent(getContext(), KiloTakibi.class));
             }
         });
 
-        tekmeSayar = findViewById(R.id.tekmesayarLogo);
+        tekmeSayar = view.findViewById(R.id.tekmesayarLogo);
         tekmeSayar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(gebelikAraclari.this, TekmeSayar.class));
+                startActivity(new Intent(getContext(), TekmeSayar.class));
             }
         });
 
-        saglikTestleri = findViewById(R.id.sagliktestleriLogo);
+        saglikTestleri = view.findViewById(R.id.sagliktestleriLogo);
         saglikTestleri.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(gebelikAraclari.this, TestlerVeTaramalar.class));
+                startActivity(new Intent(getContext(), TestlerVeTaramalar.class));
             }
         });
 
-        gidalar = findViewById(R.id.gidalarLogo);
+        gidalar = view.findViewById(R.id.gidalarLogo);
         gidalar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(gebelikAraclari.this, KiloTakibi.class));
+                startActivity(new Intent(getContext(), Gidalar.class));
             }
         });
 
-        ihtiyacListesi = findViewById(R.id.ihtiyaclistesiLogo);
+        ihtiyacListesi = view.findViewById(R.id.ihtiyaclistesiLogo);
         ihtiyacListesi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(gebelikAraclari.this, ihtiyacListesi.class));
+                startActivity(new Intent(getContext(), IhtiyacListesi.class));
             }
         });
 
-        hamilelikGunlugum = findViewById(R.id.hamilelikgunluguLogo);
+        hamilelikGunlugum = view.findViewById(R.id.hamilelikgunluguLogo);
         hamilelikGunlugum.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(gebelikAraclari.this, HamilelikAjandam.class));
+                startActivity(new Intent(getContext(), HamilelikAjandam.class));
             }
         });
 
-        hamilelikAjandam = findViewById(R.id.hamilelikajandaLogo);
+        hamilelikAjandam = view.findViewById(R.id.hamilelikajandaLogo);
         hamilelikAjandam.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(gebelikAraclari.this, HamilelikAjandam.class));
+                startActivity(new Intent(getContext(), HamilelikAjandam.class));
             }
         });
 
-        bebekIsimleri = findViewById(R.id.bebekisimleriLogo);
+        bebekIsimleri = view.findViewById(R.id.bebekisimleriLogo);
         bebekIsimleri.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(gebelikAraclari.this, BebekIsimleri.class));
+                startActivity(new Intent(getContext(), BebekIsimleri.class));
             }
         });
 
-        hamilelikCizelgesi = findViewById(R.id.hamilelikcizelgesiLogo);
+        hamilelikCizelgesi = view.findViewById(R.id.hamilelikcizelgesiLogo);
         hamilelikCizelgesi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(gebelikAraclari.this, HamilelikAjandam.class));
+                startActivity(new Intent(getContext(), HamilelikAjandam.class));
             }
         });
 
-        bugunNeAsersem = findViewById(R.id.bugunneasersemLogo);
+        bugunNeAsersem = view.findViewById(R.id.bugunneasersemLogo);
         bugunNeAsersem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(gebelikAraclari.this, BugunNeAsersem.class));
+                startActivity(new Intent(getContext(), BugunNeAsersem.class));
             }
         });
 
-
-
+        return view;
     }
-
-
 }

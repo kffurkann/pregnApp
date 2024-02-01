@@ -12,7 +12,7 @@ import android.widget.RelativeLayout;
 
 
 
-public class ihtiyacListesi extends AppCompatActivity {
+public class IhtiyacListesi extends AppCompatActivity {
     private RelativeLayout relativeAnne, relativeBebek;
     private Button buttonAnne, buttonBebek;
     private SharedPreferences sharedPreferencesTestler;

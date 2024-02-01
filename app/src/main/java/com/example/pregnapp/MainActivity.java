@@ -22,11 +22,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+
         buttonSignUp=findViewById(R.id.button_signUp);
         buttonSignUp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, signUp.class));
+                onBackPressed();
             }
         });
 
@@ -42,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         buttonGebelik.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, gebelikAraclari.class));
+                startActivity(new Intent(MainActivity.this, DashBoard.class));
             }
         });
 
