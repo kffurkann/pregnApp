@@ -44,7 +44,7 @@ public class LoginPage extends AppCompatActivity {
         });
 
 
-       /* buttonLogin.setOnClickListener(new View.OnClickListener() {
+       buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 loginRequest();
@@ -107,6 +107,6 @@ public class LoginPage extends AppCompatActivity {
                     });
                 }
             }
-        });*/
+        });
     }
 }

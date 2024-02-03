@@ -47,7 +47,7 @@ public class Register extends AppCompatActivity {
             }
         });
 
-        /*buttonDate.setOnClickListener(new View.OnClickListener() {
+        buttonDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showDatePickerDialog();
@@ -144,7 +144,7 @@ public class Register extends AppCompatActivity {
                     });
                 }
             }
-        });*/
+        });
     }
 
 
