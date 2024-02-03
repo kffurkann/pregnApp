@@ -9,6 +9,7 @@
     <color name="boldPink">#EC407A</color>
     <color name="mediumPink">#F48FB1</color>
     <color name="lightPink">#FFCDD2</color>
+    <color name="mainBackground">#FFEBEB</color>
     <color name="darkBlue">#3F51B5</color>
     <color name="dangerous">#BD0303</color>
     <color name="undangerous">#7DD581</color>

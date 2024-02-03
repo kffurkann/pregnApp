@@ -1,24 +1,16 @@
 package com.example.pregnapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.annotation.SuppressLint;
-import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import okhttp3.*;
+import androidx.appcompat.app.AppCompatActivity;
 
-import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Locale;
 
 public class Register extends AppCompatActivity {
     private Button buttonDate;
@@ -55,7 +47,7 @@ public class Register extends AppCompatActivity {
             }
         });
 
-        buttonDate.setOnClickListener(new View.OnClickListener() {
+        /*buttonDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showDatePickerDialog();
@@ -152,7 +144,7 @@ public class Register extends AppCompatActivity {
                     });
                 }
             }
-        });
+        });*/
     }
 
 

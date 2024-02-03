@@ -43,9 +43,6 @@
             android:name=".Gidalar"
             android:exported="false" />
         <activity
-            android:name=".gebelikAraclari"
-            android:exported="false" />
-        <activity
             android:name=".BugunNeAsersem"
             android:exported="false" />
         <activity
@@ -65,15 +62,6 @@
             android:exported="false" />
         <activity
             android:name=".HamilelikAjandam"
-            android:exported="false" />
-        <activity
-            android:name=".HamilelikAjandamEkle"
-            android:exported="false" />
-        <activity
-            android:name=".login"
-            android:exported="false" />
-        <activity
-            android:name=".SignUp"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

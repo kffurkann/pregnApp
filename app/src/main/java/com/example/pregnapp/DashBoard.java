@@ -1,8 +1,10 @@
 package com.example.pregnapp;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
+
 import android.os.Bundle;
 import android.util.Log;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -34,29 +36,26 @@ public class DashBoard extends AppCompatActivity {
             item -> {
                 Fragment selectedFragment;
 
-                switch (item.getItemId()) {
-                    case R.id.nav_home:
-                        selectedFragment = new HomeFragment();
-                        Bundle bundle = new Bundle();
-                        bundle.putString("userMail", userMail);
-                        Log.d("usermail bundle:", userMail);
-                        selectedFragment.setArguments(bundle);
-                        break;
-                    case R.id.nav_forum:
-                        selectedFragment = new Forum();
-                        break;
-                    case R.id.nav_tools:
-                        selectedFragment = new Tools();
-                        break;
-                    case R.id.nav_profile:
-                        selectedFragment = new Profile();
-                        Bundle bundleP = new Bundle();
-                        bundleP.putString("userMail", userMail);
-                        Log.d("usermail bundle:", userMail);
-                        selectedFragment.setArguments(bundleP);
-                        break;
-                    default:
-                        return false;
+                int itemId = item.getItemId();
+
+                if (itemId == R.id.nav_home) {
+                    selectedFragment = new HomeFragment();
+                    Bundle bundle = new Bundle();
+                    bundle.putString("userMail", userMail);
+                    Log.d("usermail bundle:", userMail);
+                    selectedFragment.setArguments(bundle);
+                } else if (itemId == R.id.nav_forum) {
+                    selectedFragment = new Forum();
+                } else if (itemId == R.id.nav_tools) {
+                    selectedFragment = new Tools();
+                } else if (itemId == R.id.nav_profile) {
+                    selectedFragment = new Profile();
+                    Bundle bundleP = new Bundle();
+                    bundleP.putString("userMail", userMail);
+                    Log.d("usermail bundle:", userMail);
+                    selectedFragment.setArguments(bundleP);
+                } else {
+                    return false;
                 }
 
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,

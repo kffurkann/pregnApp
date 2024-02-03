@@ -1,8 +1,5 @@
 package com.example.pregnapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +8,9 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 public class Gidalar extends AppCompatActivity {
     private Toolbar toolbarGidalar;
@@ -39,8 +39,8 @@ public class Gidalar extends AppCompatActivity {
         relativeTehlikesiz=findViewById(R.id.relativeTehlikelisiz);
         relativeBeCareful=findViewById(R.id.relativeBeCareful);
 
-        buttonTehlikeli=findViewById(R.id.buttonTarih);
-        buttonTehlikesiz=findViewById(R.id.buttonSaat);
+        buttonTehlikeli=findViewById(R.id.buttonTarihKilo);
+        buttonTehlikesiz=findViewById(R.id.buttonSaatKilo);
         buttonCareful=findViewById(R.id.buttonCareful);
 
 
@@ -48,12 +48,12 @@ public class Gidalar extends AppCompatActivity {
 
 
     public void showContent(View view) {
-        if (view.getId() == R.id.buttonTarih) {
+        if (view.getId() == R.id.buttonTarihKilo) {
             relativeTehlikeli.setVisibility(View.VISIBLE);
             relativeTehlikesiz.setVisibility(View.GONE);
             relativeBeCareful.setVisibility(View.GONE);
 
-        } else if (view.getId() == R.id.buttonSaat) {
+        } else if (view.getId() == R.id.buttonSaatKilo) {
             relativeTehlikeli.setVisibility(View.GONE);
             relativeTehlikesiz.setVisibility(View.VISIBLE);
             relativeBeCareful.setVisibility(View.GONE);

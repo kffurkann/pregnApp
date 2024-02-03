@@ -1,27 +1,19 @@
 package com.example.pregnapp;
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import java.io.IOException;
-import okhttp3.Call;
-import okhttp3.Callback;
-import okhttp3.MediaType;
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
-import okhttp3.RequestBody;
-import okhttp3.Response;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class LoginPage extends AppCompatActivity {
     private EditText loginMail;
     private EditText loginPassword;
-    private Button buttonLogin;
+    private Button buttonLogin, buttonalfa;
     private TextView goRegister;
 
     @SuppressLint("MissingInflatedId")
@@ -33,6 +25,15 @@ public class LoginPage extends AppCompatActivity {
         loginPassword = findViewById(R.id.loginPassword);
         buttonLogin = findViewById(R.id.buttonLogin);
         goRegister = findViewById(R.id.goRegister);
+        buttonalfa=findViewById(R.id.buttonalfa);
+
+        buttonalfa.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LoginPage.this,DashBoard.class));
+            }
+        });
+
 
         goRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,7 +43,8 @@ public class LoginPage extends AppCompatActivity {
             }
         });
 
-        buttonLogin.setOnClickListener(new View.OnClickListener() {
+
+       /* buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 loginRequest();
@@ -105,6 +107,6 @@ public class LoginPage extends AppCompatActivity {
                     });
                 }
             }
-        });
+        });*/
     }
 }
