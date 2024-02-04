@@ -1,6 +1,8 @@
 package com.example.pregnapp;
+
+import static android.graphics.Color.parseColor;
+
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -16,13 +18,15 @@ import android.widget.LinearLayout;
 import android.widget.PopupMenu;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
+
 import com.google.android.material.bottomsheet.BottomSheetDialog;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
-import static android.graphics.Color.parseColor;
 
 public class TekmeSayar extends AppCompatActivity {
 
@@ -56,8 +60,8 @@ public class TekmeSayar extends AppCompatActivity {
 
                 ImageView tekmeAddimage = sheetview.findViewById(R.id.tekmeAddimage);
                 TextView tekmeAdd = sheetview.findViewById(R.id.tekmeAdd);
-                Button buttonTekmeiptal = sheetview.findViewById(R.id.buttonTekmeiptal);
-                Button buttonTekmeEkle2 = sheetview.findViewById(R.id.buttonTekmeEkle2);
+                Button buttonTekmeiptal = sheetview.findViewById(R.id.buttonKiloiptal);
+                Button buttonTekmeEkle2 = sheetview.findViewById(R.id.buttonKiloEklesheet);
                 final String[] ayse = new String[]{"0"};
 
                 tekmeAddimage.setOnClickListener(new View.OnClickListener() {

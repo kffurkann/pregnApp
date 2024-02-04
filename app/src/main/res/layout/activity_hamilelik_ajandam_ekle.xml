@@ -51,7 +51,7 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/buttonTarih"
+                android:id="@+id/buttonTarihKilo"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="4dp"
@@ -62,7 +62,7 @@
                 android:text="Tarih" />
 
             <Button
-                android:id="@+id/buttonSaat"
+                android:id="@+id/buttonSaatKilo"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="4dp"

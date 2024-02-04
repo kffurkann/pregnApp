@@ -4,720 +4,305 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <ScrollView
+        android:id="@+id/scroll"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:context=".KiloTakibi">
 
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:context=".KiloTakibi">
 
 
             <androidx.appcompat.widget.Toolbar
-                android:id="@+id/my_toolbar_kilo_takibi"
+                    android:id="@+id/my_toolbar_kilo_takibi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/darkBlue"
+                    android:minHeight="?attr/actionBarSize"
+                    android:theme="?attr/actionBarTheme"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                <ImageButton
+                        android:id="@+id/button_geri_kilo_takibi"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:contentDescription="s"
+                        android:src="@drawable/ic_back_arrow" />
+
+                    <!-- TextView ekleyerek kendi metnini belirle -->
+                    <TextView
+                        android:id="@+id/toolbar_title_kilo_takibi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Kilo Takibi"
+                        android:textColor="#FFFFFF"
+                        android:textSize="25dp"
+                        tools:layout_editor_absoluteX="16dp"
+                        tools:layout_editor_absoluteY="20dp" />
+                </androidx.appcompat.widget.Toolbar>
+
+                <ImageView
+                    android:id="@+id/kiloTakibiImage"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/my_toolbar_kilo_takibi"
+                    app:srcCompat="@drawable/kilo_takibi_logo" />
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayoutKiloPanel"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:background="#F1F0F0"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/kiloTakibiImage">
+
+                    <TextView
+                        android:id="@+id/textViewPanelKiloSon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:paddingLeft="20dp"
+                        android:paddingTop="15dp"
+                        android:text="65.0 kg"
+                        android:textSize="25dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textViewTarihKiloPanelEnSon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:paddingLeft="30dp"
+                        android:paddingTop="50dp"
+                        android:text="En Son"
+                        android:textSize="20dp" />
+
+                    <ImageView
+                        android:id="@+id/imageViewEksi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:paddingLeft="110dp"
+                        android:src="@drawable/eksi"
+
+                        />
+
+                    <!-- TextViewHafta - Ortada -->
+                    <TextView
+                        android:id="@+id/textViewPanelKiloBaslangic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:paddingTop="15dp"
+                        android:paddingRight="10dp"
+                        android:text="90.0 kg"
+                        android:textSize="25dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textViewHaftaKiloPanelBaslangic"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:paddingTop="50dp"
+                        android:paddingRight="10dp"
+                        android:text="Başlangıç"
+                        android:textSize="20dp" />
+
+                    <ImageView
+                        android:id="@+id/imageViewEsittir"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:paddingRight="115dp"
+                        android:src="@drawable/esittir"
+
+                        />
+
+                    <TextView
+                        android:id="@+id/textViewPanelKiloFark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:paddingTop="15dp"
+                        android:paddingRight="15dp"
+                        android:text="-25.0 kg"
+                        android:textSize="25dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textViewFarkKiloPanelFark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:paddingTop="50dp"
+                        android:paddingRight="40dp"
+                        android:text="Fark"
+                        android:textSize="20dp"
+
+                        />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayoutKilo"
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/relativeLayoutKiloPanel">
+
+                    <TextView
+                        android:id="@+id/textViewTarihKilo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:paddingLeft="30dp"
+                        android:text="Tarih"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <!-- TextViewHafta - Ortada -->
+                    <TextView
+                        android:id="@+id/textViewHaftaKilo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:paddingRight="50dp"
+                        android:text="Hafta"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <!-- TextViewTekme - Sağda -->
+                    <TextView
+                        android:id="@+id/textViewTekmeKilo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:paddingRight="90dp"
+                        android:text="Kilo"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textViewFarkKilo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:paddingRight="15dp"
+                        android:text="Fark"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"></LinearLayout>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
+                </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/listeleme"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@color/darkBlue"
-                android:minHeight="?attr/actionBarSize"
-                android:theme="?attr/actionBarTheme"
+                android:orientation="vertical"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-                <ImageButton
-                    android:id="@+id/button_geri_kilo_takibi"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:background="?attr/selectableItemBackgroundBorderless"
-                    android:src="@drawable/ic_back_arrow"
-                    android:contentDescription="s"/>
+                app:layout_constraintTop_toBottomOf="@id/relativeLayoutKilo">
 
-                <!-- TextView ekleyerek kendi metnini belirle -->
-                <TextView
-                    android:id="@+id/toolbar_title_kilo_takibi"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="Kilo Takibi"
-                    android:textColor="#FFFFFF"
-                    android:textSize="25dp"
-                    tools:layout_editor_absoluteX="16dp"
-                    tools:layout_editor_absoluteY="20dp" />
-            </androidx.appcompat.widget.Toolbar>
+                <RelativeLayout
+                    android:id="@+id/listelemeoge"
+                    android:layout_width="match_parent"
+                    android:layout_height="70dp"
+                    android:background="#F1F0F0">
 
-            <ImageView
-                android:id="@+id/kiloTakibiImage"
-                android:layout_width="0dp"
-                android:layout_height="100dp"
-                android:layout_marginTop="8dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/my_toolbar_kilo_takibi"
-                app:srcCompat="@drawable/kilo_takibi_logo"
-                />
+                    <TextView
+                        android:id="@+id/textViewKiloTarih"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_centerVertical="true"
+                        android:paddingLeft="15dp"
+                        android:text="17.10.2023\n   12:31"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
 
-            <RelativeLayout
-                android:id="@+id/relativeLayoutKiloPanel"
-                android:layout_width="match_parent"
-                android:background="#F1F0F0"
-                android:layout_height="90dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/kiloTakibiImage">
+                    <!-- TextViewHafta - Ortada -->
+                    <TextView
+                        android:id="@+id/textViewKiloHafta"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:paddingRight="25dp"
+                        android:text="21.Hafta\n   1.Gün"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
 
-                <TextView
-                    android:id="@+id/textViewTarihKiloPanelKilo1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentLeft="true"
-                    android:paddingTop="15dp"
-                    android:paddingLeft="20dp"
-                    android:text="65.0 kg"
-                    android:textSize="25dp"
-                    android:textStyle="bold" />
-                <TextView
-                    android:id="@+id/textViewTarihKiloPanelEnSon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentLeft="true"
-                    android:paddingTop="50dp"
-                    android:paddingLeft="30dp"
-                    android:text="En Son"
-                    android:textSize="20dp"
-                     />
+                    <!-- TextViewTekme - Sağda -->
+                    <TextView
+                        android:id="@+id/textViewKiloMiktar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:paddingRight="90dp"
+                        android:text="65.0\n Kg"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
 
-                <ImageView
-                    android:id="@+id/imageViewEksi"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_alignParentLeft="true"
-                    android:paddingLeft="110dp"
-                    android:src="@drawable/eksi"
-
-                    />
-
-                <!-- TextViewHafta - Ortada -->
-                <TextView
-                    android:id="@+id/textViewHaftaKiloPanelKilo2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:paddingTop="15dp"
-                    android:paddingRight="10dp"
-                    android:text="90.0 kg"
-                    android:textSize="25dp"
-                    android:textStyle="bold"/>
-
-                <TextView
-                    android:id="@+id/textViewHaftaKiloPanelBaslangic"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:paddingTop="50dp"
-                    android:paddingRight="10dp"
-                    android:text="Başlangıç"
-                    android:textSize="20dp"
-                    />
-
-                <ImageView
-                    android:id="@+id/imageViewEsittir"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:paddingRight="115dp"
-                    android:src="@drawable/esittir"
-
-                    />
-                <TextView
-                    android:id="@+id/textViewFarkKiloPanelKilo3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:paddingTop="15dp"
-                    android:text="-25.0 kg"
-                    android:textSize="25dp"
-                    android:paddingRight="15dp"
-                    android:textStyle="bold"
-                    />
-                <TextView
-                    android:id="@+id/textViewFarkKiloPanelFark"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:paddingTop="50dp"
-                    android:text="Fark"
-                    android:textSize="20dp"
-                    android:paddingRight="40dp"
-
-                    />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/relativeLayoutKilo"
-                android:layout_width="match_parent"
-                android:layout_height="65dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/relativeLayoutKiloPanel">
-
-                <TextView
-                    android:id="@+id/textViewTarihKilo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"
-                    android:paddingLeft="30dp"
-                    android:text="Tarih"
-                    android:textSize="20dp"
-                    android:textStyle="bold"/>
-
-                <!-- TextViewHafta - Ortada -->
-                <TextView
-                    android:id="@+id/textViewHaftaKilo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:paddingRight="50dp"
-                    android:text="Hafta"
-                    android:textSize="20dp"
-                    android:textStyle="bold"/>
-
-                <!-- TextViewTekme - Sağda -->
-                <TextView
-                    android:id="@+id/textViewTekmeKilo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:paddingRight="90dp"
-                    android:text="Kilo"
-                    android:textSize="20dp"
-                    android:textStyle="bold"/>
-                <TextView
-                    android:id="@+id/textViewFarkKilo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:text="Fark"
-                    android:textSize="20dp"
-                    android:paddingRight="15dp"
-                    android:textStyle="bold"
-                    />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:id="@+id/relativeLayoutKilo1"
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:background="#F1F0F0"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/relativeLayoutKilo">
-
-                <TextView
-                    android:id="@+id/textViewTarihKilo1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"
-                    android:paddingLeft="15dp"
-                    android:text="17.10.2023\n   12:31"
-                    android:textSize="20dp"
-                    android:textStyle="bold"/>
-
-                <!-- TextViewHafta - Ortada -->
-                <TextView
-                    android:id="@+id/textViewHaftaKilo1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:paddingRight="25dp"
-                    android:text="21.Hafta\n   1.Gün"
-                    android:textSize="20dp"
-                    android:textStyle="bold"/>
-
-                <!-- TextViewTekme - Sağda -->
-                <TextView
-                    android:id="@+id/textViewTekmeKilo1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:paddingRight="90dp"
-                    android:text="65.0\n Kg"
-                    android:textSize="20dp"
-                    android:textStyle="bold"/>
-
-                <TextView
-                    android:id="@+id/textViewFarkKilo1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:text="+ 5.0"
-                    android:textSize="20dp"
-                    android:paddingRight="13dp"
-                    android:textStyle="bold"
-                    />
+                    <TextView
+                        android:id="@+id/textViewKiloFark"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:paddingRight="13dp"
+                        android:text="+ 5.0"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
 
 
-            </RelativeLayout>
-            <RelativeLayout
-                android:id="@+id/relativeLayoutKilo2"
-                android:layout_marginTop="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:background="#F1F0F0"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/relativeLayoutKilo1">
+                </RelativeLayout>
+            </LinearLayout>
 
-                <TextView
-                    android:id="@+id/textViewTarihKilo2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"
-                    android:paddingLeft="15dp"
-                    android:text="14.10.2023\n   11:12"
-                    android:textSize="20dp"
-                    android:textStyle="bold"/>
-
-                <!-- TextViewHafta - Ortada -->
-                <TextView
-                    android:id="@+id/textViewHaftaKilo2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:paddingRight="25dp"
-                    android:text="20.Hafta\n   5.Gün"
-                    android:textSize="20dp"
-                    android:textStyle="bold"/>
-
-                <!-- TextViewTekme - Sağda -->
-                <TextView
-                    android:id="@+id/textViewTekmeKilo2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:paddingRight="90dp"
-                    android:text="63.0\n Kg"
-                    android:textSize="20dp"
-                    android:textStyle="bold"/>
-
-                <TextView
-                    android:id="@+id/textViewFarkKilo2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:text="- 11.0"
-                    android:textSize="20dp"
-                    android:paddingRight="13dp"
-                    android:textStyle="bold"
-                    />
-
-            </RelativeLayout>
-            <RelativeLayout
-                android:id="@+id/relativeLayoutKilo3"
-                android:layout_marginTop="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:background="#F1F0F0"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/relativeLayoutKilo2">
-
-                <TextView
-                    android:id="@+id/textViewTarihKilo3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"
-                    android:paddingLeft="15dp"
-                    android:text="14.10.2023\n   23:14"
-                    android:textSize="20dp"
-                    android:textStyle="bold"/>
-
-                <!-- TextViewHafta - Ortada -->
-                <TextView
-                    android:id="@+id/textViewHaftaKilo3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:paddingRight="25dp"
-                    android:text="20.Hafta\n   3.Gün"
-                    android:textSize="20dp"
-                    android:textStyle="bold"/>
-
-                <!-- TextViewTekme - Sağda -->
-                <TextView
-                    android:id="@+id/textViewTekmeKilo3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:paddingRight="90dp"
-                    android:text="56.0\n Kg"
-                    android:textSize="20dp"
-                    android:textStyle="bold"/>
-
-                <TextView
-                    android:id="@+id/textViewFarkKilo3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:text="- 9.0"
-                    android:textSize="20dp"
-                    android:paddingRight="13dp"
-                    android:textStyle="bold"
-                    />
-
-            </RelativeLayout>
-            <RelativeLayout
-                android:id="@+id/relativeLayoutKilo4"
-                android:layout_marginTop="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:background="#F1F0F0"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/relativeLayoutKilo3">
-
-                <TextView
-                    android:id="@+id/textViewTarihKilo4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"
-                    android:paddingLeft="15dp"
-                    android:text="22.09.2023\n   07:50"
-                    android:textSize="20dp"
-                    android:textStyle="bold"/>
-
-                <!-- TextViewHafta - Ortada -->
-                <TextView
-                    android:id="@+id/textViewHaftaKilo4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:paddingRight="25dp"
-                    android:text="17.Hafta\n   12.Gün"
-                    android:textSize="20dp"
-                    android:textStyle="bold"/>
-
-                <!-- TextViewTekme - Sağda -->
-                <TextView
-                    android:id="@+id/textViewTekmeKilo4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:paddingRight="90dp"
-                    android:text="75.0\n Kg"
-                    android:textSize="20dp"
-                    android:textStyle="bold"/>
-
-                <TextView
-                    android:id="@+id/textViewFarkKilo4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:text="0.0"
-                    android:textSize="20dp"
-                    android:paddingRight="13dp"
-                    android:textStyle="bold"
-                    />
-
-            </RelativeLayout>
-            <RelativeLayout
-                android:id="@+id/relativeLayoutKilo5"
-                android:layout_marginTop="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:background="#F1F0F0"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/relativeLayoutKilo4">
-
-                <TextView
-                    android:id="@+id/textViewTarihKilo5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"
-                    android:paddingLeft="15dp"
-                    android:text="29.08.2023\n   14:52"
-                    android:textSize="20dp"
-                    android:textStyle="bold"/>
-
-                <!-- TextViewHafta - Ortada -->
-                <TextView
-                    android:id="@+id/textViewHaftaKilo5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:paddingRight="25dp"
-                    android:text="14.Hafta\n   14.Gün"
-                    android:textSize="20dp"
-                    android:textStyle="bold"/>
-
-                <!-- TextViewTekme - Sağda -->
-                <TextView
-                    android:id="@+id/textViewTekmeKilo5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:paddingRight="90dp"
-                    android:text="68.0\n Kg"
-                    android:textSize="20dp"
-                    android:textStyle="bold"/>
-
-                <TextView
-                    android:id="@+id/textViewFarkKilo5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:text="+ 17.0"
-                    android:textSize="20dp"
-                    android:paddingRight="13dp"
-                    android:textStyle="bold"
-                    />
-
-            </RelativeLayout>
-            <RelativeLayout
-                android:id="@+id/relativeLayoutKilo6"
-                android:layout_marginTop="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:background="#F1F0F0"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/relativeLayoutKilo5">
-
-                <TextView
-                    android:id="@+id/textViewTarihKilo6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"
-                    android:paddingLeft="15dp"
-                    android:text="29.08.2023\n   17:28"
-                    android:textSize="20dp"
-                    android:textStyle="bold"/>
-
-                <!-- TextViewHafta - Ortada -->
-                <TextView
-                    android:id="@+id/textViewHaftaKilo6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:paddingRight="25dp"
-                    android:text="14.Hafta\n   7.Gün"
-                    android:textSize="20dp"
-                    android:textStyle="bold"/>
-
-                <!-- TextViewTekme - Sağda -->
-                <TextView
-                    android:id="@+id/textViewTekmeKilo6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:paddingRight="90dp"
-                    android:text="69.0\n Kg"
-                    android:textSize="20dp"
-                    android:textStyle="bold"/>
-
-                <TextView
-                    android:id="@+id/textViewFarkKilo6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:text="+ 13.0"
-                    android:textSize="20dp"
-                    android:paddingRight="13dp"
-                    android:textStyle="bold"
-                    />
-
-            </RelativeLayout>
-            <RelativeLayout
-                android:id="@+id/relativeLayoutKilo7"
-                android:layout_marginTop="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:background="#F1F0F0"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/relativeLayoutKilo6">
-
-                <TextView
-                    android:id="@+id/textViewTarihKilo7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"
-                    android:paddingLeft="15dp"
-                    android:text="17.10.2023\n   16:55"
-                    android:textSize="20dp"
-                    android:textStyle="bold"/>
-
-                <!-- TextViewHafta - Ortada -->
-                <TextView
-                    android:id="@+id/textViewHaftaKilo7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:paddingRight="25dp"
-                    android:text="21.Hafta\n   12.Gün"
-                    android:textSize="20dp"
-                    android:textStyle="bold"/>
-
-                <!-- TextViewTekme - Sağda -->
-                <TextView
-                    android:id="@+id/textViewTekmeKilo7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:paddingRight="90dp"
-                    android:text="56.0\n Kg"
-                    android:textSize="20dp"
-                    android:textStyle="bold"/>
-
-                <TextView
-                    android:id="@+id/textViewFarkKilo7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:text="+ 6.0"
-                    android:textSize="20dp"
-                    android:paddingRight="13dp"
-                    android:textStyle="bold"
-                    />
-
-            </RelativeLayout>
-            <RelativeLayout
-                android:id="@+id/relativeLayoutKilo8"
-                android:layout_marginTop="10dp"
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:background="#F1F0F0"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/relativeLayoutKilo7">
-
-                <TextView
-                    android:id="@+id/textViewTarihKilo8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"
-                    android:paddingLeft="15dp"
-                    android:text="17.10.2023\n   21:21"
-                    android:textSize="20dp"
-                    android:textStyle="bold"/>
-
-                <!-- TextViewHafta - Ortada -->
-                <TextView
-                    android:id="@+id/textViewHaftaKilo8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:paddingRight="25dp"
-                    android:text="21.Hafta\n   8.Gün"
-                    android:textSize="20dp"
-                    android:textStyle="bold"/>
-
-                <!-- TextViewTekme - Sağda -->
-                <TextView
-                    android:id="@+id/textViewTekmeKilo8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:paddingRight="90dp"
-                    android:text="72.0\n Kg"
-                    android:textSize="20dp"
-                    android:textStyle="bold"/>
-
-                <TextView
-                    android:id="@+id/textViewFarkKilo8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:text="+ 9.0"
-                    android:textSize="20dp"
-                    android:paddingRight="13dp"
-                    android:textStyle="bold"
-                    />
-
-            </RelativeLayout>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
+
 
     <Button
         android:id="@+id/buttonKiloEkle"
@@ -730,6 +315,7 @@
         android:text="Ekle"
         app:icon="@drawable/plus_icon_white"
         app:iconPadding="0dp" />
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 

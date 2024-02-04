@@ -1,25 +1,18 @@
 package com.example.pregnapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.os.Bundle;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.TimePicker;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Calendar;
 
@@ -38,8 +31,8 @@ public class HamilelikAjandamEkle extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hamilelik_ajandam_ekle);
 
-        buttonTarih=findViewById(R.id.buttonTarih);
-        buttonSaat=findViewById(R.id.buttonSaat);
+        buttonTarih=findViewById(R.id.buttonTarihKilo);
+        buttonSaat=findViewById(R.id.buttonSaatKilo);
         buttonEkleDate=findViewById(R.id.buttonEkleDate);
 
         gunlukNote=findViewById(R.id.gunlukNote);
