@@ -20,44 +20,44 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-        <ImageButton
-            android:id="@+id/button_geri_testlervetaramalar"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@drawable/ic_back_arrow"
-            android:contentDescription="s"/>
+            <ImageButton
+                android:id="@+id/button_geri_testlervetaramalar"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@drawable/ic_back_arrow"
+                android:contentDescription="s"/>
 
-        <!-- TextView ekleyerek kendi metnini belirle -->
+            <!-- TextView ekleyerek kendi metnini belirle -->
+            <TextView
+                android:id="@+id/toolbar_title_testlervetaramalar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Testler Ve Taramalar"
+                android:textColor="#FFFFFF"
+                android:textSize="25dp"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="20dp" />
+        </androidx.appcompat.widget.Toolbar>
+
         <TextView
-            android:id="@+id/toolbar_title_testlervetaramalar"
+            android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Testler Ve Taramalar"
-            android:textColor="#FFFFFF"
-            android:textSize="25dp"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="20dp" />
-    </androidx.appcompat.widget.Toolbar>
+            android:gravity="center"
+            android:padding="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Doktor Kontrolünde Yapılan Testler"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:background="@drawable/oval_background"
+            android:radius="100dp"
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:padding="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Doktor Kontrolünde Yapılan Testler"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        android:background="@drawable/oval_background"
-        android:radius="100dp"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/my_toolbar_testlervetaramalar" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/my_toolbar_testlervetaramalar" />
 
 
         <LinearLayout
@@ -93,7 +93,7 @@
                     android:background="#808080" />
 
                 <CheckBox
-                    android:id="@+id/checkboxTest1"
+                    android:id="@+id/checkboxTestler1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -124,7 +124,7 @@
                     android:background="#808080" />
 
                 <CheckBox
-                    android:id="@+id/checkboxTest2"
+                    android:id="@+id/checkboxTestler2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -155,7 +155,7 @@
                     android:background="#808080" />
 
                 <CheckBox
-                    android:id="@+id/checkboxTest3"
+                    android:id="@+id/checkboxTestler3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -186,7 +186,7 @@
                     android:background="#808080" />
 
                 <CheckBox
-                    android:id="@+id/checkboxTest4"
+                    android:id="@+id/checkboxTestler4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -217,7 +217,7 @@
                     android:background="#808080" />
 
                 <CheckBox
-                    android:id="@+id/checkboxTest5"
+                    android:id="@+id/checkboxTestler5"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -249,7 +249,7 @@
                     android:background="#808080" />
 
                 <CheckBox
-                    android:id="@+id/checkboxTest6"
+                    android:id="@+id/checkboxTestler6"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -280,7 +280,7 @@
                     android:background="#808080" />
 
                 <CheckBox
-                    android:id="@+id/checkboxTest7"
+                    android:id="@+id/checkboxTestler7"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -311,7 +311,7 @@
                     android:background="#808080" />
 
                 <CheckBox
-                    android:id="@+id/checkboxTest8"
+                    android:id="@+id/checkboxTestler8"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -342,7 +342,7 @@
                     android:background="#808080" />
 
                 <CheckBox
-                    android:id="@+id/checkboxTest9"
+                    android:id="@+id/checkboxTestler9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -373,7 +373,7 @@
                     android:background="#808080" />
 
                 <CheckBox
-                    android:id="@+id/checkboxTest10"
+                    android:id="@+id/checkboxTestler10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -404,7 +404,7 @@
                     android:background="#808080" />
 
                 <CheckBox
-                    android:id="@+id/checkboxTest11"
+                    android:id="@+id/checkboxTestler11"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -435,7 +435,7 @@
                     android:background="#808080" />
 
                 <CheckBox
-                    android:id="@+id/checkboxTest12"
+                    android:id="@+id/checkboxTestler12"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"

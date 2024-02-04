@@ -43,6 +43,9 @@
             android:name=".Gidalar"
             android:exported="false" />
         <activity
+            android:name=".Tools"
+            android:exported="false" />
+        <activity
             android:name=".BugunNeAsersem"
             android:exported="false" />
         <activity

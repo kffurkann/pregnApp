@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import org.json.JSONException;
@@ -20,7 +21,8 @@ import okhttp3.Response;
 public class HomeFragment extends Fragment {
 
     private String userMail;
-    private Button buttonMakale;
+    TextView textView_14;
+    TextView textView_15;
     TextView firstWeek;
     TextView secondWeek;
     TextView thirdWeek;
@@ -30,6 +32,7 @@ public class HomeFragment extends Fragment {
     TextView weightT;
     TextView fruitT;
     TextView fullName;
+    RelativeLayout relativeLayoutMakale;
     int week;
     double height;
     double weight;
@@ -49,15 +52,17 @@ public class HomeFragment extends Fragment {
         heightT=view.findViewById(R.id.height);
         weightT=view.findViewById(R.id.width);
         fruitT=view.findViewById(R.id.fruitT);
-        buttonMakale=view.findViewById(R.id.button_makale);
         fullName=view.findViewById(R.id.fullName);
+        textView_14=view.findViewById(R.id.textView14);
+        textView_15=view.findViewById(R.id.textView15);
+        relativeLayoutMakale=view.findViewById(R.id.relativeMakale1);
 
 
-        buttonMakale.setOnClickListener(new View.OnClickListener() {
+        relativeLayoutMakale.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Makale aktivitesine geçiş yap
                 Intent intent = new Intent(getContext(), Makale.class);
-                // Put the title and content as extras in the intent
                 intent.putExtra("articleTitle", articleTitle);
                 intent.putExtra("articleContent", articleContent);
                 startActivity(intent);
@@ -93,6 +98,13 @@ public class HomeFragment extends Fragment {
 
                         articleTitle = jsonObject.getString("title");
                         articleContent = jsonObject.getString("content");
+
+                        getActivity().runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                updateArticleViews();
+                            }
+                        });
 
                     } else {
                         Log.e("API Error", "Response not successful");
@@ -184,5 +196,17 @@ public class HomeFragment extends Fragment {
             }
         }).start();
     }
+
+    private void updateArticleViews() {
+        textView_14.setText(articleTitle);
+
+        if (articleContent != null && articleContent.length() > 100) {
+            String shortenedContent = articleContent.substring(0, 100) + "...";
+            textView_15.setText(shortenedContent);
+        } else {
+            textView_15.setText(articleContent);
+        }
+    }
+
 
 }

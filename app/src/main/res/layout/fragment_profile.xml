@@ -1,42 +1,208 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Profile">
 
-    <TextView
-        android:id="@+id/userNameArea"
-        android:layout_width="wrap_content"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/my_toolbar_profil_ekrani"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Text View 1"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="100dp" />
+        android:background="@color/darkBlue"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/lastReglDate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Text View 2"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp" />
+
+
+        <ImageButton
+            android:id="@+id/button_geri_profil_ekrani"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="s"
+            android:src="@drawable/ic_back_arrow"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/toolbar_title_profil_ekrani"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/toolbar_title_profil_ekrani"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Profil Bilgileri"
+            android:textColor="#FFFFFF"
+            android:textSize="25dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/button_geri_profil_ekrani"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="20dp" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ImageView
+        android:id="@+id/roundedImageView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/round_background"
+        android:clipToOutline="true"
+        android:outlineProvider="background"
+        android:scaleType="centerCrop"
+        android:src="@drawable/profil_ekrani_fotograf"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/my_toolbar_profil_ekrani" />
+
+    <RelativeLayout
+        android:id="@+id/adiniz"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/roundedImageView">
+
+        <TextView
+            android:id="@+id/text_profil_adiniz"
+            android:layout_width="300dp"
+            android:layout_height="17dp"
+            android:fontFamily="@font/rubikregular"
+            android:gravity="center_vertical"
+            android:text="Adınız:" />
+
+        <EditText
+            android:id="@+id/input_profil_adiniz"
+            android:layout_width="300dp"
+            android:layout_height="48dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/input"
+            android:drawableRight="@drawable/user_icon"
+            android:fontFamily="@font/rubikregular"
+            android:hint="Ornek İhsan Emre Doğan"
+            android:paddingStart="20dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="10dp"
+            android:textSize="12sp" />
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/kilo"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/adiniz">
+
+        <TextView
+            android:id="@+id/text_profil_kilonuz"
+            android:layout_width="300dp"
+            android:layout_height="17dp"
+            android:fontFamily="@font/rubikregular"
+            android:gravity="center_vertical"
+            android:text="Kilonuz" />
+
+        <EditText
+            android:id="@+id/input_profil_kilonuz"
+            android:layout_width="300dp"
+            android:layout_height="48dp"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/input"
+            android:drawableRight="@drawable/kilo_register_icon"
+            android:fontFamily="@font/rubikregular"
+            android:hint="Ornek Kilo"
+            android:inputType="number"
+            android:paddingStart="20dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="20dp"
+            android:paddingBottom="10dp"
+            android:textSize="12sp" />
+
+
+
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:id="@+id/son_adet_tarihi"
+        android:layout_width="300dp"
+        android:layout_height="70dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/kilo">
+
+        <TextView
+            android:id="@+id/text_profil_son_adet_tarihi"
+            android:layout_width="300dp"
+            android:layout_height="17dp"
+            android:fontFamily="@font/rubikregular"
+            android:gravity="center_vertical"
+            android:text="Son Adet Tarihiniz:" />
+
+        <Button
+            android:id="@+id/buttonReglDateP"
+            android:layout_width="300dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/boldPink"
+            android:fontFamily="@font/rubikregular"
+            android:text="Son Adet Tarihinizi Seçiniz"
+            android:textStyle="bold"
+            app:cornerRadius="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            android:drawableRight="@drawable/son_adet_tarihi"/>
+
+    </RelativeLayout>
 
     <Button
-        android:id="@+id/editMail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Edit Mail"
-        android:layout_below="@id/userNameArea"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp" />
+        android:id="@+id/saveDataProfil"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/darkBlue"
+        android:text="Kaydet"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/son_adet_tarihi" />
 
     <Button
-        android:id="@+id/deleteAccount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Delete Account"
-        android:layout_below="@id/editMail"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp" />
+        android:id="@+id/deleteAccountProfil"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="36dp"
+        android:backgroundTint="@color/darkBlue"
+        android:text="Profilimi Sil"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/son_adet_tarihi" />
 
-</RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
