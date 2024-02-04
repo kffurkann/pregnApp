@@ -4,90 +4,74 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:onClick="showContent"
     tools:context=".IhtiyacListesi">
 
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbarihtiyaclistesi"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
-        <ImageButton
-            android:id="@+id/button_geri_ihtiyac"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="s"
-            android:src="@drawable/ic_back_arrow" />
-
-        <!-- TextView ekleyerek kendi metnini belirle -->
-        <TextView
-            android:id="@+id/toolbar_title_ihtiyac"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="İhtiyaç Listesi"
-            android:textColor="#FFFFFF"
-            android:textSize="25dp"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="20dp" />
-    </androidx.appcompat.widget.Toolbar>
-
     <Button
         android:id="@+id/buttonAnne"
-        android:layout_width="120dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
-        android:backgroundTint="@color/darkerPink"
         android:onClick="showContent"
         android:paddingLeft="4dp"
         android:paddingRight="4dp"
         android:text="Anne\nİhtiyaçları"
+        android:backgroundTint="@color/boldPink"
         app:layout_constraintEnd_toStartOf="@+id/buttonBebek"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintHorizontal_chainStyle="spread"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbarihtiyaclistesi" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/buttonBebek"
-        android:layout_width="120dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:backgroundTint="@color/lightPink"
-        android:textColor="@color/darkerPink"
         android:onClick="showContent"
         android:paddingLeft="4dp"
         android:paddingRight="4dp"
         android:text="Bebek\nİhtiyaçları"
+        android:textColor="@color/boldPink"
+        android:backgroundTint="@color/lightPink"
         app:layout_constraintEnd_toStartOf="@+id/buttonDogum"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/buttonAnne"
-        app:layout_constraintTop_toBottomOf="@+id/toolbarihtiyaclistesi" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/buttonDogum"
-        android:layout_width="120dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
         android:layout_marginTop="16dp"
-        android:backgroundTint="@color/lightPink"
-        android:textColor="@color/darkerPink"
         android:onClick="showContent"
         android:paddingLeft="4dp"
         android:paddingRight="4dp"
         android:text="Doğum\nİhtiyaçları"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:backgroundTint="@color/lightPink"
+        android:textColor="@color/boldPink"
+        app:layout_constraintEnd_toStartOf="@+id/buttonSusleme"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/buttonBebek"
-        app:layout_constraintTop_toBottomOf="@+id/toolbarihtiyaclistesi" />
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/buttonSusleme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:onClick="showContent"
+        android:paddingLeft="4dp"
+        android:paddingRight="4dp"
+        android:text="İkramlık\nSüsleme"
+        android:backgroundTint="@color/lightPink"
+        android:textColor="@color/boldPink"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/buttonDogum"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <RelativeLayout
@@ -103,7 +87,7 @@
         app:layout_constraintTop_toBottomOf="@+id/buttonAnne">
 
         <LinearLayout
-            android:id="@+id/linearLayout"
+            android:id="@+id/linearLayoutAnne"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="16dp"
@@ -130,6 +114,7 @@
                     android:textSize="20dp" />
 
                 <View
+                    android:id="@+id/lineTehlikeli1"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_below="@+id/gogusUcu"
@@ -161,6 +146,7 @@
                     android:textSize="20dp" />
 
                 <View
+                    android:id="@+id/lineTehlikeli2"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_below="@+id/gogusPompasi"
@@ -192,6 +178,7 @@
                     android:textSize="20dp" />
 
                 <View
+                    android:id="@+id/line3"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_below="@+id/sutSaklama"
@@ -223,6 +210,7 @@
                     android:textSize="20dp" />
 
                 <View
+                    android:id="@+id/line4"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_below="@+id/gogusP"
@@ -254,6 +242,7 @@
                     android:textSize="20dp" />
 
                 <View
+                    android:id="@+id/line5"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_below="@+id/gogusK"
@@ -285,6 +274,7 @@
                     android:textSize="20dp" />
 
                 <View
+                    android:id="@+id/line6"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_below="@+id/emzirmeS"
@@ -316,6 +306,7 @@
                     android:textSize="20dp" />
 
                 <View
+                    android:id="@+id/line7"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_below="@+id/emzirmeO"
@@ -347,6 +338,7 @@
                     android:textSize="20dp" />
 
                 <View
+                    android:id="@+id/line8"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_below="@+id/emzirmeY"
@@ -379,7 +371,7 @@
         app:layout_constraintTop_toBottomOf="@+id/buttonAnne">
 
         <LinearLayout
-            android:id="@+id/linearLayoutTehlikesizb"
+            android:id="@+id/linearLayoutBebek"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="16dp"
@@ -406,6 +398,7 @@
                     android:textSize="20dp" />
 
                 <View
+                    android:id="@+id/line11"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_below="@+id/biberon"
@@ -413,7 +406,7 @@
                     android:background="#808080" />
 
                 <CheckBox
-                    android:id="@+id/checkboxTest11"
+                    android:id="@+id/checkboxTest9"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -437,6 +430,7 @@
                     android:textSize="20dp" />
 
                 <View
+                    android:id="@+id/line22"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_below="@+id/emzik"
@@ -444,7 +438,7 @@
                     android:background="#808080" />
 
                 <CheckBox
-                    android:id="@+id/checkboxTest22"
+                    android:id="@+id/checkboxTest10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -468,6 +462,7 @@
                     android:textSize="20dp" />
 
                 <View
+                    android:id="@+id/line33"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_below="@+id/tulum"
@@ -475,7 +470,7 @@
                     android:background="#808080" />
 
                 <CheckBox
-                    android:id="@+id/checkboxTest33"
+                    android:id="@+id/checkboxTest11"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -499,6 +494,7 @@
                     android:textSize="20dp" />
 
                 <View
+                    android:id="@+id/line44"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_below="@+id/agizBezi"
@@ -506,7 +502,7 @@
                     android:background="#808080" />
 
                 <CheckBox
-                    android:id="@+id/checkboxTest44"
+                    android:id="@+id/checkboxTest12"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -530,6 +526,7 @@
                     android:textSize="20dp" />
 
                 <View
+                    android:id="@+id/line55"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_below="@+id/hastane"
@@ -537,7 +534,7 @@
                     android:background="#808080" />
 
                 <CheckBox
-                    android:id="@+id/checkboxTest55"
+                    android:id="@+id/checkboxTest13"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -561,6 +558,7 @@
                     android:textSize="20dp" />
 
                 <View
+                    android:id="@+id/line66"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_below="@+id/sling"
@@ -568,7 +566,7 @@
                     android:background="#808080" />
 
                 <CheckBox
-                    android:id="@+id/checkboxTest46"
+                    android:id="@+id/checkboxTest14"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -592,6 +590,7 @@
                     android:textSize="20dp" />
 
                 <View
+                    android:id="@+id/line77"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_below="@+id/kanguru"
@@ -599,7 +598,7 @@
                     android:background="#808080" />
 
                 <CheckBox
-                    android:id="@+id/checkboxTest77"
+                    android:id="@+id/checkboxTest15"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -623,6 +622,7 @@
                     android:textSize="20dp" />
 
                 <View
+                    android:id="@+id/line88"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_below="@+id/bebekArabasi"
@@ -630,7 +630,7 @@
                     android:background="#808080" />
 
                 <CheckBox
-                    android:id="@+id/checkboxTest88"
+                    android:id="@+id/checkboxTest16"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -641,6 +641,7 @@
 
         </LinearLayout>
     </RelativeLayout>
+
 
     <RelativeLayout
         android:id="@+id/relativeDogum"
@@ -664,32 +665,31 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent">
 
-
-            <!-- RelativeLayout ve içeriği -->
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="5dp">
 
                 <TextView
-                    android:id="@+id/sabahlık"
+                    android:id="@+id/dogumCantasi"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:paddingLeft="10dp"
                     android:paddingBottom="4dp"
-                    android:text="Sabahlık"
+                    android:text="Doğum Çantası"
                     android:textSize="20dp" />
 
                 <View
+                    android:id="@+id/line12"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_below="@+id/sabahlık"
+                    android:layout_below="@+id/dogumCantasi"
                     android:layout_marginTop="9dp"
                     android:background="#808080" />
 
                 <CheckBox
-                    android:id="@+id/checkboxTest61"
+                    android:id="@+id/checkboxTest17"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -703,24 +703,25 @@
                 android:padding="5dp">
 
                 <TextView
-                    android:id="@+id/terlik"
+                    android:id="@+id/doktorBilgileri"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:paddingLeft="10dp"
                     android:paddingBottom="4dp"
-                    android:text="Terlik"
+                    android:text="Doktor ve Hastane Bilgileri"
                     android:textSize="20dp" />
 
                 <View
+                    android:id="@+id/linedoktorBilgi"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_below="@+id/terlik"
+                    android:layout_below="@+id/doktorBilgileri"
                     android:layout_marginTop="9dp"
                     android:background="#808080" />
 
                 <CheckBox
-                    android:id="@+id/checkboxTest62"
+                    android:id="@+id/checkboxTest18"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -734,24 +735,25 @@
                 android:padding="5dp">
 
                 <TextView
-                    android:id="@+id/uckremi"
+                    android:id="@+id/konforluKiyafet"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:paddingLeft="10dp"
                     android:paddingBottom="4dp"
-                    android:text="Göğüs Ucu Kremi"
+                    android:text="Konforlu Kıyafetler"
                     android:textSize="20dp" />
 
                 <View
+                    android:id="@+id/line333"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_below="@+id/uckremi"
+                    android:layout_below="@+id/konforluKiyafet"
                     android:layout_marginTop="9dp"
                     android:background="#808080" />
 
                 <CheckBox
-                    android:id="@+id/checkboxTest63"
+                    android:id="@+id/checkboxTest19"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -765,24 +767,25 @@
                 android:padding="5dp">
 
                 <TextView
-                    android:id="@+id/body"
+                    android:id="@+id/hijyenMalzemeleri"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:paddingLeft="10dp"
                     android:paddingBottom="4dp"
-                    android:text="Body"
+                    android:text="Hijyen Malzemeleri"
                     android:textSize="20dp" />
 
                 <View
+                    android:id="@+id/line444"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_below="@+id/body"
+                    android:layout_below="@+id/hijyenMalzemeleri"
                     android:layout_marginTop="9dp"
                     android:background="#808080" />
 
                 <CheckBox
-                    android:id="@+id/checkboxTest64"
+                    android:id="@+id/checkboxTest20"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -796,24 +799,25 @@
                 android:padding="5dp">
 
                 <TextView
-                    android:id="@+id/patik"
+                    android:id="@+id/telefon"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:paddingLeft="10dp"
                     android:paddingBottom="4dp"
-                    android:text="Patik"
+                    android:text="Telefon ve Şarj Cihazları"
                     android:textSize="20dp" />
 
                 <View
+                    android:id="@+id/line555"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_below="@+id/patik"
+                    android:layout_below="@+id/telefon"
                     android:layout_marginTop="9dp"
                     android:background="#808080" />
 
                 <CheckBox
-                    android:id="@+id/checkboxTest65"
+                    android:id="@+id/checkboxTest21"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -827,24 +831,25 @@
                 android:padding="5dp">
 
                 <TextView
-                    android:id="@+id/kucak"
+                    android:id="@+id/suveAtistirmalik"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:paddingLeft="10dp"
                     android:paddingBottom="4dp"
-                    android:text="Ana Kucağı"
+                    android:text="Su ve Atıştırmalıklar"
                     android:textSize="20dp" />
 
                 <View
+                    android:id="@+id/line666"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_below="@+id/kucak"
+                    android:layout_below="@+id/suveAtistirmalik"
                     android:layout_marginTop="9dp"
                     android:background="#808080" />
 
                 <CheckBox
-                    android:id="@+id/checkboxTest66"
+                    android:id="@+id/checkboxTest22"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -858,24 +863,25 @@
                 android:padding="5dp">
 
                 <TextView
-                    android:id="@+id/muslin"
+                    android:id="@+id/kendiYastigin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:paddingLeft="10dp"
                     android:paddingBottom="4dp"
-                    android:text="Müslin Örtü"
+                    android:text="Kendi Yastığınız"
                     android:textSize="20dp" />
 
                 <View
+                    android:id="@+id/line777"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_below="@+id/muslin"
+                    android:layout_below="@+id/kendiYastigin"
                     android:layout_marginTop="9dp"
                     android:background="#808080" />
 
                 <CheckBox
-                    android:id="@+id/checkboxTest67"
+                    android:id="@+id/checkboxTest23"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -889,24 +895,25 @@
                 android:padding="5dp">
 
                 <TextView
-                    android:id="@+id/eyastik"
+                    android:id="@+id/gozlukveyalensKutusu"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:paddingLeft="10dp"
                     android:paddingBottom="4dp"
-                    android:text="Emzirme Yastığı"
+                    android:text="Gözlük Veya Lens Kutusu"
                     android:textSize="20dp" />
 
                 <View
+                    android:id="@+id/line888"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:layout_below="@+id/eyastik"
+                    android:layout_below="@+id/gozlukveyalensKutusu"
                     android:layout_marginTop="9dp"
                     android:background="#808080" />
 
                 <CheckBox
-                    android:id="@+id/checkboxTest68"
+                    android:id="@+id/checkboxTest24"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
@@ -918,5 +925,287 @@
         </LinearLayout>
     </RelativeLayout>
 
+
+    <RelativeLayout
+        android:id="@+id/relativeSusleme"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonAnne">
+
+        <LinearLayout
+            android:id="@+id/linearLayoutIkramlik"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/renkliKurdele"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="10dp"
+                    android:paddingBottom="4dp"
+                    android:text="Renkli Kurdeleler ve Balonlar"
+                    android:textSize="20dp" />
+
+                <View
+                    android:id="@+id/linerenkliKurdele"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/renkliKurdele"
+                    android:layout_marginTop="9dp"
+                    android:background="#808080" />
+
+                <CheckBox
+                    android:id="@+id/checkboxTest25"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true" />
+                <!-- TextView, View, CheckBox ve diğer içerikler -->
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/sekerlemeler"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="10dp"
+                    android:paddingBottom="4dp"
+                    android:text="Şekerlemeler"
+                    android:textSize="20dp" />
+
+                <View
+                    android:id="@+id/lineSekerlemeler"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/sekerlemeler"
+                    android:layout_marginTop="9dp"
+                    android:background="#808080" />
+
+                <CheckBox
+                    android:id="@+id/checkboxTest26"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true" />
+                <!-- TextView, View, CheckBox ve diğer içerikler -->
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/elyapimiMagnetler"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="10dp"
+                    android:paddingBottom="4dp"
+                    android:text="El Yapımı Magnetler ve Rozetler"
+                    android:textSize="20dp" />
+
+                <View
+                    android:id="@+id/line3333"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/elyapimiMagnetler"
+                    android:layout_marginTop="9dp"
+                    android:background="#808080" />
+
+                <CheckBox
+                    android:id="@+id/checkboxTest27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true" />
+                <!-- TextView, View, CheckBox ve diğer içerikler -->
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/kurabiyeler"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="10dp"
+                    android:paddingBottom="4dp"
+                    android:text="Kurabiyeler"
+                    android:textSize="20dp" />
+
+                <View
+                    android:id="@+id/line4444"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/kurabiyeler"
+                    android:layout_marginTop="9dp"
+                    android:background="#808080" />
+
+                <CheckBox
+                    android:id="@+id/checkboxTest28"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true" />
+                <!-- TextView, View, CheckBox ve diğer içerikler -->
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/fotografveCerceveler"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="10dp"
+                    android:paddingBottom="4dp"
+                    android:text="Fotoğraflar ve Çerçeveler"
+                    android:textSize="20dp" />
+
+                <View
+                    android:id="@+id/line5555"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/fotografveCerceveler"
+                    android:layout_marginTop="9dp"
+                    android:background="#808080" />
+
+                <CheckBox
+                    android:id="@+id/checkboxTest29"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true" />
+                <!-- TextView, View, CheckBox ve diğer içerikler -->
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/tesekkurKartlari"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="10dp"
+                    android:paddingBottom="4dp"
+                    android:text="Teşekkür Kartları"
+                    android:textSize="20dp" />
+
+                <View
+                    android:id="@+id/line6666"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/tesekkurKartlari"
+                    android:layout_marginTop="9dp"
+                    android:background="#808080" />
+
+                <CheckBox
+                    android:id="@+id/checkboxTest30"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true" />
+                <!-- TextView, View, CheckBox ve diğer içerikler -->
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/renkliMumlar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="10dp"
+                    android:paddingBottom="4dp"
+                    android:text="Renkli Mumlar ve Mumluklar"
+                    android:textSize="20dp" />
+
+                <View
+                    android:id="@+id/line7777"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/renkliMumlar"
+                    android:layout_marginTop="9dp"
+                    android:background="#808080" />
+
+                <CheckBox
+                    android:id="@+id/checkboxTest31"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true" />
+                <!-- TextView, View, CheckBox ve diğer içerikler -->
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/bebekPastasi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="10dp"
+                    android:paddingBottom="4dp"
+                    android:text="Bebek Pastası"
+                    android:textSize="20dp" />
+
+                <View
+                    android:id="@+id/line8888"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/bebekPastasi"
+                    android:layout_marginTop="9dp"
+                    android:background="#808080" />
+
+                <CheckBox
+                    android:id="@+id/checkboxTest32"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true" />
+                <!-- TextView, View, CheckBox ve diğer içerikler -->
+            </RelativeLayout>
+
+
+        </LinearLayout>
+    </RelativeLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

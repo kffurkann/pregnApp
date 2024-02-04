@@ -1,137 +1,348 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/mainBackground">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:layout_height="match_parent" >
 
-        <TextView
-            android:id="@+id/fullName"
-            android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text=""
-            android:padding="15dp"
-            android:layout_marginBottom="36dp"/>
-
-        <!-- Üst Row -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="center">
-
-            <TextView
-                android:id="@+id/firstWeek"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                android:text=""
-                android:gravity="center"
-                android:background="@drawable/text_view_border"/>
-
-            <TextView
-                android:id="@+id/secondWeek"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                android:text=""
-                android:gravity="center"
-                android:background="@drawable/text_view_border"/>
-
-
-            <TextView
-                android:id="@+id/thirdWeek"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                android:text=""
-                android:gravity="center"
-                android:background="@drawable/text_view_border"/>
-
-            <TextView
-                android:id="@+id/fifthWeek"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                android:text=""
-                android:gravity="center"
-                android:background="@drawable/text_view_border"/>
-
-            <TextView
-                android:id="@+id/sixWeek"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="8dp"
-                android:text=""
-                android:gravity="center"
-                android:background="@drawable/text_view_border"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:gravity="fill_horizontal"
-            android:padding="20dp">
-
-            <TextView
-                android:id="@+id/height"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:gravity="center"
-                android:padding="15dp"
-                android:background="@drawable/text_view_border"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:layout_weight="2"
-                android:gravity="center"/>
-
-            <TextView
-                android:gravity="center"
-                android:id="@+id/width"
-                android:layout_width="100dp"
-                android:layout_height="wrap_content"
-                android:text=""
-                android:layout_marginStart="8dp"
-                android:padding="15dp"
-                android:background="@drawable/text_view_border"/>
-        </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:gravity="fill_horizontal"
-            android:padding="20dp">
+            android:padding="16dp">
 
             <TextView
-                android:gravity="center"
-                android:id="@+id/fruitT"
+                android:id="@+id/fullName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text=""
+                android:layout_marginBottom="18dp"
+                android:fontFamily="@font/rubikbold"
+                android:gravity="bottom|center"
                 android:padding="15dp"
-                android:background="@drawable/text_view_border"/>
-            <Button
-                android:layout_marginTop="48dp"
-                android:id="@+id/button_makale"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Günün Makalesi" />
+                android:text="pregnApp"
+                android:textColor="@color/darkerPink"
+                android:textSize="36sp"
+                android:textStyle="bold" />
 
+            <!-- Üst Row -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/hafta1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/rubikregular"
+                    android:text="hafta"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/boldPink" />
+
+                <TextView
+                    android:id="@+id/hafta2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/rubikregular"
+                    android:paddingStart="8dp"
+                    android:text="hafta"
+                    android:textAlignment="center"
+                    android:textColor="@color/boldPink" />
+
+                <TextView
+                    android:id="@+id/hafta3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/rubikregular"
+                    android:text="hafta"
+                    android:textAlignment="center"
+                    android:textColor="@color/boldPink"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/hafta4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/rubikregular"
+                    android:paddingEnd="8dp"
+                    android:text="hafta"
+                    android:textAlignment="center"
+                    android:textColor="@color/boldPink" />
+
+                <TextView
+                    android:id="@+id/hafta5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/rubikregular"
+                    android:text="hafta"
+                    android:textAlignment="textStart"
+                    android:textColor="@color/boldPink" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/firstWeek"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/rubikregular"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="@color/boldPink"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/secondWeek"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/rubikregular"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="@color/boldPink"
+                    android:textSize="18sp" />
+
+
+                <TextView
+                    android:id="@+id/thirdWeek"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/rubikregular"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="@color/boldPink"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/fifthWeek"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/rubikregular"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="@color/boldPink"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/sixWeek"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/rubikregular"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="@color/boldPink"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="fill_horizontal"
+                android:orientation="horizontal"
+                android:paddingTop="20dp"
+                android:paddingEnd="20dp"
+                android:paddingBottom="0dp">
+
+                <TextView
+                    android:id="@+id/height"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/rubikregular"
+                    android:padding="15dp"
+                    android:text="0"
+                    android:textAlignment="center"
+                    android:textColor="@color/boldPink" />
+
+                <ImageView
+                    android:id="@+id/anaEkran"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/ellipseana"
+                    android:padding="30dp"
+                    app:srcCompat="@drawable/anaekran" />
+
+                <TextView
+                    android:id="@+id/width"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/rubikregular"
+                    android:gravity="center"
+                    android:padding="15dp"
+                    android:text="0"
+                    android:textColor="@color/boldPink" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/textView13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="190dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/rubikbold"
+                    android:text="Boyu"
+                    android:textAlignment="center"
+                    android:textColor="@color/boldPink" />
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="30dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/rubikbold"
+                    android:text="Kilosu"
+                    android:textAlignment="center"
+                    android:textColor="@color/boldPink" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/fruitT"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/rubikregular"
+                    android:gravity="center"
+                    android:padding="15dp"
+                    android:text="aaaaaaaaaaaaaaaaaaaaaaa"
+                    android:textColor="@color/boldPink" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/imageView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rectangle_532"
+                    android:padding="10dp"
+                    tools:srcCompat="@drawable/anaekrangidalar_logo" />
+
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rectangle_531"
+                    android:padding="10dp"
+                    tools:srcCompat="@drawable/anaekrantekme_sayar_logo" />
+
+                <ImageView
+                    android:id="@+id/imageView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rectangle_534"
+                    android:padding="10dp"
+                    tools:srcCompat="@drawable/anaekranbebek_isimleri_logo" />
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rectangle_530"
+                    android:padding="10dp"
+                    tools:srcCompat="@drawable/anaekranbugunne_asersem_logo" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="fill_horizontal"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <RelativeLayout
+                    android:id="@+id/relativeMakale1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:background="@color/background"
+                    android:padding="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imageView9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/makale_2" />
+
+                        <TextView
+                            android:id="@+id/textView14"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:fontFamily="@font/rubikbold"
+                            android:text="TextView" />
+
+                        <TextView
+                            android:id="@+id/textView15"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/rubikregular"
+                            android:text="TextView" />
+                    </LinearLayout>
+                </RelativeLayout>
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
+    </ScrollView>
 </FrameLayout>

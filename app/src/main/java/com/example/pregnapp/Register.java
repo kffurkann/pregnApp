@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
 import android.app.DatePickerDialog;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -11,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import okhttp3.*;
@@ -38,14 +40,24 @@ public class Register extends AppCompatActivity {
         setContentView(R.layout.register_form);
 
         buttonDate = findViewById(R.id.buttonDate);
-        editTextUserMail = findViewById(R.id.editTextUserMail);
+        editTextUserMail = findViewById(R.id.inputMail);
         editTextUsername = findViewById(R.id.editTextUsername);
-        editTextUserPassword = findViewById(R.id.editTextUserPassword);
-        editTextUserWeight = findViewById(R.id.editTextUserWeight);
-        buttonRegister = findViewById(R.id.buttonRegister);
-        goLogin = findViewById(R.id.goLogin);
+        editTextUserPassword = findViewById(R.id.inputPassword);
+        editTextUserWeight = findViewById(R.id.inputWeight);
+        buttonRegister = findViewById(R.id.buttonSignUp);
+        goLogin = findViewById(R.id.textPassToLogin);
+        TextView textViewMain = findViewById(R.id.textViewMain);
+
 
         calendar = Calendar.getInstance();
+
+
+        textViewMain.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showPopup(); // Yeni ekranı göster
+            }
+        });
 
         goLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,6 +81,24 @@ public class Register extends AppCompatActivity {
             }
         });
     }
+
+    private void showPopup() {
+
+        Dialog popupDialog = new Dialog(this);
+        popupDialog.setContentView(R.layout.activity_popup);
+
+        ImageView imageViewClose = popupDialog.findViewById(R.id.imageViewClose);
+        imageViewClose.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                popupDialog.dismiss();
+            }
+        });
+
+        popupDialog.show();
+    }
+
+
 
     private void showDatePickerDialog() {
         DatePickerDialog datePickerDialog = new DatePickerDialog(

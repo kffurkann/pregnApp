@@ -7,7 +7,7 @@
     android:background="@android:color/white"
     android:layout_margin="20dp"
     android:elevation="8dp"
-    app:cardCornerRadius="25dp"> <!-- Adjust the corner radius as needed -->
+    app:cardCornerRadius="25dp">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -17,7 +17,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <!-- İçerik için bir TextView -->
             <TextView
                 android:id="@+id/textViewPopup"
                 android:layout_width="match_parent"
@@ -51,7 +50,6 @@
 "
                 android:padding="16dp" />
 
-            <!-- Kapatma işareti (X) -->
             <ImageView
                 android:id="@+id/imageViewClose"
                 android:layout_width="48dp"

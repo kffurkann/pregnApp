@@ -21,18 +21,18 @@ import okhttp3.Response;
 public class LoginPage extends AppCompatActivity {
     private EditText loginMail;
     private EditText loginPassword;
-    private Button buttonLogin;
     private TextView goRegister;
+    Button buttonLogin;
 
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_page);
-        loginMail = findViewById(R.id.loginMail);
-        loginPassword = findViewById(R.id.loginPassword);
+        loginMail = findViewById(R.id.inputLoginMail);
+        loginPassword = findViewById(R.id.inputLoginPassword);
         buttonLogin = findViewById(R.id.buttonLogin);
-        goRegister = findViewById(R.id.goRegister);
+        goRegister = findViewById(R.id.textPassToSignUp);
 
         goRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,19 +49,20 @@ public class LoginPage extends AppCompatActivity {
             }
         });
     }
+
     private void loginRequest() {
         String userMail = loginMail.getText().toString();
         String userPassword = loginPassword.getText().toString();
-        Log.d("usermail", userMail);
-        Log.d("userpassword", userPassword);
+
+        Log.d("LoginRequest", "E-mail: " + userMail);
+        Log.d("LoginRequest", "Password: [protected]");
 
         OkHttpClient client = new OkHttpClient();
 
-        String apiUrl = "http://10.0.2.2:5274/api/User/login" + "?mail=" + userMail + "&şifre=" + userPassword;
+        String apiUrl = "http://10.0.2.2:5274/api/User/login";
         MediaType JSON = MediaType.parse("application/json; charset=utf-8");
 
-        String jsonBody = "{\"mail\":\"" + userMail + "\",\"şifre\":\"" + userPassword + "}";
-
+        String jsonBody = "{\"email\":\"" + userMail + "\",\"şifre\":\"" + userPassword + "\"}";
         RequestBody requestBody = RequestBody.create(jsonBody, JSON);
 
         Request request = new Request.Builder()
@@ -72,7 +73,7 @@ public class LoginPage extends AppCompatActivity {
         client.newCall(request).enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
-                e.printStackTrace();
+                Log.e("LoginRequest", "HTTP request failed: " + e.getMessage());
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -84,7 +85,7 @@ public class LoginPage extends AppCompatActivity {
             public void onResponse(Call call, Response response) throws IOException {
                 if (response.isSuccessful()) {
                     String responseBody = response.body().string();
-                    Log.d("başarılı", responseBody);
+                    Log.d("LoginRequest", "Response successful: " + responseBody);
 
                     runOnUiThread(new Runnable() {
                         @Override
@@ -97,10 +98,11 @@ public class LoginPage extends AppCompatActivity {
                     });
                 } else {
                     String responseBody = response.body().string();
-                    Log.d("başarısız", responseBody);
+                    Log.d("LoginRequest", "Response unsuccessful: " + responseBody);
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
+
                         }
                     });
                 }
