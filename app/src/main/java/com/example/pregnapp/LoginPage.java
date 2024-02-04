@@ -30,7 +30,7 @@ public class LoginPage extends AppCompatActivity {
         buttonalfa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(LoginPage.this,DashBoard.class));
+                startActivity(new Intent(LoginPage.this,TekmeSayar.class));
             }
         });
 
@@ -47,11 +47,11 @@ public class LoginPage extends AppCompatActivity {
        buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                loginRequest();
+                //loginRequest();
             }
         });
     }
-    private void loginRequest() {
+    /*private void loginRequest() {
         String userMail = loginMail.getText().toString();
         String userPassword = loginPassword.getText().toString();
         Log.d("usermail", userMail);
@@ -107,6 +107,6 @@ public class LoginPage extends AppCompatActivity {
                     });
                 }
             }
-        });
+        });*/
     }
-}
+

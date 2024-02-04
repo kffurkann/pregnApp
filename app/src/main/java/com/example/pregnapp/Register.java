@@ -50,19 +50,19 @@ public class Register extends AppCompatActivity {
         buttonDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                showDatePickerDialog();
+               // showDatePickerDialog();
             }
         });
 
         buttonRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                sendRegistrationRequest();
+                //sendRegistrationRequest();
             }
         });
     }
 
-    private void showDatePickerDialog() {
+    /*private void showDatePickerDialog() {
         DatePickerDialog datePickerDialog = new DatePickerDialog(
                 this,
                 new DatePickerDialog.OnDateSetListener() {
@@ -144,8 +144,8 @@ public class Register extends AppCompatActivity {
                     });
                 }
             }
-        });
-    }
+        })
+    };*/
 
 
 }
