@@ -7,7 +7,9 @@ import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -32,6 +34,7 @@ public class Register extends AppCompatActivity {
     private Calendar calendar;
     private String selectedDate = "";
     private TextView goLogin;
+    private boolean isPasswordVisible = false;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -41,7 +44,7 @@ public class Register extends AppCompatActivity {
 
         buttonDate = findViewById(R.id.buttonDate);
         editTextUserMail = findViewById(R.id.inputMail);
-        editTextUsername = findViewById(R.id.editTextUsername);
+        editTextUsername = findViewById(R.id.inputUsername);
         editTextUserPassword = findViewById(R.id.inputPassword);
         editTextUserWeight = findViewById(R.id.inputWeight);
         buttonRegister = findViewById(R.id.buttonSignUp);
@@ -51,6 +54,7 @@ public class Register extends AppCompatActivity {
 
         calendar = Calendar.getInstance();
 
+        setupPasswordVisibilityToggle();
 
         textViewMain.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,6 +84,34 @@ public class Register extends AppCompatActivity {
                 sendRegistrationRequest();
             }
         });
+    }
+
+    private void setupPasswordVisibilityToggle() {
+        editTextUserPassword.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.password_icon, 0);
+        editTextUserPassword.setOnTouchListener((v, event) -> {
+            if (event.getAction() == MotionEvent.ACTION_UP) {
+                if (event.getRawX() >= (editTextUserPassword.getRight() - editTextUserPassword.getCompoundDrawables()[2].getBounds().width())) {
+                    // Şifre görünürlüğünü değiştir
+                    togglePasswordVisibility();
+                    return true;
+                }
+            }
+            return false;
+        });
+    }
+
+    private void togglePasswordVisibility() {
+        if (isPasswordVisible) {
+            // Şifreyi gizle
+            editTextUserPassword.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+            editTextUserPassword.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.eye_off, 0);
+        } else {
+            // Şifreyi göster
+            editTextUserPassword.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+            editTextUserPassword.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.eye_svg, 0);
+        }
+        editTextUserPassword.setSelection(editTextUserPassword.getText().length());
+        isPasswordVisible = !isPasswordVisible;
     }
 
     private void showPopup() {

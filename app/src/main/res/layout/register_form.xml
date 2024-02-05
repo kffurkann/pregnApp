@@ -146,13 +146,14 @@
                 android:layout_height="48dp"
                 android:layout_alignParentBottom="true"
                 android:background="@drawable/input"
-                android:drawableRight="@drawable/password_icon"
+                android:drawableRight="@drawable/eye_off"
                 android:fontFamily="@font/rubikregular"
                 android:hint="Parola"
                 android:paddingStart="20dp"
                 android:paddingTop="10dp"
                 android:paddingEnd="20dp"
                 android:paddingBottom="10dp"
+                android:inputType="textPassword"
                 android:textSize="12sp" />
 
         </RelativeLayout>

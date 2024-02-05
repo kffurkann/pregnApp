@@ -18,25 +18,13 @@
         app:layout_constraintTop_toTopOf="parent">
 
 
-
-        <ImageButton
-            android:id="@+id/button_geri_profil_ekrani"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="?attr/selectableItemBackgroundBorderless"
-            android:contentDescription="s"
-            android:src="@drawable/ic_back_arrow"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/toolbar_title_profil_ekrani"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <TextView
             android:id="@+id/toolbar_title_profil_ekrani"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="Profil Bilgileri"
+            android:fontFamily="@font/rubikregular"
             android:textColor="#FFFFFF"
             android:textSize="25dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -190,6 +178,7 @@
         android:layout_marginTop="20dp"
         android:backgroundTint="@color/darkBlue"
         android:text="Kaydet"
+        android:fontFamily="@font/rubikregular"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/son_adet_tarihi" />
 
@@ -201,6 +190,7 @@
         android:layout_marginEnd="36dp"
         android:backgroundTint="@color/darkBlue"
         android:text="Profilimi Sil"
+        android:fontFamily="@font/rubikregular"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/son_adet_tarihi" />
 

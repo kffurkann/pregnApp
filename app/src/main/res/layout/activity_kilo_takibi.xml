@@ -11,225 +11,236 @@
         android:layout_height="match_parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                tools:context=".KiloTakibi">
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:context=".KiloTakibi">
 
 
             <androidx.appcompat.widget.Toolbar
-                    android:id="@+id/my_toolbar_kilo_takibi"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/darkBlue"
-                    android:minHeight="?attr/actionBarSize"
-                    android:theme="?attr/actionBarTheme"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+                android:id="@+id/my_toolbar_kilo_takibi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/darkBlue"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
                 <ImageButton
-                        android:id="@+id/button_geri_kilo_takibi"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:background="?attr/selectableItemBackgroundBorderless"
-                        android:contentDescription="s"
-                        android:src="@drawable/ic_back_arrow" />
+                    android:id="@+id/button_geri_kilo_takibi"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="s"
+                    android:src="@drawable/ic_back_arrow" />
 
-                    <!-- TextView ekleyerek kendi metnini belirle -->
-                    <TextView
-                        android:id="@+id/toolbar_title_kilo_takibi"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:text="Kilo Takibi"
-                        android:textColor="#FFFFFF"
-                        android:textSize="25dp"
-                        tools:layout_editor_absoluteX="16dp"
-                        tools:layout_editor_absoluteY="20dp" />
-                </androidx.appcompat.widget.Toolbar>
+
+                <TextView
+                    android:id="@+id/toolbar_title_kilo_takibi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Kilo Takibi"
+                    android:fontFamily="@font/rubikregular"
+                    android:textColor="#FFFFFF"
+                    android:textSize="25dp"
+                    tools:layout_editor_absoluteX="16dp"
+                    tools:layout_editor_absoluteY="20dp" />
+            </androidx.appcompat.widget.Toolbar>
+
+            <ImageView
+                android:id="@+id/kiloTakibiImage"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/my_toolbar_kilo_takibi"
+                app:srcCompat="@drawable/kilo_takibi_logo" />
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutKiloPanel"
+                android:layout_width="match_parent"
+                android:layout_height="90dp"
+                android:background="#F1F0F0"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/kiloTakibiImage">
+
+                <TextView
+                    android:id="@+id/textViewPanelKiloSon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:paddingLeft="20dp"
+                    android:paddingTop="15dp"
+                    android:text="... kg"
+                    android:fontFamily="@font/rubikregular"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewTarihKiloPanelEnSon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:paddingLeft="30dp"
+                    android:paddingTop="50dp"
+                    android:text="En Son"
+                    android:fontFamily="@font/rubikregular"
+                    android:textSize="20dp" />
 
                 <ImageView
-                    android:id="@+id/kiloTakibiImage"
-                    android:layout_width="0dp"
-                    android:layout_height="100dp"
-                    android:layout_marginTop="8dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/my_toolbar_kilo_takibi"
-                    app:srcCompat="@drawable/kilo_takibi_logo" />
+                    android:id="@+id/imageViewEksi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="110dp"
+                    android:src="@drawable/eksi"
 
-                <RelativeLayout
-                    android:id="@+id/relativeLayoutKiloPanel"
+                    />
+
+
+                <TextView
+                    android:id="@+id/textViewPanelKiloBaslangic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:paddingTop="15dp"
+                    android:paddingRight="10dp"
+                    android:text="90.0 kg"
+                    android:fontFamily="@font/rubikregular"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewHaftaKiloPanelBaslangic"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:paddingTop="50dp"
+                    android:paddingRight="10dp"
+                    android:text="Başlangıç"
+                    android:fontFamily="@font/rubikregular"
+                    android:textSize="20dp" />
+
+                <ImageView
+                    android:id="@+id/imageViewEsittir"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:paddingRight="115dp"
+                    android:src="@drawable/esittir"
+
+                    />
+
+                <TextView
+                    android:id="@+id/textViewPanelKiloFark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:paddingTop="15dp"
+                    android:paddingRight="15dp"
+                    android:text="... kg"
+                    android:fontFamily="@font/rubikregular"
+                    android:textSize="25dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewFarkKiloPanelFark"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:paddingTop="50dp"
+                    android:paddingRight="40dp"
+                    android:text="Fark"
+                    android:fontFamily="@font/rubikregular"
+                    android:textSize="20dp"
+
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayoutKilo"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/relativeLayoutKiloPanel">
+
+                <TextView
+                    android:id="@+id/textViewTarihKilo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="30dp"
+                    android:text="Tarih"
+                    android:fontFamily="@font/rubikregular"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/textViewHaftaKilo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:paddingRight="50dp"
+                    android:text="Hafta"
+                    android:fontFamily="@font/rubikregular"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+
+                <TextView
+                    android:id="@+id/textViewTekmeKilo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:paddingRight="90dp"
+                    android:text="Kilo"
+                    android:fontFamily="@font/rubikregular"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textViewFarkKilo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:paddingRight="15dp"
+                    android:text="Fark"
+                    android:fontFamily="@font/rubikregular"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="90dp"
-                    android:background="#F1F0F0"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/kiloTakibiImage">
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"></LinearLayout>
 
-                    <TextView
-                        android:id="@+id/textViewPanelKiloSon"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentLeft="true"
-                        android:paddingLeft="20dp"
-                        android:paddingTop="15dp"
-                        android:text="65.0 kg"
-                        android:textSize="25dp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/textViewTarihKiloPanelEnSon"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentLeft="true"
-                        android:paddingLeft="30dp"
-                        android:paddingTop="50dp"
-                        android:text="En Son"
-                        android:textSize="20dp" />
-
-                    <ImageView
-                        android:id="@+id/imageViewEksi"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentLeft="true"
-                        android:layout_centerVertical="true"
-                        android:paddingLeft="110dp"
-                        android:src="@drawable/eksi"
-
-                        />
-
-                    <!-- TextViewHafta - Ortada -->
-                    <TextView
-                        android:id="@+id/textViewPanelKiloBaslangic"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:paddingTop="15dp"
-                        android:paddingRight="10dp"
-                        android:text="90.0 kg"
-                        android:textSize="25dp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/textViewHaftaKiloPanelBaslangic"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:paddingTop="50dp"
-                        android:paddingRight="10dp"
-                        android:text="Başlangıç"
-                        android:textSize="20dp" />
-
-                    <ImageView
-                        android:id="@+id/imageViewEsittir"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:paddingRight="115dp"
-                        android:src="@drawable/esittir"
-
-                        />
-
-                    <TextView
-                        android:id="@+id/textViewPanelKiloFark"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentRight="true"
-                        android:paddingTop="15dp"
-                        android:paddingRight="15dp"
-                        android:text="-25.0 kg"
-                        android:textSize="25dp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/textViewFarkKiloPanelFark"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentRight="true"
-                        android:paddingTop="50dp"
-                        android:paddingRight="40dp"
-                        android:text="Fark"
-                        android:textSize="20dp"
-
-                        />
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/relativeLayoutKilo"
+                <androidx.recyclerview.widget.RecyclerView
                     android:layout_width="match_parent"
-                    android:layout_height="65dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/relativeLayoutKiloPanel">
+                    android:layout_height="match_parent" />
 
-                    <TextView
-                        android:id="@+id/textViewTarihKilo"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_alignParentLeft="true"
-                        android:layout_centerVertical="true"
-                        android:paddingLeft="30dp"
-                        android:text="Tarih"
-                        android:textSize="20dp"
-                        android:textStyle="bold" />
-
-                    <!-- TextViewHafta - Ortada -->
-                    <TextView
-                        android:id="@+id/textViewHaftaKilo"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerHorizontal="true"
-                        android:layout_centerVertical="true"
-                        android:paddingRight="50dp"
-                        android:text="Hafta"
-                        android:textSize="20dp"
-                        android:textStyle="bold" />
-
-                    <!-- TextViewTekme - Sağda -->
-                    <TextView
-                        android:id="@+id/textViewTekmeKilo"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:paddingRight="90dp"
-                        android:text="Kilo"
-                        android:textSize="20dp"
-                        android:textStyle="bold" />
-
-                    <TextView
-                        android:id="@+id/textViewFarkKilo"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentEnd="true"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:paddingRight="15dp"
-                        android:text="Fark"
-                        android:textSize="20dp"
-                        android:textStyle="bold" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"></LinearLayout>
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent" />
-
-                </RelativeLayout>
+            </RelativeLayout>
 
             <LinearLayout
                 android:id="@+id/listeleme"
@@ -254,6 +265,7 @@
         android:backgroundTint="@color/darkerPink"
         android:paddingStart="16dp"
         android:text="Ekle"
+        android:fontFamily="@font/rubikbold"
         app:icon="@drawable/plus_icon_white"
         app:iconPadding="0dp" />
 

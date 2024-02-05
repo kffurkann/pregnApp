@@ -4,124 +4,128 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:context=".TekmeSayar">
-
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/my_toolbar_tekme_sayar"
+        android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/darkBlue"
-            android:minHeight="?attr/actionBarSize"
-            android:theme="?attr/actionBarTheme"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            tools:context=".TekmeSayar">
 
-            <ImageButton
-                android:id="@+id/button_geri_tekme_sayar"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:background="?attr/selectableItemBackgroundBorderless"
-                android:contentDescription="s"
-                android:src="@drawable/ic_back_arrow" />
 
-            <!-- TextView ekleyerek kendi metnini belirle -->
-            <TextView
-                android:id="@+id/toolbar_title_tekme_sayar"
-                android:layout_width="wrap_content"
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/my_toolbar_tekme_sayar"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="Tekme Sayar"
-                android:textColor="#FFFFFF"
-                android:textSize="25dp"
-                tools:layout_editor_absoluteX="16dp"
-                tools:layout_editor_absoluteY="20dp" />
-        </androidx.appcompat.widget.Toolbar>
+                android:background="@color/darkBlue"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-        android:id="@+id/tekmeSayarImage"
-        android:layout_width="0dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/my_toolbar_tekme_sayar"
-        app:srcCompat="@drawable/tekme_sayar_logo"
-        />
+                <ImageButton
+                    android:id="@+id/button_geri_tekme_sayar"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="s"
+                    android:src="@drawable/ic_back_arrow" />
 
 
-        <RelativeLayout
-        android:id="@+id/relativeLayoutBaslik"
-        android:layout_width="match_parent"
-        android:layout_height="65dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tekmeSayarImage">
+                <TextView
+                    android:id="@+id/toolbar_title_tekme_sayar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Tekme Sayar"
+                    android:fontFamily="@font/rubikregular"
+                    android:textColor="#FFFFFF"
+                    android:textSize="25dp"
+                    tools:layout_editor_absoluteX="16dp"
+                    tools:layout_editor_absoluteY="20dp" />
+            </androidx.appcompat.widget.Toolbar>
 
-        <TextView
-            android:id="@+id/textViewTarih"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:paddingLeft="30dp"
-            android:text="Tarih"
-            android:textSize="20dp"
-            android:textStyle="bold"/>
-
-        <!-- TextViewHafta - Ortada -->
-        <TextView
-            android:id="@+id/textViewHafta"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:paddingRight="50dp"
-            android:text="Hafta"
-            android:textSize="20dp"
-            android:textStyle="bold"/>
-
-        <!-- TextViewTekme - Sağda -->
-        <TextView
-            android:id="@+id/textViewTekme"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:paddingRight="75dp"
-            android:text="Tekme"
-            android:textSize="20dp"
-            android:textStyle="bold"/>
-
-        </RelativeLayout>
-
-        <LinearLayout
-            android:id="@+id/siralama"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/relativeLayoutBaslik">
+            <ImageView
+                android:id="@+id/tekmeSayarImage"
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/my_toolbar_tekme_sayar"
+                app:srcCompat="@drawable/tekme_sayar_logo"
+                />
 
 
+            <RelativeLayout
+                android:id="@+id/relativeLayoutBaslik"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tekmeSayarImage">
+
+                <TextView
+                    android:id="@+id/textViewTarih"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:paddingLeft="30dp"
+                    android:text="Tarih"
+                    android:fontFamily="@font/rubikregular"
+                    android:textSize="20dp"
+                    android:textStyle="bold"/>
 
 
-        </LinearLayout>
+                <TextView
+                    android:id="@+id/textViewHafta"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:paddingRight="50dp"
+                    android:text="Hafta"
+                    android:fontFamily="@font/rubikregular"
+                    android:textSize="20dp"
+                    android:textStyle="bold"/>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+
+                <TextView
+                    android:id="@+id/textViewTekme"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:paddingRight="75dp"
+                    android:text="Tekme"
+                    android:fontFamily="@font/rubikregular"
+                    android:textSize="20dp"
+                    android:textStyle="bold"/>
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/siralama"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/relativeLayoutBaslik">
+
+
+
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 
     <Button
         android:id="@+id/buttonTekmeEkle"

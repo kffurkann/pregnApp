@@ -31,13 +31,14 @@
                 android:src="@drawable/ic_back_arrow"
                 android:contentDescription="s"/>
 
-            <!-- TextView ekleyerek kendi metnini belirle -->
+
             <TextView
                 android:id="@+id/toolbar_title_tekme_sayar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="Gıdalar"
+                android:fontFamily="@font/rubikregular"
                 android:textColor="#FFFFFF"
                 android:textSize="25dp"
                 tools:layout_editor_absoluteX="16dp"
@@ -66,7 +67,8 @@
                 android:layout_weight="4"
                 android:backgroundTint="@color/dangerous"
                 android:onClick="showContent"
-                android:text="Tehlikeli" />
+                android:text="Tehlikeli"
+                android:fontFamily="@font/rubikbold" />
 
             <Button
                 android:id="@+id/buttonTehlikesiz"
@@ -78,6 +80,7 @@
                 android:backgroundTint="@color/undangerous"
                 android:onClick="showContent"
                 android:text="Tehlikesiz"
+                android:fontFamily="@font/rubikbold"
                 android:textColor="@color/undangerousText" />
 
             <Button
@@ -90,6 +93,7 @@
                 android:backgroundTint="@color/careful"
                 android:onClick="showContent"
                 android:text="Dikkatli Olun"
+                android:fontFamily="@font/rubikbold"
                 android:textColor="@color/carefulText" />
         </LinearLayout>
 
@@ -137,6 +141,7 @@
                                 android:layout_height="wrap_content"
                                 android:paddingLeft="8dp"
                                 android:text="Alkol"
+                                android:fontFamily="@font/rubikregular"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
 
@@ -145,6 +150,7 @@
                                 android:layout_height="wrap_content"
                                 android:paddingLeft="8dp"
                                 android:paddingRight="8dp"
+                                android:fontFamily="@font/rubikregular"
                                 android:text="Risk: Bebekte gelişim geriliği, erken doğuma, düşük yapma"
                                 android:textSize="14sp" />
                         </LinearLayout>
@@ -191,6 +197,7 @@
                                 android:layout_height="wrap_content"
                                 android:paddingLeft="8dp"
                                 android:text="Pastörize Edilmemiş Gıdalar"
+                                android:fontFamily="@font/rubikregular"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
 
@@ -199,6 +206,7 @@
                                 android:layout_height="wrap_content"
                                 android:paddingLeft="8dp"
                                 android:paddingRight="8dp"
+                                android:fontFamily="@font/rubikregular"
                                 android:text="Hamilelik sırasında pastörize edilmemiş süt, yumurta ve peynir gibi süt ürünlerinden kaçınnmak gerekir. Risk: Salmonella"
                                 android:textSize="14sp" />
                         </LinearLayout>
@@ -243,6 +251,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:paddingLeft="8dp"
+                                android:fontFamily="@font/rubikregular"
                                 android:text="Cıva oranı yüksek deniz ürünleri"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -252,6 +261,7 @@
                                 android:layout_height="wrap_content"
                                 android:paddingLeft="8dp"
                                 android:paddingRight="8dp"
+                                android:fontFamily="@font/rubikregular"
                                 android:text="Hamilelikte çok fazla cıva içeren deniz ürünleri tüketmek bebeğinizin görme ve işitme duyusuna zarar verebilir. Risk: Metil Cıva"
                                 android:textSize="14sp" />
                         </LinearLayout>
@@ -296,6 +306,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:paddingLeft="8dp"
+                                android:fontFamily="@font/rubikregular"
                                 android:text="Çiğ deniz ürünleri ve yumurtalar"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -305,6 +316,7 @@
                                 android:layout_height="wrap_content"
                                 android:paddingLeft="8dp"
                                 android:paddingRight="8dp"
+                                android:fontFamily="@font/rubikregular"
                                 android:text="Çiğ deniz ürünleri veya çiğ balık içeren suşi yemek tehlikelidir. Hamilelik sırasında sizi ciddi şekilde hasta edebilecek her türlü bakteri ve paraziti barındırabilir. Aynı şey çiğ veya az pişmiş yumurtalar için de geçerlidir."
                                 android:textSize="14sp" />
                         </LinearLayout>
@@ -350,6 +362,7 @@
                                 android:layout_height="wrap_content"
                                 android:paddingLeft="8dp"
                                 android:text="Az pişmiş et"
+                                android:fontFamily="@font/rubikregular"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
 
@@ -358,6 +371,7 @@
                                 android:layout_height="wrap_content"
                                 android:paddingLeft="8dp"
                                 android:paddingRight="8dp"
+                                android:fontFamily="@font/rubikregular"
                                 android:text="Çiğ et üzerinde yaşayabilecek bakterileri öldürmek için iyi pişmiş olmaları gerekir. Az pişmiş et yemek bebeğinizi hasta etmez. Ancak hamilelik sırasındaki bir salmonella enfeksionu sizin için gerçekten kötü olabilir."
                                 android:textSize="14sp" />
                         </LinearLayout>
@@ -402,6 +416,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:paddingLeft="8dp"
+                                android:fontFamily="@font/rubikregular"
                                 android:text="Yumuşak peynirler"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -411,6 +426,7 @@
                                 android:layout_height="wrap_content"
                                 android:paddingLeft="8dp"
                                 android:paddingRight="8dp"
+                                android:fontFamily="@font/rubikregular"
                                 android:text="Yumuşak peynirlerde Listeria adı verilen bir tür bakteri türü olabilmektedir. Bu bakteri insanı ciddi şekilde hasta etme riski bulundurmaktadır."
                                 android:textSize="14sp" />
                         </LinearLayout>
@@ -455,6 +471,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:paddingLeft="8dp"
+                                android:fontFamily="@font/rubikregular"
                                 android:text="Aşırı Kafein Tüketimi"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -464,6 +481,7 @@
                                 android:layout_height="wrap_content"
                                 android:paddingLeft="8dp"
                                 android:paddingRight="8dp"
+                                android:fontFamily="@font/rubikregular"
                                 android:text="Risk: Düşük yapma, Gelişim geriliği."
                                 android:textSize="14sp" />
                         </LinearLayout>
@@ -508,6 +526,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:paddingLeft="8dp"
+                                android:fontFamily="@font/rubikregular"
                                 android:text="İyi yıkanmamış sebze ve meyveler"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -517,6 +536,7 @@
                                 android:layout_height="wrap_content"
                                 android:paddingLeft="8dp"
                                 android:paddingRight="8dp"
+                                android:fontFamily="@font/rubikregular"
                                 android:text="Çeşitli bakteri ve parazitler içerebilir. Risk: Salmonella, Listeria"
                                 android:textSize="14sp" />
                         </LinearLayout>
@@ -561,6 +581,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:paddingLeft="8dp"
+                                android:fontFamily="@font/rubikregular"
                                 android:text="Pastorize edilmemiş meyve suları"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -570,6 +591,7 @@
                                 android:layout_height="wrap_content"
                                 android:paddingLeft="8dp"
                                 android:paddingRight="8dp"
+                                android:fontFamily="@font/rubikregular"
                                 android:text="Bakteri barındırabilir. Risk: Kolibasi."
                                 android:textSize="14sp" />
                         </LinearLayout>
@@ -614,6 +636,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:paddingLeft="8dp"
+                                android:fontFamily="@font/rubikregular"
                                 android:text="Uzun ömürlü paketli gıdalar"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -623,6 +646,7 @@
                                 android:layout_height="wrap_content"
                                 android:paddingLeft="8dp"
                                 android:paddingRight="8dp"
+                                android:fontFamily="@font/rubikregular"
                                 android:text="Uzun ömürlü konserve ve paket gıdalar uzun süre bozulmadan kalabimesi için çeşitli katkı maddeleri eklenerek üretilir. Bu yüzden hamilelikte tüketilmemesi tavsiye edilmektedir."
                                 android:textSize="14sp" />
                         </LinearLayout>
@@ -667,6 +691,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:paddingLeft="8dp"
+                                android:fontFamily="@font/rubikregular"
                                 android:text="Kabuklu Deniz Ürünleri"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -676,6 +701,7 @@
                                 android:layout_height="wrap_content"
                                 android:paddingLeft="8dp"
                                 android:paddingRight="8dp"
+                                android:fontFamily="@font/rubikregular"
                                 android:text="İstiridye, karides ve midye gibi az pişmiş olarak ya da çiğ tüketilen deniz ürünleri bakteri barındırır. Risk: Salmonella."
                                 android:textSize="14sp" />
                         </LinearLayout>
@@ -733,6 +759,7 @@
                             android:layout_height="match_parent"
                             android:layout_weight="20"
                             android:paddingLeft="8dp"
+                            android:fontFamily="@font/rubikregular"
                             android:text="Pastörize edilmiş süt ürünleri"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -773,6 +800,7 @@
                             android:layout_height="match_parent"
                             android:layout_weight="20"
                             android:paddingLeft="8dp"
+                            android:fontFamily="@font/rubikregular"
                             android:text="Pastörize edilmiş meyve suları"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -813,6 +841,7 @@
                             android:layout_height="match_parent"
                             android:layout_weight="20"
                             android:paddingLeft="8dp"
+                            android:fontFamily="@font/rubikregular"
                             android:text="Çerezler, kuruyemişler"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -853,6 +882,7 @@
                             android:layout_height="match_parent"
                             android:layout_weight="20"
                             android:paddingLeft="8dp"
+                            android:fontFamily="@font/rubikregular"
                             android:text="Tam pişmiş deniz ürünleri"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -893,6 +923,7 @@
                             android:layout_height="match_parent"
                             android:layout_weight="20"
                             android:paddingLeft="8dp"
+                            android:fontFamily="@font/rubikregular"
                             android:text="Pastörize yumurta ile yapılan yiyecekler"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -933,6 +964,7 @@
                             android:layout_height="match_parent"
                             android:layout_weight="20"
                             android:paddingLeft="8dp"
+                            android:fontFamily="@font/rubikregular"
                             android:text="İyi haşlanmış yumurta"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -973,6 +1005,7 @@
                             android:layout_height="match_parent"
                             android:layout_weight="20"
                             android:paddingLeft="8dp"
+                            android:fontFamily="@font/rubikregular"
                             android:text="İyi pişirilmiş et"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -1013,6 +1046,7 @@
                             android:layout_height="match_parent"
                             android:layout_weight="20"
                             android:paddingLeft="8dp"
+                            android:fontFamily="@font/rubikregular"
                             android:text="İyi yıkanmış sebze ve meyveler"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -1071,6 +1105,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:paddingLeft="8dp"
+                                android:fontFamily="@font/rubikregular"
                                 android:text="Kafein"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -1080,6 +1115,7 @@
                                 android:layout_height="wrap_content"
                                 android:paddingLeft="8dp"
                                 android:paddingRight="8dp"
+                                android:fontFamily="@font/rubikregular"
                                 android:text="Kafein plasentadan geçer. Bazı araştırmalar aşırı kafein tüketiminin düşüğe neden olabileceğini gösteriyor. Günlük güvenli kabul edilen kafein miktarı 200mg'dır."
                                 android:textSize="14sp" />
                         </LinearLayout>
@@ -1125,6 +1161,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:paddingLeft="8dp"
+                                android:fontFamily="@font/rubikregular"
                                 android:text="Bitki çayları"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -1134,6 +1171,7 @@
                                 android:layout_height="wrap_content"
                                 android:paddingLeft="8dp"
                                 android:paddingRight="8dp"
+                                android:fontFamily="@font/rubikregular"
                                 android:text="Bazı bitki çayları bebeğin gelişimi üzerinde olumsuz etki yapabilir. Bitki çayları ile ilgili çok fazla bilimsel araştırma yoktur. Bu yüzden doktorunuza danışın."
                                 android:textSize="14sp" />
                         </LinearLayout>
@@ -1178,6 +1216,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:paddingLeft="8dp"
+                                android:fontFamily="@font/rubikregular"
                                 android:text="Dondurulmuş et kıyması"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -1187,6 +1226,7 @@
                                 android:layout_height="wrap_content"
                                 android:paddingLeft="8dp"
                                 android:paddingRight="8dp"
+                                android:fontFamily="@font/rubikregular"
                                 android:text="Uygun şekilde saklanmadıklarında Listeria riski vardır."
                                 android:textSize="14sp" />
                         </LinearLayout>
@@ -1231,6 +1271,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:paddingLeft="8dp"
+                                android:fontFamily="@font/rubikregular"
                                 android:text="Dondurulmuş hazır gıdalar"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -1240,6 +1281,7 @@
                                 android:layout_height="wrap_content"
                                 android:paddingLeft="8dp"
                                 android:paddingRight="8dp"
+                                android:fontFamily="@font/rubikregular"
                                 android:text="Uygun şartlarında saklanmadıklarında Listeria riski vardır."
                                 android:textSize="14sp" />
                         </LinearLayout>
@@ -1284,6 +1326,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:paddingLeft="8dp"
+                                android:fontFamily="@font/rubikregular"
                                 android:text="Havyar"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -1293,6 +1336,7 @@
                                 android:layout_height="wrap_content"
                                 android:paddingLeft="8dp"
                                 android:paddingRight="8dp"
+                                android:fontFamily="@font/rubikregular"
                                 android:text="Pastörize edilmemiş ise Listeria riski vardır."
                                 android:textSize="14sp" />
                         </LinearLayout>
@@ -1337,6 +1381,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:paddingLeft="8dp"
+                                android:fontFamily="@font/rubikregular"
                                 android:text="Humus"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -1346,6 +1391,7 @@
                                 android:layout_height="wrap_content"
                                 android:paddingLeft="8dp"
                                 android:paddingRight="8dp"
+                                android:fontFamily="@font/rubikregular"
                                 android:text="Bakteri barındırabilir. Risk: Listeria ve Salmonella."
                                 android:textSize="14sp" />
                         </LinearLayout>
@@ -1390,6 +1436,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:paddingLeft="8dp"
+                                android:fontFamily="@font/rubikregular"
                                 android:text="Konserveler"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -1399,6 +1446,7 @@
                                 android:layout_height="wrap_content"
                                 android:paddingLeft="8dp"
                                 android:paddingRight="8dp"
+                                android:fontFamily="@font/rubikregular"
                                 android:text="BPA içerebilir. Risk: Düşük"
                                 android:textSize="14sp" />
                         </LinearLayout>
@@ -1443,6 +1491,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:paddingLeft="8dp"
+                                android:fontFamily="@font/rubikregular"
                                 android:text="Krema"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -1452,6 +1501,7 @@
                                 android:layout_height="wrap_content"
                                 android:paddingLeft="8dp"
                                 android:paddingRight="8dp"
+                                android:fontFamily="@font/rubikregular"
                                 android:text="İçeriğindeki yumurta iyi pişmemiş olabilir. Risk: Salmonella."
                                 android:textSize="14sp" />
                         </LinearLayout>
@@ -1496,6 +1546,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:paddingLeft="8dp"
+                                android:fontFamily="@font/rubikregular"
                                 android:text="Küflü Peynir"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -1505,6 +1556,7 @@
                                 android:layout_height="wrap_content"
                                 android:paddingLeft="8dp"
                                 android:paddingRight="8dp"
+                                android:fontFamily="@font/rubikregular"
                                 android:text="Bakterilerin gelişmesi için uygun bir ortam sağladığından Listeria riski vardır."
                                 android:textSize="14sp" />
                         </LinearLayout>
@@ -1549,6 +1601,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:paddingLeft="8dp"
+                                android:fontFamily="@font/rubikregular"
                                 android:text="Plastik şişe suları"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -1558,6 +1611,7 @@
                                 android:layout_height="wrap_content"
                                 android:paddingLeft="8dp"
                                 android:paddingRight="8dp"
+                                android:fontFamily="@font/rubikregular"
                                 android:text="Bisefenol A ve BPA içerebilir. Risk: Düşük."
                                 android:textSize="14sp" />
                         </LinearLayout>
@@ -1602,6 +1656,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:paddingLeft="8dp"
+                                android:fontFamily="@font/rubikregular"
                                 android:text="Karaciğer, Sakatat"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -1611,6 +1666,7 @@
                                 android:layout_height="wrap_content"
                                 android:paddingLeft="8dp"
                                 android:paddingRight="8dp"
+                                android:fontFamily="@font/rubikregular"
                                 android:text="Aşırı ve düzenli tüketilmesi durumunda A vitamini toksitine neden olabilir."
                                 android:textSize="14sp" />
                         </LinearLayout>
@@ -1655,6 +1711,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:paddingLeft="8dp"
+                                android:fontFamily="@font/rubikregular"
                                 android:text="Yapay Tatlandırıcılar"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -1664,6 +1721,7 @@
                                 android:layout_height="wrap_content"
                                 android:paddingLeft="8dp"
                                 android:paddingRight="8dp"
+                                android:fontFamily="@font/rubikregular"
                                 android:text="Risk: Fetal komplkasyonlar"
                                 android:textSize="14sp" />
                         </LinearLayout>
@@ -1707,6 +1765,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:paddingLeft="8dp"
+                                android:fontFamily="@font/rubikregular"
                                 android:text="Bal"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -1716,6 +1775,7 @@
                                 android:layout_height="wrap_content"
                                 android:paddingLeft="8dp"
                                 android:paddingRight="8dp"
+                                android:fontFamily="@font/rubikregular"
                                 android:text="Risk: Hamilelik Diyabeti."
                                 android:textSize="14sp" />
                         </LinearLayout>
@@ -1760,6 +1820,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:paddingLeft="8dp"
+                                android:fontFamily="@font/rubikregular"
                                 android:text="Salam, Sosis ve Sucuk"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -1769,6 +1830,7 @@
                                 android:layout_height="wrap_content"
                                 android:paddingLeft="8dp"
                                 android:paddingRight="8dp"
+                                android:fontFamily="@font/rubikregular"
                                 android:text="Tüketmeden önce iyice pişirilmelidir. Risk: Sindirim sistemi  hastalıkları."
                                 android:textSize="14sp" />
                         </LinearLayout>

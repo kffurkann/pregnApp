@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,15 +13,14 @@ import android.widget.ImageButton;
 
 public class Tools extends Fragment {
 
+    private String userMailT;
     private ImageButton kiloTakibi;
     private ImageButton tekmeSayar;
     private ImageButton saglikTestleri;
     private ImageButton gidalar;
     private ImageButton ihtiyacListesi;
-    private ImageButton hamilelikGunlugum;
     private ImageButton hamilelikAjandam;
     private ImageButton bebekIsimleri;
-    private ImageButton hamilelikCizelgesi;
     private ImageButton bugunNeAsersem;
 
     @Override
@@ -29,11 +29,16 @@ public class Tools extends Fragment {
 
         View view =
         inflater.inflate(R.layout.fragment_tools, container, false);
+        Bundle bundle = getArguments();
+        userMailT = bundle.getString("userMail");
+        Log.d("userMail DenemeT:", userMailT != null ? userMailT : "userMail is null");
         kiloTakibi = view.findViewById(R.id.kilotakibiLogo);
         kiloTakibi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getContext(), KiloTakibi.class));
+                Intent intent = new Intent(getContext(), KiloTakibi.class);
+                intent.putExtra("userMailT", userMailT);
+                startActivity(intent);
             }
         });
 
@@ -69,14 +74,6 @@ public class Tools extends Fragment {
             }
         });
 
-        hamilelikGunlugum = view.findViewById(R.id.hamilelikgunluguLogo);
-        hamilelikGunlugum.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getContext(), HamilelikAjandam.class));
-            }
-        });
-
         hamilelikAjandam = view.findViewById(R.id.hamilelikajandaLogo);
         hamilelikAjandam.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -93,13 +90,6 @@ public class Tools extends Fragment {
             }
         });
 
-        hamilelikCizelgesi = view.findViewById(R.id.hamilelikcizelgesiLogo);
-        hamilelikCizelgesi.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(getContext(), HamilelikAjandam.class));
-            }
-        });
 
         bugunNeAsersem = view.findViewById(R.id.bugunneasersemLogo);
         bugunNeAsersem.setOnClickListener(new View.OnClickListener() {

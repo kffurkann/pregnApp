@@ -12,6 +12,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:text="Silmek İstiyor Musun?"
+        android:fontFamily="@font/rubikregular"
         android:textAlignment="center"
         android:textSize="24sp"
         android:textStyle="bold" />
@@ -33,9 +34,9 @@
             android:background="@drawable/buttoncorner"
             android:backgroundTint="@color/lightGrey"
             android:text="İptal"
+            android:fontFamily="@font/rubikregular"
             android:textColor="@color/background" />
 
-        <!-- İkinci buton -->
         <Button
             android:id="@+id/buttonKiloSilsheet"
             android:layout_width="0dp"
@@ -48,6 +49,7 @@
             android:background="@drawable/buttoncorner"
             android:backgroundTint="@color/darkerPink"
             android:text="Sil"
+            android:fontFamily="@font/rubikregular"
             android:textColor="@color/background" />
 
     </LinearLayout>

@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputType;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -24,6 +26,7 @@ public class LoginPage extends AppCompatActivity {
     private TextView goRegister;
     Button buttonLogin;
 
+    private boolean isPasswordVisible = false;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,6 +37,7 @@ public class LoginPage extends AppCompatActivity {
         buttonLogin = findViewById(R.id.buttonLogin);
         goRegister = findViewById(R.id.textPassToSignUp);
 
+        setupPasswordVisibilityToggle();
         goRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -108,5 +112,32 @@ public class LoginPage extends AppCompatActivity {
                 }
             }
         });
+    }
+    private void setupPasswordVisibilityToggle() {
+        loginPassword.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.password_icon, 0);
+        loginPassword.setOnTouchListener((v, event) -> {
+            if (event.getAction() == MotionEvent.ACTION_UP) {
+                if (event.getRawX() >= (loginPassword.getRight() - loginPassword.getCompoundDrawables()[2].getBounds().width())) {
+                    // Şifre görünürlüğünü değiştir
+                    togglePasswordVisibility();
+                    return true;
+                }
+            }
+            return false;
+        });
+    }
+
+    private void togglePasswordVisibility() {
+        if (isPasswordVisible) {
+            // Şifreyi gizle
+            loginPassword.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+            loginPassword.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.eye_off, 0);
+        } else {
+            // Şifreyi göster
+            loginPassword.setInputType(InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+            loginPassword.setCompoundDrawablesWithIntrinsicBounds(0, 0, R.drawable.eye_svg, 0);
+        }
+        loginPassword.setSelection(loginPassword.getText().length());
+        isPasswordVisible = !isPasswordVisible;
     }
 }

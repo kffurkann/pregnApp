@@ -1,11 +1,15 @@
 package com.example.pregnapp;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewParent;
 import android.widget.CalendarView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -14,9 +18,9 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Locale;
 
 public class HamilelikAjandam extends AppCompatActivity {
     public CalendarView calendarView;
@@ -42,6 +46,7 @@ public class HamilelikAjandam extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(HamilelikAjandam.this, HamilelikAjandamEkle.class));
+                finish();
             }
         });
 
@@ -130,14 +135,14 @@ public class HamilelikAjandam extends AppCompatActivity {
         newMinusImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String entryKey = (String) newRelativeLayout.getTag();
-
-                // Remove the view from the layout
+                // View'i layouttan kaldır
                 linearLayout.removeView(newRelativeLayout);
+                String entryKey = (String) newRelativeLayout.getTag();
                 Toast.makeText(HamilelikAjandam.this, entryKey, Toast.LENGTH_SHORT).show();
-
-                // Remove the corresponding entry from SharedPreferences
+                // İlgili girişi SharedPreferencesdan kaldır
                 removeEntryFromSharedPreferences(entryKey);
+
+
             }
         });
 
@@ -148,10 +153,10 @@ public class HamilelikAjandam extends AppCompatActivity {
         horizontalLayout.addView(newNoteTextView);
         horizontalLayout.addView(newMinusImageView);
 
-        // RelativeLayout içine Horizontal Layout'ı ekle
+        // RelativeLayout içine Horizontal Layoutu ekle
         newRelativeLayout.addView(horizontalLayout);
 
-        // Ana LinearLayout'a yeni RelativeLayout'ı ekle
+        // Ana LinearLayout'a yeni RelativeLayoutu ekle
         linearLayout.addView(newRelativeLayout);
 
     }
@@ -164,31 +169,28 @@ public class HamilelikAjandam extends AppCompatActivity {
         for (int i = 0; i < entryCount; i++) {
             String entryKey = "entry_" + i;
 
-            // Retrieve data
+            // Verileri al
             String dateAndTime = sharedPreferences.getString(entryKey + "_date_time", "");
             String note = sharedPreferences.getString(entryKey + "_note", "");
 
-            // Display entry
+            // Girişi görüntüle
             String[] entryData = new String[]{dateAndTime, note};
-            addNewEntry(entryData);  // Do not pass entryKey when displaying saved entries
+            addNewEntry(entryData);
         }
     }
     private void removeEntryFromSharedPreferences(String entryKey) {
         SharedPreferences sharedPreferences = getSharedPreferences("entry_data", MODE_PRIVATE);
 
-        // Remove the entry
+        // Girişi kaldır
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.remove(entryKey + "_date_time");
         editor.remove(entryKey + "_note");
 
-        // Update entry count after removal
+        // Kaldırma işleminden sonra giriş sayısını güncelle
         int entryCount = sharedPreferences.getInt("entry_count", 0);
         if (entryCount > 0) {
             editor.putInt("entry_count", entryCount - 1);
         }
 
-        // Save changes synchronously
         editor.apply();
-    }
-
-}
+    }}

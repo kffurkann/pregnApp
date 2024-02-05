@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/RelativeHamilelikAjandamEkle"
     android:layout_width="wrap_content"
@@ -17,7 +17,7 @@
             android:id="@+id/toolbarHamilelikAjandamEkle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="?attr/colorPrimary"
+            android:background="@color/darkBlue"
             android:contentDescription="Ana sayfa araç çubuğu"
             android:minHeight="?attr/actionBarSize"
             android:theme="?attr/actionBarTheme" >
@@ -29,13 +29,13 @@
                 android:contentDescription="s"
                 android:src="@drawable/ic_back_arrow" />
 
-            <!-- TextView ekleyerek kendi metnini belirle -->
             <TextView
                 android:id="@+id/toolbar_title_HamilelikAjandamEkle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="Not Ekle"
+                android:fontFamily="@font/rubikregular"
                 android:textColor="#FFFFFF"
                 android:textSize="25dp"
                 tools:layout_editor_absoluteX="16dp"
@@ -59,7 +59,8 @@
                 android:layout_weight="4"
                 android:backgroundTint="@color/dangerous"
                 android:onClick="showContent"
-                android:text="Tarih" />
+                android:text="Tarih"
+                android:fontFamily="@font/rubikregular" />
 
             <Button
                 android:id="@+id/buttonSaatKilo"
@@ -71,6 +72,7 @@
                 android:backgroundTint="@color/undangerous"
                 android:onClick="showContent"
                 android:text="Saat"
+                android:fontFamily="@font/rubikregular"
                 android:textColor="@color/undangerousText" />
 
         </LinearLayout>
@@ -82,7 +84,8 @@
             android:layout_margin="20dp"
             android:background="@color/background"
             android:padding="10dp"
-            android:text=".......">
+            android:text="......."
+            android:fontFamily="@font/rubikregular">
 
         </EditText>
 
@@ -97,14 +100,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="İptal" />
+                android:text="İptal"
+                android:fontFamily="@font/rubikregular"/>
 
             <Button
                 android:id="@+id/buttonEkleDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Ekle" />
+                android:text="Ekle"
+                android:fontFamily="@font/rubikregular"/>
         </LinearLayout>
 
 

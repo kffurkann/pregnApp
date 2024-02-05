@@ -115,7 +115,7 @@ public class HamilelikAjandamEkle extends AppCompatActivity {
         entryData[0] = secilenTarihSaat;
         entryData[1] = gunlukNot;
 
-        // Intent oluştur ve bilgiyi ekleyerek HamilelikAjandam sınıfına gönder
+        // Intentle bilgiyi ekleyerek HamilelikAjandam sınıfına gönder
         Intent intent = new Intent(HamilelikAjandamEkle.this, HamilelikAjandam.class);
         intent.putExtra("entryData", entryData);
         startActivity(intent);
@@ -123,13 +123,14 @@ public class HamilelikAjandamEkle extends AppCompatActivity {
 
         saveEntryDataToSharedPreferences(secilenTarihSaat, gunlukNot);
 
-        // Her tıklamada yeni bir giriş eklemek için sayaç arttır
+        finish();
+
 
     }
 
 
     private String getSecilenTarihSaat(String selectedDate, String selectedTime) {
-        // Burada seçilen tarih ve saat bilgisini işleyebilirsiniz
+        // seçilen tarih ve saat bilgisini işleme yeri
         String secilenTarihSaat = "";
 
         if (selectedDate != null && !selectedDate.isEmpty()) {
@@ -149,17 +150,17 @@ public class HamilelikAjandamEkle extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences("entry_data", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
-        // Retrieve the current entry count
+        // Geçerli giriş sayısını al
         final int entryCount = sharedPreferences.getInt("entry_count", 0);
 
-        // Use the entryCount as the key for the new entry
+        // Yeni girişin anahtarı olarak entryCountı kullanın
         String entryKey = "entry_" + entryCount;
 
-        // Save data
+        // veriyi kaydet
         editor.putString(entryKey + "_date_time", selectedDateTime);
         editor.putString(entryKey + "_note", note);
 
-        // Update entry count
+        // entry countu güncelle
         editor.putInt("entry_count", entryCount + 1);
 
         editor.apply();

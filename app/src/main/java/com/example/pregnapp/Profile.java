@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -20,6 +21,7 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -44,6 +46,7 @@ public class Profile extends Fragment {
     private EditText changeWeight;
     private Calendar calendarP;
     private Button buttonChangeRegl, saveDataProfil, deleteAccountButton;
+    ImageButton buttonGeriProfile;
     private DatePickerDialog datePickerDialog;
     private String selectedDate = "";
 
@@ -64,7 +67,7 @@ public class Profile extends Fragment {
 
         Bundle bundle = getArguments();
         userMailP = bundle.getString("userMail");
-        Log.d("userMail DenemeP:", userMailP);
+        Log.d("userMail DenemeP:", userMailP != null ? userMailP : "userMail is null");
 
         calendarP = Calendar.getInstance();
         datePickerDialog = new DatePickerDialog(

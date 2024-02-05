@@ -21,6 +21,7 @@
                 android:id="@+id/textViewPopup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/rubikregular"
                 android:text="Bu Kullanım Şartları PregnApp içindir. Bu şartlar PregnApp Android uygulaması için geçerlidir.
      \n
      \nBu uygulamayı kullanmaya devam ederek bu şartları kabul etmiş sayılırsınız.
