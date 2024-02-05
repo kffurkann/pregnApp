@@ -158,22 +158,18 @@ public class KiloTakibi extends AppCompatActivity {
                             createNewRelativeLayout(kiloValue, selectedDateTime, difference);
 
 
-
                             // previousKiloValue'yi güncelle
                             previousKiloValue = kiloValue;
                             textViewPanelKiloSon.setText(String.valueOf(previousKiloValue));
                             // Geri kalan işlemler
                         } catch (NumberFormatException e) {
-                            // Hata durumuyla başa çık
+
                             e.printStackTrace();
-                            // Kullanıcıya uygun bir hata mesajı göster
+
                             Toast.makeText(getApplicationContext(), "Geçerli bir kilo değeri giriniz.", Toast.LENGTH_SHORT).show();
                         }
 
-
-
                         bottomSheetDialog2.dismiss();
-
 
                     }
                 });
@@ -191,7 +187,6 @@ public class KiloTakibi extends AppCompatActivity {
 
                     }
                 });
-
 
 
                 bottomSheetDialog2.setContentView(sheetview2);

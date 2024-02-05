@@ -1,15 +1,11 @@
 package com.example.pregnapp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.ViewParent;
 import android.widget.CalendarView;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -18,9 +14,9 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.text.SimpleDateFormat;
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.Calendar;
-import java.util.Locale;
 
 public class HamilelikAjandam extends AppCompatActivity {
     public CalendarView calendarView;
@@ -134,14 +130,14 @@ public class HamilelikAjandam extends AppCompatActivity {
         newMinusImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String entryKey = (String) newRelativeLayout.getTag();
+
                 // Remove the view from the layout
                 linearLayout.removeView(newRelativeLayout);
-                String entryKey = (String) newRelativeLayout.getTag();
                 Toast.makeText(HamilelikAjandam.this, entryKey, Toast.LENGTH_SHORT).show();
+
                 // Remove the corresponding entry from SharedPreferences
                 removeEntryFromSharedPreferences(entryKey);
-
-
             }
         });
 
@@ -193,4 +189,6 @@ public class HamilelikAjandam extends AppCompatActivity {
 
         // Save changes synchronously
         editor.apply();
-    }}
+    }
+
+}
