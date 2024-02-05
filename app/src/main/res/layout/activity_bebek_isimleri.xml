@@ -29,12 +29,13 @@
             tools:layout_editor_absoluteY="7dp" />
 
 
-        <!-- TextView ekleyerek kendi metnini belirle -->
+
         <TextView
             android:id="@+id/toolbar_title_bebek_isimleri"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:fontFamily="@font/rubikregular"
             android:text="Bebek İsimleri"
             android:textColor="#ffffff"
             android:textSize="25dp"
@@ -49,6 +50,7 @@
         android:layout_marginStart="30dp"
         android:layout_marginBottom="80dp"
         android:backgroundTint="@color/boldPink"
+        android:fontFamily="@font/rubikregular"
         android:text="Kız"
         android:textSize="20dp"
         android:textStyle="bold"
@@ -64,6 +66,7 @@
         android:layout_marginBottom="80dp"
         android:backgroundTint="#3F51B5"
         android:text="Erkek"
+        android:fontFamily="@font/rubikregular"
         android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -87,7 +90,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="47dp"
         android:text="Rastgele gelen isim:"
-
+        android:fontFamily="@font/rubikregular"
         android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"

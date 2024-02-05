@@ -18,6 +18,7 @@
         android:paddingLeft="4dp"
         android:paddingRight="4dp"
         android:text="Anne\nİhtiyaçları"
+        android:fontFamily="@font/rubikbold"
         android:backgroundTint="@color/boldPink"
         app:layout_constraintEnd_toStartOf="@+id/buttonBebek"
         app:layout_constraintHorizontal_bias="0.5"
@@ -33,6 +34,7 @@
         android:paddingLeft="4dp"
         android:paddingRight="4dp"
         android:text="Bebek\nİhtiyaçları"
+        android:fontFamily="@font/rubikbold"
         android:textColor="@color/boldPink"
         android:backgroundTint="@color/lightPink"
         app:layout_constraintEnd_toStartOf="@+id/buttonDogum"
@@ -49,6 +51,7 @@
         android:paddingLeft="4dp"
         android:paddingRight="4dp"
         android:text="Doğum\nİhtiyaçları"
+        android:fontFamily="@font/rubikbold"
         android:backgroundTint="@color/lightPink"
         android:textColor="@color/boldPink"
         app:layout_constraintEnd_toStartOf="@+id/buttonSusleme"
@@ -66,6 +69,7 @@
         android:paddingLeft="4dp"
         android:paddingRight="4dp"
         android:text="İkramlık\nSüsleme"
+        android:fontFamily="@font/rubikbold"
         android:backgroundTint="@color/lightPink"
         android:textColor="@color/boldPink"
         app:layout_constraintEnd_toEndOf="parent"
@@ -97,7 +101,7 @@
             app:layout_constraintStart_toStartOf="parent">
 
 
-            <!-- RelativeLayout ve içeriği -->
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -111,6 +115,7 @@
                     android:paddingLeft="10dp"
                     android:paddingBottom="4dp"
                     android:text="Göğüs Ucu Kremi"
+                    android:fontFamily="@font/rubikregular"
                     android:textSize="20dp" />
 
                 <View
@@ -127,7 +132,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true" />
-                <!-- TextView, View, CheckBox ve diğer içerikler -->
+
             </RelativeLayout>
 
             <RelativeLayout
@@ -143,6 +148,7 @@
                     android:paddingLeft="10dp"
                     android:paddingBottom="4dp"
                     android:text="Göğüs Pompası"
+                    android:fontFamily="@font/rubikregular"
                     android:textSize="20dp" />
 
                 <View
@@ -159,7 +165,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true" />
-                <!-- TextView, View, CheckBox ve diğer içerikler -->
+
             </RelativeLayout>
 
             <RelativeLayout
@@ -175,6 +181,7 @@
                     android:paddingLeft="10dp"
                     android:paddingBottom="4dp"
                     android:text="Süt Saklama Poşeti"
+                    android:fontFamily="@font/rubikregular"
                     android:textSize="20dp" />
 
                 <View
@@ -191,7 +198,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true" />
-                <!-- TextView, View, CheckBox ve diğer içerikler -->
+
             </RelativeLayout>
 
             <RelativeLayout
@@ -207,6 +214,7 @@
                     android:paddingLeft="10dp"
                     android:paddingBottom="4dp"
                     android:text="Göğüs Pedi"
+                    android:fontFamily="@font/rubikregular"
                     android:textSize="20dp" />
 
                 <View
@@ -223,7 +231,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true" />
-                <!-- TextView, View, CheckBox ve diğer içerikler -->
+
             </RelativeLayout>
 
             <RelativeLayout
@@ -239,6 +247,7 @@
                     android:paddingLeft="10dp"
                     android:paddingBottom="4dp"
                     android:text="Göğüs Kalkanı"
+                    android:fontFamily="@font/rubikregular"
                     android:textSize="20dp" />
 
                 <View
@@ -255,7 +264,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true" />
-                <!-- TextView, View, CheckBox ve diğer içerikler -->
+
             </RelativeLayout>
 
             <RelativeLayout
@@ -271,6 +280,7 @@
                     android:paddingLeft="10dp"
                     android:paddingBottom="4dp"
                     android:text="Emzirme Sütyeni / Atleti"
+                    android:fontFamily="@font/rubikregular"
                     android:textSize="20dp" />
 
                 <View
@@ -287,7 +297,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true" />
-                <!-- TextView, View, CheckBox ve diğer içerikler -->
+
             </RelativeLayout>
 
             <RelativeLayout
@@ -303,6 +313,7 @@
                     android:paddingLeft="10dp"
                     android:paddingBottom="4dp"
                     android:text="Emzirme Önlüğü"
+                    android:fontFamily="@font/rubikregular"
                     android:textSize="20dp" />
 
                 <View
@@ -319,7 +330,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true" />
-                <!-- TextView, View, CheckBox ve diğer içerikler -->
+
             </RelativeLayout>
 
             <RelativeLayout
@@ -335,6 +346,7 @@
                     android:paddingLeft="10dp"
                     android:paddingBottom="4dp"
                     android:text="Emzirme Yastığı"
+                    android:fontFamily="@font/rubikregular"
                     android:textSize="20dp" />
 
                 <View
@@ -351,7 +363,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true" />
-                <!-- TextView, View, CheckBox ve diğer içerikler -->
+
             </RelativeLayout>
 
 
@@ -381,7 +393,6 @@
             app:layout_constraintStart_toStartOf="parent">
 
 
-            <!-- RelativeLayout ve içeriği -->
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -395,6 +406,7 @@
                     android:paddingLeft="10dp"
                     android:paddingBottom="4dp"
                     android:text="Biberon"
+                    android:fontFamily="@font/rubikregular"
                     android:textSize="20dp" />
 
                 <View
@@ -411,7 +423,6 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true" />
-                <!-- TextView, View, CheckBox ve diğer içerikler -->
             </RelativeLayout>
 
             <RelativeLayout
@@ -427,6 +438,7 @@
                     android:paddingLeft="10dp"
                     android:paddingBottom="4dp"
                     android:text="Emzik"
+                    android:fontFamily="@font/rubikregular"
                     android:textSize="20dp" />
 
                 <View
@@ -443,7 +455,6 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true" />
-                <!-- TextView, View, CheckBox ve diğer içerikler -->
             </RelativeLayout>
 
             <RelativeLayout
@@ -459,6 +470,7 @@
                     android:paddingLeft="10dp"
                     android:paddingBottom="4dp"
                     android:text="Tulum"
+                    android:fontFamily="@font/rubikregular"
                     android:textSize="20dp" />
 
                 <View
@@ -475,7 +487,6 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true" />
-                <!-- TextView, View, CheckBox ve diğer içerikler -->
             </RelativeLayout>
 
             <RelativeLayout
@@ -491,6 +502,7 @@
                     android:paddingLeft="10dp"
                     android:paddingBottom="4dp"
                     android:text="Ağız Bezi"
+                    android:fontFamily="@font/rubikregular"
                     android:textSize="20dp" />
 
                 <View
@@ -507,7 +519,6 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true" />
-                <!-- TextView, View, CheckBox ve diğer içerikler -->
             </RelativeLayout>
 
             <RelativeLayout
@@ -523,6 +534,7 @@
                     android:paddingLeft="10dp"
                     android:paddingBottom="4dp"
                     android:text="Hastane Çıkışı"
+                    android:fontFamily="@font/rubikregular"
                     android:textSize="20dp" />
 
                 <View
@@ -539,7 +551,6 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true" />
-                <!-- TextView, View, CheckBox ve diğer içerikler -->
             </RelativeLayout>
 
             <RelativeLayout
@@ -555,6 +566,7 @@
                     android:paddingLeft="10dp"
                     android:paddingBottom="4dp"
                     android:text="Sling"
+                    android:fontFamily="@font/rubikregular"
                     android:textSize="20dp" />
 
                 <View
@@ -571,7 +583,6 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true" />
-                <!-- TextView, View, CheckBox ve diğer içerikler -->
             </RelativeLayout>
 
             <RelativeLayout
@@ -587,6 +598,7 @@
                     android:paddingLeft="10dp"
                     android:paddingBottom="4dp"
                     android:text="Kanguru"
+                    android:fontFamily="@font/rubikregular"
                     android:textSize="20dp" />
 
                 <View
@@ -603,7 +615,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true" />
-                <!-- TextView, View, CheckBox ve diğer içerikler -->
+
             </RelativeLayout>
 
             <RelativeLayout
@@ -619,6 +631,7 @@
                     android:paddingLeft="10dp"
                     android:paddingBottom="4dp"
                     android:text="Bebek Arabası"
+                    android:fontFamily="@font/rubikregular"
                     android:textSize="20dp" />
 
                 <View
@@ -635,7 +648,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true" />
-                <!-- TextView, View, CheckBox ve diğer içerikler -->
+
             </RelativeLayout>
 
 
@@ -678,6 +691,7 @@
                     android:paddingLeft="10dp"
                     android:paddingBottom="4dp"
                     android:text="Doğum Çantası"
+                    android:fontFamily="@font/rubikregular"
                     android:textSize="20dp" />
 
                 <View
@@ -694,7 +708,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true" />
-                <!-- TextView, View, CheckBox ve diğer içerikler -->
+
             </RelativeLayout>
 
             <RelativeLayout
@@ -710,6 +724,7 @@
                     android:paddingLeft="10dp"
                     android:paddingBottom="4dp"
                     android:text="Doktor ve Hastane Bilgileri"
+                    android:fontFamily="@font/rubikregular"
                     android:textSize="20dp" />
 
                 <View
@@ -726,7 +741,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true" />
-                <!-- TextView, View, CheckBox ve diğer içerikler -->
+
             </RelativeLayout>
 
             <RelativeLayout
@@ -742,6 +757,7 @@
                     android:paddingLeft="10dp"
                     android:paddingBottom="4dp"
                     android:text="Konforlu Kıyafetler"
+                    android:fontFamily="@font/rubikregular"
                     android:textSize="20dp" />
 
                 <View
@@ -758,7 +774,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true" />
-                <!-- TextView, View, CheckBox ve diğer içerikler -->
+
             </RelativeLayout>
 
             <RelativeLayout
@@ -774,6 +790,7 @@
                     android:paddingLeft="10dp"
                     android:paddingBottom="4dp"
                     android:text="Hijyen Malzemeleri"
+                    android:fontFamily="@font/rubikregular"
                     android:textSize="20dp" />
 
                 <View
@@ -790,7 +807,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true" />
-                <!-- TextView, View, CheckBox ve diğer içerikler -->
+
             </RelativeLayout>
 
             <RelativeLayout
@@ -806,6 +823,7 @@
                     android:paddingLeft="10dp"
                     android:paddingBottom="4dp"
                     android:text="Telefon ve Şarj Cihazları"
+                    android:fontFamily="@font/rubikregular"
                     android:textSize="20dp" />
 
                 <View
@@ -822,7 +840,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true" />
-                <!-- TextView, View, CheckBox ve diğer içerikler -->
+
             </RelativeLayout>
 
             <RelativeLayout
@@ -838,6 +856,7 @@
                     android:paddingLeft="10dp"
                     android:paddingBottom="4dp"
                     android:text="Su ve Atıştırmalıklar"
+                    android:fontFamily="@font/rubikregular"
                     android:textSize="20dp" />
 
                 <View
@@ -854,7 +873,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true" />
-                <!-- TextView, View, CheckBox ve diğer içerikler -->
+
             </RelativeLayout>
 
             <RelativeLayout
@@ -870,6 +889,7 @@
                     android:paddingLeft="10dp"
                     android:paddingBottom="4dp"
                     android:text="Kendi Yastığınız"
+                    android:fontFamily="@font/rubikregular"
                     android:textSize="20dp" />
 
                 <View
@@ -886,7 +906,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true" />
-                <!-- TextView, View, CheckBox ve diğer içerikler -->
+
             </RelativeLayout>
 
             <RelativeLayout
@@ -902,6 +922,7 @@
                     android:paddingLeft="10dp"
                     android:paddingBottom="4dp"
                     android:text="Gözlük Veya Lens Kutusu"
+                    android:fontFamily="@font/rubikregular"
                     android:textSize="20dp" />
 
                 <View
@@ -918,7 +939,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true" />
-                <!-- TextView, View, CheckBox ve diğer içerikler -->
+
             </RelativeLayout>
 
 
@@ -961,6 +982,7 @@
                     android:paddingLeft="10dp"
                     android:paddingBottom="4dp"
                     android:text="Renkli Kurdeleler ve Balonlar"
+                    android:fontFamily="@font/rubikregular"
                     android:textSize="20dp" />
 
                 <View
@@ -977,7 +999,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true" />
-                <!-- TextView, View, CheckBox ve diğer içerikler -->
+
             </RelativeLayout>
 
             <RelativeLayout
@@ -993,6 +1015,7 @@
                     android:paddingLeft="10dp"
                     android:paddingBottom="4dp"
                     android:text="Şekerlemeler"
+                    android:fontFamily="@font/rubikregular"
                     android:textSize="20dp" />
 
                 <View
@@ -1009,7 +1032,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true" />
-                <!-- TextView, View, CheckBox ve diğer içerikler -->
+
             </RelativeLayout>
 
             <RelativeLayout
@@ -1025,6 +1048,7 @@
                     android:paddingLeft="10dp"
                     android:paddingBottom="4dp"
                     android:text="El Yapımı Magnetler ve Rozetler"
+                    android:fontFamily="@font/rubikregular"
                     android:textSize="20dp" />
 
                 <View
@@ -1041,7 +1065,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true" />
-                <!-- TextView, View, CheckBox ve diğer içerikler -->
+
             </RelativeLayout>
 
             <RelativeLayout
@@ -1057,6 +1081,7 @@
                     android:paddingLeft="10dp"
                     android:paddingBottom="4dp"
                     android:text="Kurabiyeler"
+                    android:fontFamily="@font/rubikregular"
                     android:textSize="20dp" />
 
                 <View
@@ -1073,7 +1098,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true" />
-                <!-- TextView, View, CheckBox ve diğer içerikler -->
+
             </RelativeLayout>
 
             <RelativeLayout
@@ -1089,6 +1114,7 @@
                     android:paddingLeft="10dp"
                     android:paddingBottom="4dp"
                     android:text="Fotoğraflar ve Çerçeveler"
+                    android:fontFamily="@font/rubikregular"
                     android:textSize="20dp" />
 
                 <View
@@ -1105,7 +1131,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true" />
-                <!-- TextView, View, CheckBox ve diğer içerikler -->
+
             </RelativeLayout>
 
             <RelativeLayout
@@ -1121,6 +1147,7 @@
                     android:paddingLeft="10dp"
                     android:paddingBottom="4dp"
                     android:text="Teşekkür Kartları"
+                    android:fontFamily="@font/rubikregular"
                     android:textSize="20dp" />
 
                 <View
@@ -1137,7 +1164,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true" />
-                <!-- TextView, View, CheckBox ve diğer içerikler -->
+
             </RelativeLayout>
 
             <RelativeLayout
@@ -1153,6 +1180,7 @@
                     android:paddingLeft="10dp"
                     android:paddingBottom="4dp"
                     android:text="Renkli Mumlar ve Mumluklar"
+                    android:fontFamily="@font/rubikregular"
                     android:textSize="20dp" />
 
                 <View
@@ -1169,7 +1197,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true" />
-                <!-- TextView, View, CheckBox ve diğer içerikler -->
+
             </RelativeLayout>
 
             <RelativeLayout
@@ -1185,6 +1213,7 @@
                     android:paddingLeft="10dp"
                     android:paddingBottom="4dp"
                     android:text="Bebek Pastası"
+                    android:fontFamily="@font/rubikregular"
                     android:textSize="20dp" />
 
                 <View
@@ -1201,7 +1230,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true" />
-                <!-- TextView, View, CheckBox ve diğer içerikler -->
+
             </RelativeLayout>
 
 

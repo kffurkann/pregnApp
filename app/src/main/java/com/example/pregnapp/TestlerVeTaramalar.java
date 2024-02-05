@@ -12,24 +12,25 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 public class TestlerVeTaramalar extends AppCompatActivity {
-    //button_geri_testlervetaramalar
     private ImageButton buttongeriGitmeTestler;
     private SharedPreferences sharedPreferencesTestler;
     private Toolbar toolbar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_testler_ve_taramalar);
+
         toolbar = findViewById(R.id.my_toolbar_testlervetaramalar);
         setSupportActionBar(toolbar);
 
+        sharedPreferencesTestler = getSharedPreferences("YourPreferenceName", MODE_PRIVATE);
 
-
-        buttongeriGitmeTestler=findViewById(R.id.button_geri_testlervetaramalar);
+        buttongeriGitmeTestler = findViewById(R.id.button_geri_testlervetaramalar);
         buttongeriGitmeTestler.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(TestlerVeTaramalar.this, MainActivity.class));
+                finish();
             }
         });
 
@@ -41,12 +42,10 @@ public class TestlerVeTaramalar extends AppCompatActivity {
             checkbox.setOnCheckedChangeListener((buttonView, isChecked) ->
                     saveCheckboxState("checkboxTestler" + finalI, isChecked));
         }
-
     }
 
     private void saveCheckboxState(String key, boolean isChecked) {
-        SharedPreferences sharedPreferences = getPreferences(Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
+        SharedPreferences.Editor editor = sharedPreferencesTestler.edit();
         editor.putBoolean(key, isChecked);
         editor.apply();
     }

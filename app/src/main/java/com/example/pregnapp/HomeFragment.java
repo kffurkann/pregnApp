@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -20,6 +21,10 @@ import okhttp3.Response;
 
 public class HomeFragment extends Fragment {
 
+    ImageView firstTab;
+    ImageView secondTab;
+    ImageView thirdTab;
+    ImageView fourthTab;
     private String userMail;
     TextView textView_14;
     TextView textView_15;
@@ -56,15 +61,51 @@ public class HomeFragment extends Fragment {
         textView_14=view.findViewById(R.id.textView14);
         textView_15=view.findViewById(R.id.textView15);
         relativeLayoutMakale=view.findViewById(R.id.relativeMakale1);
+        firstTab=view.findViewById(R.id.imageView5);
+        secondTab=view.findViewById(R.id.imageView6);
+        thirdTab=view.findViewById(R.id.imageView7);
+        fourthTab=view.findViewById(R.id.imageView4);
+
 
 
         relativeLayoutMakale.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Makale aktivitesine geçiş yap
                 Intent intent = new Intent(getContext(), Makale.class);
                 intent.putExtra("articleTitle", articleTitle);
                 intent.putExtra("articleContent", articleContent);
+                startActivity(intent);
+            }
+        });
+
+        firstTab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), Gidalar.class);
+                startActivity(intent);
+            }
+        });
+
+        secondTab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), TekmeSayar.class);
+                startActivity(intent);
+            }
+        });
+
+        thirdTab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), BebekIsimleri.class);
+                startActivity(intent);
+            }
+        });
+
+        fourthTab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getActivity(), BugunNeAsersem.class);
                 startActivity(intent);
             }
         });

@@ -1,7 +1,10 @@
 package com.example.pregnapp;
+import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,8 +16,8 @@ public class BugunNeAsersem extends AppCompatActivity {
     private ImageView asermekadinView;
     private TextView textViewAser;
     private Button buttonAser;
+    private ImageButton geriGitmeAserme;
 
-    // Yemek ve fotoğraf kaynaklarını içeren dizi
     private String[] yemekler = {"Pizza", "Hamburger", "Salata", "Pasta", "Sushi", "Makarna", "Adana Kebap",
             "Brokoli Salatası", "Çin Mantısı", "Et Döner", "Fırında Tavuk", "Humus", "İskender Kebap", "Izgara Somon",
             "Karpuz", "Kivi", "Kumpir", "Kuzu Tandır", "Mercimek Çorbası", "Nohut Ezme", "Omlet", "Patates Kızarması",
@@ -28,23 +31,28 @@ public class BugunNeAsersem extends AppCompatActivity {
             R.drawable.yesilerik
     };
 
-    private String sonSecilenYemek = ""; // Son seçilen yemeği saklamak için değişken
+    private String sonSecilenYemek = "";
 
-    private Random random = new Random(); // Random objesini sadece bir kez oluştur
+    private Random random = new Random(); //
 
-    // Daha önce seçilen yemekleri saklamak için liste
     private ArrayList<Integer> secilenYemekIndeksleri = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bugun_ne_asersem);
-
+        geriGitmeAserme = findViewById(R.id.button_geri_aserme);
         asermekadinView = findViewById(R.id.asermekadinView);
         textViewAser = findViewById(R.id.textViewAser);
         buttonAser = findViewById(R.id.button_aser);
 
-        // AŞER butonuna tıklanınca
+        geriGitmeAserme.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
         buttonAser.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -53,16 +61,13 @@ public class BugunNeAsersem extends AppCompatActivity {
         });
     }
 
-    // Rastgele bir yemek seç ve göster
     private void aserYemek() {
         int randomIndex;
 
-        // Eğer tüm yemekler seçilmişse, listedeki tüm indeksleri temizle
         if (secilenYemekIndeksleri.size() == yemekler.length) {
             secilenYemekIndeksleri.clear();
         }
 
-        // Yeni bir indeks bulana kadar devam et
         do {
             randomIndex = random.nextInt(yemekler.length);
         } while (secilenYemekIndeksleri.contains(randomIndex));
@@ -73,7 +78,6 @@ public class BugunNeAsersem extends AppCompatActivity {
 
         int secilenResim = yemekResimleri[randomIndex];
 
-        // Seçilen yemeği ve fotoğrafı ekranda göster
         textViewAser.setText("Aşerdiğiniz Yemek: " + sonSecilenYemek);
         asermekadinView.setImageResource(secilenResim);
     }

@@ -28,13 +28,13 @@
                 android:src="@drawable/ic_back_arrow"
                 android:contentDescription="s"/>
 
-            <!-- TextView ekleyerek kendi metnini belirle -->
             <TextView
                 android:id="@+id/toolbar_title_testlervetaramalar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="Testler Ve Taramalar"
+                android:fontFamily="@font/rubikregular"
                 android:textColor="#FFFFFF"
                 android:textSize="25dp"
                 tools:layout_editor_absoluteX="16dp"
@@ -49,6 +49,7 @@
             android:padding="8dp"
             android:layout_marginTop="8dp"
             android:text="Doktor Kontrolünde Yapılan Testler"
+            android:fontFamily="@font/rubikregular"
             android:textSize="18sp"
             android:textStyle="bold"
             android:background="@drawable/oval_background"
@@ -69,7 +70,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView3">
 
-            <!-- RelativeLayout ve içeriği -->
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -83,6 +83,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="Beta hCG hormonu"
+                    android:fontFamily="@font/rubikregular"
                     android:textSize="20dp" />
                 <View
                     android:id="@+id/line1"
@@ -99,7 +100,6 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     />
-                <!-- TextView, View, CheckBox ve diğer içerikler -->
             </RelativeLayout>
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -114,6 +114,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="Frengi için VDRL Testi"
+                    android:fontFamily="@font/rubikregular"
                     android:textSize="20dp" />
                 <View
                     android:id="@+id/line2"
@@ -130,7 +131,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     />
-                <!-- TextView, View, CheckBox ve diğer içerikler -->
+
             </RelativeLayout>
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -145,6 +146,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="Hepatit B, HBsAg ve AntiHBs Testleri"
+                    android:fontFamily="@font/rubikregular"
                     android:textSize="20dp" />
                 <View
                     android:id="@+id/line3"
@@ -161,7 +163,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     />
-                <!-- TextView, View, CheckBox ve diğer içerikler -->
+
             </RelativeLayout>
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -176,6 +178,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="HIV Testi"
+                    android:fontFamily="@font/rubikregular"
                     android:textSize="20dp" />
                 <View
                     android:id="@+id/line4"
@@ -192,7 +195,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     />
-                <!-- TextView, View, CheckBox ve diğer içerikler -->
+
             </RelativeLayout>
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -207,6 +210,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="İndirekt Coombs Testi"
+                    android:fontFamily="@font/rubikregular"
                     android:textSize="20dp" />
                 <View
                     android:id="@+id/line5"
@@ -223,7 +227,6 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     />
-                <!-- TextView, View, CheckBox ve diğer içerikler -->
             </RelativeLayout>
 
             <RelativeLayout
@@ -239,6 +242,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="Kızamıkçık Testi"
+                    android:fontFamily="@font/rubikregular"
                     android:textSize="20dp" />
                 <View
                     android:id="@+id/line6"
@@ -255,7 +259,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     />
-                <!-- TextView, View, CheckBox ve diğer içerikler -->
+
             </RelativeLayout>
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -270,6 +274,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="Tam idrar tahlili"
+                    android:fontFamily="@font/rubikregular"
                     android:textSize="20dp" />
                 <View
                     android:id="@+id/line7"
@@ -286,7 +291,6 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     />
-                <!-- TextView, View, CheckBox ve diğer içerikler -->
             </RelativeLayout>
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -301,6 +305,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="TSH Testi"
+                    android:fontFamily="@font/rubikregular"
                     android:textSize="20dp" />
                 <View
                     android:id="@+id/line8"
@@ -317,7 +322,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     />
-                <!-- TextView, View, CheckBox ve diğer içerikler -->
+
             </RelativeLayout>
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -332,6 +337,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="HCV Testi"
+                    android:fontFamily="@font/rubikregular"
                     android:textSize="20dp" />
                 <View
                     android:id="@+id/line9"
@@ -348,7 +354,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     />
-                <!-- TextView, View, CheckBox ve diğer içerikler -->
+
             </RelativeLayout>
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -363,6 +369,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="Smear Testi"
+                    android:fontFamily="@font/rubikregular"
                     android:textSize="20dp" />
                 <View
                     android:id="@+id/line10"
@@ -379,7 +386,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     />
-                <!-- TextView, View, CheckBox ve diğer içerikler -->
+
             </RelativeLayout>
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -394,6 +401,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="Tam kan sayımı"
+                    android:fontFamily="@font/rubikregular"
                     android:textSize="20dp" />
                 <View
                     android:id="@+id/line11"
@@ -410,7 +418,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     />
-                <!-- TextView, View, CheckBox ve diğer içerikler -->
+
             </RelativeLayout>
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -425,6 +433,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:text="Ebeveyn kan grupları"
+                    android:fontFamily="@font/rubikregular"
                     android:textSize="20dp" />
                 <View
                     android:id="@+id/line12"
@@ -441,7 +450,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_centerVertical="true"
                     />
-                <!-- TextView, View, CheckBox ve diğer içerikler -->
+
             </RelativeLayout>
 
         </LinearLayout>

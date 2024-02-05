@@ -13,6 +13,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
         android:text="Yeni Tekme Ekle"
+        android:fontFamily="@font/rubikregular"
         android:textAlignment="center"
         android:textSize="24sp"
         android:textStyle="bold" />
@@ -25,6 +26,7 @@
         android:padding="10dp"
         android:paddingStart="20dp"
         android:paddingEnd="20dp"
+        android:fontFamily="@font/rubikregular"
         android:text="Bebek hareketlerinin takipe edilmesi, bebeğin anne karnında iyi olduğunu gösteren testlerden biridir. Belirgin azalan bebek hareketleri herhangi bir sorunun habercisi olabilir."
         android:textAlignment="center" />
 
@@ -51,6 +53,7 @@
             android:layout_marginEnd="20dp"
             android:layout_weight="1"
             android:text="0"
+            android:fontFamily="@font/rubikregular"
             android:textColor="@color/darkerPink"
             android:textSize="72sp"
             android:textStyle="bold" />
@@ -73,10 +76,11 @@
             android:layout_weight="1"
             android:backgroundTint="@color/lightGrey"
             android:text="İptal"
+            android:fontFamily="@font/rubikregular"
             android:textColor="@color/background"
             android:background="@drawable/buttoncorner"/>
 
-        <!-- İkinci buton -->
+
         <Button
             android:id="@+id/buttonKiloEklesheet"
             android:layout_width="0dp"
@@ -88,6 +92,7 @@
             android:layout_weight="1"
             android:backgroundTint="@color/darkerPink"
             android:text="Ekle"
+            android:fontFamily="@font/rubikregular"
             android:textColor="@color/background"
             android:background="@drawable/buttoncorner" />
 

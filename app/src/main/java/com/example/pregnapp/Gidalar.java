@@ -4,14 +4,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 
 public class Gidalar extends AppCompatActivity {
     private RelativeLayout relativeTehlikeli, relativeTehlikesiz, relativeDikkatli;
     private Button buttonTehlikeli, buttonTehlikesiz, buttonCareful;
+    private ImageButton geriGitmeGidalar;
     @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +28,14 @@ public class Gidalar extends AppCompatActivity {
         buttonTehlikeli=findViewById(R.id.buttonTehlikeli);
         buttonTehlikesiz=findViewById(R.id.buttonTehlikesiz);
         buttonCareful=findViewById(R.id.buttonCareful);
+        geriGitmeGidalar=findViewById(R.id.button_geri_gidalar);
+        geriGitmeGidalar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+              //startActivity(new Intent(Gidalar.this, DashBoard.class));
+                finish();
+            }
+        });
 
 
     }

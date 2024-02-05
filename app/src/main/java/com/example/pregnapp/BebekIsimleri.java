@@ -43,11 +43,10 @@ public class BebekIsimleri extends AppCompatActivity {
         textViewRandomIsim = findViewById(R.id.textViewRandomIsim);
         geriGitmeBebek = findViewById(R.id.button_geri_bebek_isimleri);
 
-        geriGitmeBebek=findViewById(R.id.button_geri_bebek_isimleri);
         geriGitmeBebek.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(BebekIsimleri.this, MainActivity.class));
+                finish();
             }
         });
 

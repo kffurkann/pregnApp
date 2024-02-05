@@ -29,6 +29,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
+                android:fontFamily="@font/rubikregular"
                 android:textSize="24sp"
                 android:textColor="@color/boldPink"
                 android:layout_gravity="start"/>
@@ -39,6 +40,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text=""
+                android:fontFamily="@font/rubikregular"
                 android:textSize="16sp"
                 android:textColor="@color/grey"
                 android:layout_gravity="start"

@@ -3,6 +3,7 @@ package com.example.pregnapp;
 import static android.graphics.Color.parseColor;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -48,7 +49,7 @@ public class TekmeSayar extends AppCompatActivity {
         buttongeriGitmeTekmeSayar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                onBackPressed();
+                finish();
             }
         });
 
@@ -97,7 +98,6 @@ public class TekmeSayar extends AppCompatActivity {
             }
         });
 
-        // Restore saved tekme values when the activity is created
         restoreTekmeValues();
     }
 
@@ -242,13 +242,11 @@ public class TekmeSayar extends AppCompatActivity {
             if (tekmeValue.equals(savedTekmeValue)) {
                 editor.remove("tekme_" + i);
 
-                // Kaydı silindiği için diğer kayıtları bir geriye kaydır
                 for (int j = i; j < tekmeCount - 1; j++) {
                     String nextTekmeValue = sharedPreferences.getString("tekme_" + (j + 1), "");
                     editor.putString("tekme_" + j, nextTekmeValue);
                 }
 
-                // Tekme sayısını bir azalt
                 editor.putInt("tekme_count", tekmeCount - 1);
 
                 break;

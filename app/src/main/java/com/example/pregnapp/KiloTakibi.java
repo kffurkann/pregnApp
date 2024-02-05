@@ -4,11 +4,13 @@ import static android.graphics.Color.parseColor;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.text.InputFilter;
 import android.text.Spanned;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -30,36 +32,63 @@ import androidx.core.content.ContextCompat;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 public class KiloTakibi extends AppCompatActivity {
 
-
-
+    private String weightT;
     private double previousKiloValue = 0.0;
     private String selectedDate = "";
     private String selectedTime = "";
-
-
-
     private Calendar calendar;
-
     private ImageButton buttongeriGitmeKiloTakibi;
     private Button buttonKiloEkle;
     private BottomSheetDialog bottomSheetDialog2, bottomSheetDialog3;
     private TextView textViewPanelKiloSon;
+    private TextView textViewPanelKiloFark;
+    private String userMailT;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kilo_takibi);
+        userMailT = getIntent().getStringExtra("userMailT");
+        Log.d("userMailT", userMailT != null ? userMailT : "userMail is null");
+        String uniqueKey = "Entry_" + System.currentTimeMillis();
+        List<JSONObject> savedDataList = getSavedData();
+        textViewPanelKiloSon = findViewById(R.id.textViewPanelKiloSon);
+        if (!savedDataList.isEmpty()) {
+            try {
+                JSONObject lastEntry = savedDataList.get(savedDataList.size() - 1);
+                previousKiloValue = lastEntry.getDouble("kiloValue");
+                textViewPanelKiloSon.setText(String.valueOf(previousKiloValue));
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+
+        createNewRelativeLayout(savedDataList);
         calendar = Calendar.getInstance();
+        buttongeriGitmeKiloTakibi = findViewById(R.id.button_geri_kilo_takibi);
+        buttonKiloEkle = findViewById(R.id.buttonKiloEkle);
+        textViewPanelKiloFark = findViewById(R.id.textViewPanelKiloFark);
 
-
-
-
-        buttongeriGitmeKiloTakibi=findViewById(R.id.button_geri_kilo_takibi);
-        buttonKiloEkle=findViewById(R.id.buttonKiloEkle);
-        textViewPanelKiloSon=findViewById(R.id.textViewPanelKiloSon);
+        getUserData();
 
         buttongeriGitmeKiloTakibi.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -67,9 +96,12 @@ public class KiloTakibi extends AppCompatActivity {
                 onBackPressed();
             }
         });
+
+
         buttonKiloEkle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
 
                 bottomSheetDialog2 = new BottomSheetDialog(KiloTakibi.this, R.style.BottomSheetTheme);
                 View sheetview2 = LayoutInflater.from(getApplicationContext()).inflate(R.layout.bottomsheetkilo, null);
@@ -80,8 +112,8 @@ public class KiloTakibi extends AppCompatActivity {
                 EditText kiloafter = sheetview2.findViewById(R.id.kiloafter);
                 Button buttonKiloiptal = sheetview2.findViewById(R.id.buttonKiloiptal);
                 Button buttonKiloeEklesheet = sheetview2.findViewById(R.id.buttonKiloEklesheet);
-                Button buttonTarihKilo=sheetview2.findViewById(R.id.buttonTarihKilo);
-                Button buttonSaatKilo=sheetview2.findViewById(R.id.buttonSaatKilo);
+                Button buttonTarihKilo = sheetview2.findViewById(R.id.buttonTarihKilo);
+                Button buttonSaatKilo = sheetview2.findViewById(R.id.buttonSaatKilo);
 
 
                 InputFilter inputFilterKiloBefore = new InputFilter() {
@@ -94,7 +126,7 @@ public class KiloTakibi extends AppCompatActivity {
                         return "";
                     }
                 };
-                kilobefore.setFilters(new InputFilter[] { inputFilterKiloBefore });
+                kilobefore.setFilters(new InputFilter[]{inputFilterKiloBefore});
 
                 InputFilter inputFilterKiloAfter = new InputFilter() {
                     public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
@@ -106,7 +138,7 @@ public class KiloTakibi extends AppCompatActivity {
                         return "";
                     }
                 };
-                kiloafter.setFilters(new InputFilter[] { inputFilterKiloAfter });
+                kiloafter.setFilters(new InputFilter[]{inputFilterKiloAfter});
 
                 buttonKiloiptal.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -134,30 +166,37 @@ public class KiloTakibi extends AppCompatActivity {
                         String kiloAfterText = kiloafter.getText().toString();
                         try {
                             double kiloValue = Double.parseDouble(kiloBeforeText + "." + kiloAfterText);
-                            // Çıkarma işlemi yap
+
+                            double lastWeight = Double.parseDouble(weightT);
+
+                            double difference2 = kiloValue - lastWeight;
+                            // Farkı hesapla
                             double difference = kiloValue - previousKiloValue;
                             difference = Math.round(difference * 100.0) / 100.0;
 
-                            // Ardından yeni RelativeLayout oluştur ve bilgileri içine ekle
-                            createNewRelativeLayout(kiloValue, selectedDateTime, difference);
+                            textViewPanelKiloFark.setText(String.format("%.2f", difference2));
 
 
-                            // previousKiloValue'yi güncelle
                             previousKiloValue = kiloValue;
-                            textViewPanelKiloSon.setText(String.valueOf(previousKiloValue));
-                            // Geri kalan işlemler
+
+                            //textViewPanelKiloSon.setText(String.valueOf(previousKiloValue));
+                            textViewPanelKiloSon.setText(String.format("%.2f", kiloValue));
+                            saveToSharedPreferences(kiloValue, selectedDateTime, difference);
+
+                            List<JSONObject> updatedDataList = getSavedData();
+
+                            // UI güncellemesi
+                            LinearLayout linearLayout = findViewById(R.id.listeleme);
+                            linearLayout.removeAllViews();
+                            createNewRelativeLayout(updatedDataList);
+                            // ... diğer işlemler ...
                         } catch (NumberFormatException e) {
-                            // Hata durumuyla başa çık
+
                             e.printStackTrace();
-                            // Kullanıcıya uygun bir hata mesajı göster
+
                             Toast.makeText(getApplicationContext(), "Geçerli bir kilo değeri giriniz.", Toast.LENGTH_SHORT).show();
                         }
-
-
-
                         bottomSheetDialog2.dismiss();
-
-
                     }
                 });
                 buttonTarihKilo.setOnClickListener(new View.OnClickListener() {
@@ -181,10 +220,7 @@ public class KiloTakibi extends AppCompatActivity {
                 bottomSheetDialog2.getWindow().setBackgroundDrawable(new ColorDrawable(parseColor("#80000000")));
 
 
-
             }
-
-
 
 
             private void showDatePickerDialog() {
@@ -225,11 +261,66 @@ public class KiloTakibi extends AppCompatActivity {
 
                 timePickerDialog.show();
             }
-            private void createNewRelativeLayout(double kiloValue, String selectedDateTime,  double difference) {
+        });
+    }
+
+
+    private void getUserData() {
+        OkHttpClient client = new OkHttpClient();
+        String url = "http://10.0.2.2:5274/api/User/GetUser?mail=" + userMailT;
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Request request = new Request.Builder()
+                            .url(url)
+                            .build();
+
+                    Response response = client.newCall(request).execute();
+                    final String responseData = response.body() != null ? response.body().string() : null;
+
+                    if (response.isSuccessful() && responseData != null) {
+                        Log.d("ProfileAPI", "Response data: " + responseData);
+                        JSONObject jsonObject = new JSONObject(responseData);
+
+                        weightT = jsonObject.getString("userWeight");
+                        Log.d("weightT:", weightT);
+
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                TextView textViewPanelKiloBaslangic = findViewById(R.id.textViewPanelKiloBaslangic);
+                                textViewPanelKiloBaslangic.setText(weightT);
+                                double ilk = Double.parseDouble(weightT);
+                                double fark = previousKiloValue - ilk;
+                                textViewPanelKiloFark.setText(String.valueOf(fark));
+                            }
+                        });
+
+                    } else {
+                        Log.e("ProfileAPI", "Response unsuccessful or empty data");
+                    }
+                } catch (Exception e) {
+                    Log.e("ProfileAPI", "Error fetching user data", e);
+                }
+            }
+        }).start();
+    }
+
+    private void createNewRelativeLayout(List<JSONObject> dataList) {
+        LinearLayout linearLayout = findViewById(R.id.listeleme);
+
+        for (JSONObject data : dataList) {
+            try {
+                double kiloValue = data.getDouble("kiloValue");
+                String selectedDateTime = data.getString("selectedDateTime");
+                double difference = data.getDouble("difference");
+
 
                 // Yeni bir RelativeLayout oluştur
                 RelativeLayout newRelativeLayout = new RelativeLayout(KiloTakibi.this);
-               newRelativeLayout.setId(View.generateViewId());
+                newRelativeLayout.setId(View.generateViewId());
 
                 // Parametreleri ayarla (örneğin, genişlik ve yükseklik)
                 RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(
@@ -242,12 +333,10 @@ public class KiloTakibi extends AppCompatActivity {
                         getResources().getDisplayMetrics()
                 );
 
-                // Bu layoutParams'i yeni RelativeLayout'a uygula
                 newRelativeLayout.setLayoutParams(layoutParams);
                 layoutParams.setMargins(0, marginInDp, 0, 0);
                 newRelativeLayout.setPadding(marginInDp, marginInDp, marginInDp, marginInDp);
                 newRelativeLayout.setBackgroundColor(ContextCompat.getColor(KiloTakibi.this, R.color.tekmeBackground));
-
 
 
                 newRelativeLayout.setOnClickListener(new View.OnClickListener() {
@@ -261,11 +350,12 @@ public class KiloTakibi extends AppCompatActivity {
                         Button buttonKiloSil = sheetview3.findViewById(R.id.buttonKiloSil);
                         Button buttonKiloSilsheet = sheetview3.findViewById(R.id.buttonKiloSilsheet);
 
-
+                        String uniqueId = (String) v.getTag();
 
                         buttonKiloSilsheet.setOnClickListener(new View.OnClickListener() {
                             @Override
                             public void onClick(View v) {
+
                                 LinearLayout linearLayout = findViewById(R.id.listeleme);
                                 linearLayout.removeView(newRelativeLayout);
 
@@ -280,8 +370,6 @@ public class KiloTakibi extends AppCompatActivity {
                 });
 
 
-
-
                 // Yeni bir HorizontalLayout oluştur
                 LinearLayout horizontalLayout = new LinearLayout(KiloTakibi.this);
                 LinearLayout.LayoutParams horizontalLayoutParams = new LinearLayout.LayoutParams(
@@ -290,7 +378,6 @@ public class KiloTakibi extends AppCompatActivity {
                 );
                 horizontalLayout.setOrientation(LinearLayout.HORIZONTAL);
                 horizontalLayout.setLayoutParams(horizontalLayoutParams);
-
 
 
                 // TextView oluştur ve içine bilgileri yerleştir
@@ -310,8 +397,6 @@ public class KiloTakibi extends AppCompatActivity {
                 textViewKiloTarih.setLayoutParams(textParams);
 
 
-
-
                 TextView textViewKiloHafta = new TextView(KiloTakibi.this);
                 textViewKiloHafta.setText("21.Hafta" + "\n  1.Gün");
 
@@ -327,12 +412,9 @@ public class KiloTakibi extends AppCompatActivity {
                 textViewKiloHafta.setLayoutParams(textParams2);
 
 
-
-
                 TextView textViewKiloMiktar = new TextView(KiloTakibi.this);
-                textViewKiloMiktar.setText(kiloValue+"\n kg");
+                textViewKiloMiktar.setText(kiloValue + "\n kg");
 
-                // TextView'ın layoutParams'ini ayarla (örneğin, yükseklik ve genişlik)
                 LinearLayout.LayoutParams textParams3 = new LinearLayout.LayoutParams(
                         LinearLayout.LayoutParams.WRAP_CONTENT,
                         LinearLayout.LayoutParams.WRAP_CONTENT
@@ -345,8 +427,6 @@ public class KiloTakibi extends AppCompatActivity {
                 textViewKiloMiktar.setLayoutParams(textParams3);
 
 
-
-
                 TextView textViewKiloFark = new TextView(KiloTakibi.this);
                 if (difference > 0) {
                     textViewKiloFark.setText(" +" + difference);
@@ -354,7 +434,6 @@ public class KiloTakibi extends AppCompatActivity {
                     textViewKiloFark.setText(" " + difference);
                 }
 
-// TextView'ın layoutParams'ini ayarla (örneğin, yükseklik ve genişlik)
                 FrameLayout.LayoutParams textParams4 = new FrameLayout.LayoutParams(
                         FrameLayout.LayoutParams.WRAP_CONTENT,
                         FrameLayout.LayoutParams.WRAP_CONTENT
@@ -367,8 +446,6 @@ public class KiloTakibi extends AppCompatActivity {
                 textViewKiloFark.setLayoutParams(textParams4);
 
 
-
-
                 // TextView'ı HorizontalLayout'a ekle
                 horizontalLayout.addView(textViewKiloTarih);
                 horizontalLayout.addView(textViewKiloHafta);
@@ -378,27 +455,57 @@ public class KiloTakibi extends AppCompatActivity {
 
                 // HorizontalLayout'ı yeni RelativeLayout'a ekle
                 newRelativeLayout.addView(horizontalLayout);
-
-                // Bu yeni RelativeLayout'ı tanımlı olan linearLayout'a ekle
-                LinearLayout linearLayout = findViewById(R.id.listeleme); // Burada tanımlı olan linearLayout'ın ID'sini doğru girdiğinizden emin olun
                 linearLayout.addView(newRelativeLayout);
-
-
+            } catch (JSONException e) {
+                e.printStackTrace();
             }
-
-
-        });
-
-
-
-
-
+        }
     }
 
+    private void saveToSharedPreferences(double kiloValue, String selectedDateTime, double difference) {
+        SharedPreferences sharedPreferences = getSharedPreferences("KiloData", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
 
+        // JSON nesnesi oluştur
+        JSONObject jsonObject = new JSONObject();
+        try {
+            jsonObject.put("kiloValue", kiloValue);
+            jsonObject.put("selectedDateTime", selectedDateTime);
+            jsonObject.put("difference", difference);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
 
+        // JSON nesnesini kaydet
+        editor.putString("Entry_" + System.currentTimeMillis(), jsonObject.toString());
+        editor.apply();
+    }
 
+    private List<JSONObject> getSavedData() {
+        SharedPreferences sharedPreferences = getSharedPreferences("KiloData", MODE_PRIVATE);
+        Map<String, ?> allEntries = sharedPreferences.getAll();
+        List<JSONObject> dataList = new ArrayList<>();
 
+        // Anahtarları ve JSON nesnelerini bir listeye topla
+        List<Map.Entry<String, ?>> entries = new ArrayList<>(allEntries.entrySet());
 
+        // Anahtarları (zaman damgaları) kullanarak listeyi sırala
+        Collections.sort(entries, new Comparator<Map.Entry<String, ?>>() {
+            @Override
+            public int compare(Map.Entry<String, ?> entry1, Map.Entry<String, ?> entry2) {
+                return entry1.getKey().compareTo(entry2.getKey());
+            }
+        });
+
+        for (Map.Entry<String, ?> entry : entries) {
+            try {
+                JSONObject jsonObject = new JSONObject((String) entry.getValue());
+                dataList.add(jsonObject);
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+        return dataList;
+    }
 
 }

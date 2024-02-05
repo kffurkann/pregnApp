@@ -48,6 +48,10 @@ public class DashBoard extends AppCompatActivity {
                     selectedFragment = new Forum();
                 } else if (itemId == R.id.nav_tools) {
                     selectedFragment = new Tools();
+                    Bundle bundleT = new Bundle();
+                    bundleT.putString("userMail", userMail);
+                    Log.d("usermail bundle:", userMail);
+                    selectedFragment.setArguments(bundleT);
                 } else if (itemId == R.id.nav_profile) {
                     selectedFragment = new Profile();
                     Bundle bundleP = new Bundle();
