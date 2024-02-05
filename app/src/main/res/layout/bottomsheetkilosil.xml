@@ -11,9 +11,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
+        android:fontFamily="@font/rubikbold"
         android:text="Silmek İstiyor Musun?"
-        android:fontFamily="@font/rubikregular"
         android:textAlignment="center"
+        android:textColor="@color/darkerPink"
         android:textSize="24sp"
         android:textStyle="bold" />
 

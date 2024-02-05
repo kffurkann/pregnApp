@@ -204,7 +204,7 @@ public class HomeFragment extends Fragment {
         fifthWeek.setText(String.valueOf(week + 1));
         sixWeek.setText(String.valueOf(week + 2));
         heightT.setText(String.valueOf(height + "cm"));
-        weightT.setText(String.valueOf(weight + "kg"));
+        weightT.setText(String.valueOf(weight + "gr"));
         fruitT.setText(String.valueOf("Bebeğin " + fruit +  " meyvesi büyüklüğünde"));
         fullName.setText(String.valueOf("Merhaba " + userName));
     }
