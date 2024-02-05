@@ -32,16 +32,13 @@ import androidx.core.content.ContextCompat;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
@@ -165,6 +162,7 @@ public class KiloTakibi extends AppCompatActivity {
                         String kiloBeforeText = kilobefore.getText().toString();
                         String kiloAfterText = kiloafter.getText().toString();
                         try {
+
                             double kiloValue = Double.parseDouble(kiloBeforeText + "." + kiloAfterText);
 
                             double lastWeight = Double.parseDouble(weightT);

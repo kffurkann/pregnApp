@@ -75,24 +75,11 @@
                     android:layout_alignParentStart="true"
                     android:layout_alignParentLeft="true"
                     android:layout_centerVertical="true"
-                    android:paddingLeft="30dp"
+                    android:fontFamily="@font/rubikregular"
+                    android:paddingLeft="80dp"
                     android:text="Tarih"
-                    android:fontFamily="@font/rubikregular"
                     android:textSize="20dp"
-                    android:textStyle="bold"/>
-
-
-                <TextView
-                    android:id="@+id/textViewHafta"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:paddingRight="50dp"
-                    android:text="Hafta"
-                    android:fontFamily="@font/rubikregular"
-                    android:textSize="20dp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
 
                 <TextView
