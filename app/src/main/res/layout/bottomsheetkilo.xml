@@ -12,9 +12,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="10dp"
-        android:text="Yeni Tekme Ekle"
-        android:fontFamily="@font/rubikregular"
+        android:fontFamily="@font/rubikbold"
+        android:text="Yeni Kilo Ekle"
         android:textAlignment="center"
+        android:textColor="@color/darkerPink"
         android:textSize="24sp"
         android:textStyle="bold" />
 
@@ -28,11 +29,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="20dp"
-
+            android:inputType="numberDecimal|numberSigned|textPassword"
             android:layout_weight="1"
             android:background="@drawable/buttomsheetdesign"
-            android:hint="0"
             android:fontFamily="@font/rubikregular"
+            android:hint="0"
             android:textAlignment="center"
             android:textColor="@color/darkerPink"
             android:textSize="72sp"
@@ -53,6 +54,7 @@
 
         <EditText
             android:id="@+id/kiloafter"
+            android:inputType="numberDecimal|numberSigned|textPassword"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/buttomsheetdesign"
@@ -81,10 +83,11 @@
             android:layout_marginLeft="4dp"
             android:layout_marginRight="4dp"
             android:layout_weight="2"
-            android:backgroundTint="@color/dangerous"
+            android:backgroundTint="@color/darkerPink"
+            android:fontFamily="@font/rubikregular"
             android:onClick="showContent"
             android:text="Bugün"
-            android:fontFamily="@font/rubikregular" />
+            android:textColor="@color/background" />
 
         <Button
             android:id="@+id/buttonSaatKilo"
@@ -93,17 +96,18 @@
             android:layout_marginLeft="4dp"
             android:layout_marginRight="4dp"
             android:layout_weight="2"
-            android:backgroundTint="@color/undangerous"
+            android:backgroundTint="@color/mediumPink"
+            android:fontFamily="@font/rubikregular"
             android:onClick="showContent"
             android:text="Şimdi"
-            android:fontFamily="@font/rubikregular"
-            android:textColor="@color/undangerousText" />
+            android:textColor="@color/darkerPink" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginBottom="20dp"
         android:orientation="horizontal">
 
         <Button
@@ -116,10 +120,9 @@
             android:layout_marginBottom="10dp"
             android:layout_weight="1"
             android:backgroundTint="@color/lightGrey"
-            android:text="İptal"
             android:fontFamily="@font/rubikregular"
-            android:textColor="@color/background"
-            android:background="@drawable/buttoncorner"/>
+            android:text="İptal"
+            android:textColor="@color/darkBlue" />
 
 
         <Button
@@ -131,11 +134,10 @@
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="10dp"
             android:layout_weight="1"
-            android:backgroundTint="@color/darkerPink"
-            android:text="Ekle"
+            android:backgroundTint="@color/darkBlue"
             android:fontFamily="@font/rubikregular"
-            android:textColor="@color/background"
-            android:background="@drawable/buttoncorner" />
+            android:text="Ekle"
+            android:textColor="@color/background" />
 
     </LinearLayout>
 

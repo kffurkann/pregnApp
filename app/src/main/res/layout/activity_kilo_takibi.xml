@@ -75,10 +75,10 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentStart="true"
                     android:layout_alignParentLeft="true"
+                    android:fontFamily="@font/rubikregular"
                     android:paddingLeft="20dp"
                     android:paddingTop="15dp"
-                    android:text="... kg"
-                    android:fontFamily="@font/rubikregular"
+                    android:text="0"
                     android:textSize="25dp"
                     android:textStyle="bold" />
 
@@ -147,10 +147,10 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
+                    android:fontFamily="@font/rubikregular"
                     android:paddingTop="15dp"
                     android:paddingRight="15dp"
-                    android:text="... kg"
-                    android:fontFamily="@font/rubikregular"
+                    android:text="0"
                     android:textSize="25dp"
                     android:textStyle="bold" />
 
@@ -178,67 +178,45 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/relativeLayoutKiloPanel">
 
-                <TextView
-                    android:id="@+id/textViewTarihKilo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"
-                    android:paddingLeft="30dp"
-                    android:text="Tarih"
-                    android:fontFamily="@font/rubikregular"
-                    android:textSize="20dp"
-                    android:textStyle="bold" />
-
-
-                <TextView
-                    android:id="@+id/textViewHaftaKilo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:paddingRight="50dp"
-                    android:text="Hafta"
-                    android:fontFamily="@font/rubikregular"
-                    android:textSize="20dp"
-                    android:textStyle="bold" />
-
-
-                <TextView
-                    android:id="@+id/textViewTekmeKilo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:paddingRight="90dp"
-                    android:text="Kilo"
-                    android:fontFamily="@font/rubikregular"
-                    android:textSize="20dp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/textViewFarkKilo"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:paddingRight="15dp"
-                    android:text="Fark"
-                    android:fontFamily="@font/rubikregular"
-                    android:textSize="20dp"
-                    android:textStyle="bold" />
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"></LinearLayout>
+                    android:orientation="horizontal">
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    <TextView
+                        android:id="@+id/textViewTarihKilo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/rubikregular"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:text="Tarih"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textViewTekmeKilo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/rubikregular"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:text="Kilo"
+                        android:textSize="20dp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/textViewFarkKilo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/rubikregular"
+                        android:gravity="center_horizontal|center_vertical"
+                        android:text="Fark"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
 
             </RelativeLayout>
 
@@ -270,7 +248,3 @@
         app:iconPadding="0dp" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
-
-
-
-
