@@ -11,6 +11,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.IOException;
 import okhttp3.Call;
 import okhttp3.Callback;
@@ -106,6 +111,14 @@ public class LoginPage extends AppCompatActivity {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
+                            try {
+                                JSONObject jsonObject = new JSONObject(responseBody);
+                                String errorMessage = jsonObject.getString("message");
+                                Toast.makeText(LoginPage.this, errorMessage, Toast.LENGTH_LONG).show();
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                                Toast.makeText(LoginPage.this, "Hata mesajı ayrıştırılamadı", Toast.LENGTH_LONG).show();
+                            }
 
                         }
                     });

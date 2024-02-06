@@ -123,7 +123,7 @@ public class KiloTakibi extends AppCompatActivity {
                     public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
                         // Sadece 2 haneli sayılara izin ver
                         String inputText = dest.toString() + source.toString();
-                        if (inputText.matches("\\d{0,2}")) {
+                        if (inputText.matches("\\d{0,3}")) {
                             return null;
                         }
                         return "";
@@ -286,7 +286,7 @@ public class KiloTakibi extends AppCompatActivity {
     }
 
 
-   private void getUserData() {
+    private void getUserData() {
         OkHttpClient client = new OkHttpClient();
         String url = "http://10.0.2.2:5274/api/User/GetUser?mail=" + userMailT;
 
@@ -520,10 +520,9 @@ public class KiloTakibi extends AppCompatActivity {
         Map<String, ?> allEntries = sharedPreferences.getAll();
         List<JSONObject> dataList = new ArrayList<>();
 
-        // Anahtarları ve JSON nesnelerini bir listeye topla
+
         List<Map.Entry<String, ?>> entries = new ArrayList<>(allEntries.entrySet());
 
-        // Anahtarları (zaman damgaları) kullanarak listeyi sırala
         Collections.sort(entries, new Comparator<Map.Entry<String, ?>>() {
             @Override
             public int compare(Map.Entry<String, ?> entry1, Map.Entry<String, ?> entry2) {
@@ -545,17 +544,63 @@ public class KiloTakibi extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences("KiloData", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         double kiloValue = 0.0;
+
+
         try {
             JSONObject jsonObject = new JSONObject(sharedPreferences.getString(uniqueId, ""));
             kiloValue = jsonObject.getDouble("kiloValue");
         } catch (JSONException e) {
             e.printStackTrace();
         }
+
         editor.remove(uniqueId);
         editor.apply();
-        return kiloValue;
 
+        List<JSONObject> updatedDataList = getSavedData();
+
+
+        updateDifferences(updatedDataList);
+
+
+        LinearLayout linearLayout = findViewById(R.id.listeleme);
+        linearLayout.removeAllViews();
+        createNewRelativeLayout(updatedDataList);
+
+        return kiloValue;
     }
+
+    private void updateDifferences(List<JSONObject> dataList) {
+        if (!dataList.isEmpty()) {
+            for (int i = 0; i < dataList.size(); i++) {
+                try {
+                    JSONObject currentEntry = dataList.get(i);
+
+                    if (i > 0) {
+                        JSONObject previousEntry = dataList.get(i - 1);
+                        double currentKiloValue = currentEntry.getDouble("kiloValue");
+                        double previousKiloValue = previousEntry.getDouble("kiloValue");
+
+                        double difference = currentKiloValue - previousKiloValue;
+                        difference = Math.round(difference * 100.0) / 100.0;
+                        currentEntry.put("difference", difference);
+                    } else {
+
+                        double difference = previousKiloValue - Double.parseDouble(weightT);
+                        currentEntry.put("difference", difference);
+                    }
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            createNewRelativeLayout(dataList);
+       }
+}
+
+
+
+
 
 
 }

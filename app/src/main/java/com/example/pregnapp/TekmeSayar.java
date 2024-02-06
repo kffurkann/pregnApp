@@ -1,9 +1,7 @@
 package com.example.pregnapp;
-
 import static android.graphics.Color.parseColor;
 
 import android.content.Context;
-import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
@@ -140,25 +138,13 @@ public class TekmeSayar extends AppCompatActivity {
                 LinearLayout.LayoutParams.WRAP_CONTENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT
         );
-        params5.setMargins(15, 0, 5, 0);
+        params5.setMargins(150, 0, 0, 0);
         params5.weight = 1;
         textViewTarih.setLayoutParams(params5);
 
         textViewTarih.setText(currentDateAndTime);
         textViewTarih.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
 
-        TextView textViewHafta = new TextView(this);
-        textViewHafta.setId(View.generateViewId());
-        textViewHafta.setText("New Hafta");
-        textViewHafta.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
-
-        LinearLayout.LayoutParams params22 = new LinearLayout.LayoutParams(
-                LinearLayout.LayoutParams.WRAP_CONTENT,
-                LinearLayout.LayoutParams.WRAP_CONTENT
-        );
-        params22.setMargins(5, 0, 5, 0);
-        params22.weight = 1;
-        textViewHafta.setLayoutParams(params22);
 
         TextView textViewTekme = new TextView(this);
         textViewTekme.setId(View.generateViewId());
@@ -169,7 +155,7 @@ public class TekmeSayar extends AppCompatActivity {
                 LinearLayout.LayoutParams.WRAP_CONTENT,
                 LinearLayout.LayoutParams.WRAP_CONTENT
         );
-        params33.setMargins(5, 0, 5, 0);
+        params33.setMargins(100, 0, 0, 0);
         params33.weight = 1;
         textViewTekme.setLayoutParams(params33);
 
@@ -211,7 +197,6 @@ public class TekmeSayar extends AppCompatActivity {
         });
 
         horizontalLayout.addView(textViewTarih);
-        horizontalLayout.addView(textViewHafta);
         horizontalLayout.addView(textViewTekme);
         horizontalLayout.addView(imageView);
 

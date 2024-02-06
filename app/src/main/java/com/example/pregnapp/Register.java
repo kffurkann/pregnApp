@@ -16,6 +16,10 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import okhttp3.*;
 
@@ -210,6 +214,15 @@ public class Register extends AppCompatActivity {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
+                            try {
+                                JSONObject jsonObject = new JSONObject(responseBody);
+                                String errorMessage = jsonObject.getString("message");
+                                Toast.makeText(Register.this, errorMessage, Toast.LENGTH_LONG).show();
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                                Toast.makeText(Register.this, "Hata mesajı ayrıştırılamadı", Toast.LENGTH_LONG).show();
+                            }
+
                         }
                     });
                 }
